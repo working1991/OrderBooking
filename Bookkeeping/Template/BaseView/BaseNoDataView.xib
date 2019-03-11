@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="NJr-JZ-Bwb" customClass="BaseNoDataView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无相关数据" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ov3-g5-6jJ">
+                    <rect key="frame" x="142" y="355" width="92" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wkz-kM-JUG">
+                    <rect key="frame" x="71" y="325.5" width="80" height="1"/>
+                    <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="PaG-Zv-2Of"/>
+                        <constraint firstAttribute="height" constant="1" id="rEe-4O-sQn"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2B-hU-Tl6">
+                    <rect key="frame" x="224" y="325.5" width="80" height="1"/>
+                    <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="EqY-Kf-9Xu"/>
+                        <constraint firstAttribute="width" constant="80" id="lGh-Ye-I1p"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_nodata.png" translatesAutoresizingMaskIntoConstraints="NO" id="cOu-AM-1a4">
+                    <rect key="frame" x="168" y="311" width="39" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="29" id="aE5-9Y-oDB"/>
+                        <constraint firstAttribute="width" constant="39" id="qle-VF-oDc"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ov3-g5-6jJ" firstAttribute="leading" secondItem="wkz-kM-JUG" secondAttribute="trailing" constant="17" id="FSK-VJ-plS"/>
+                <constraint firstItem="ov3-g5-6jJ" firstAttribute="top" secondItem="cOu-AM-1a4" secondAttribute="bottom" constant="15" id="Gza-Nx-zd3"/>
+                <constraint firstItem="h2B-hU-Tl6" firstAttribute="leading" secondItem="cOu-AM-1a4" secondAttribute="trailing" constant="17" id="N0o-tR-3cU"/>
+                <constraint firstAttribute="centerY" secondItem="ov3-g5-6jJ" secondAttribute="centerY" constant="-30" id="TMH-iP-mCJ"/>
+                <constraint firstItem="wkz-kM-JUG" firstAttribute="centerY" secondItem="cOu-AM-1a4" secondAttribute="centerY" id="ePW-Tz-5TN"/>
+                <constraint firstItem="cOu-AM-1a4" firstAttribute="leading" secondItem="wkz-kM-JUG" secondAttribute="trailing" constant="17" id="oik-8B-z1o"/>
+                <constraint firstAttribute="centerX" secondItem="ov3-g5-6jJ" secondAttribute="centerX" id="qtt-f0-xXf"/>
+                <constraint firstItem="h2B-hU-Tl6" firstAttribute="centerY" secondItem="cOu-AM-1a4" secondAttribute="centerY" id="wfk-SZ-S5k"/>
+                <constraint firstAttribute="centerX" secondItem="cOu-AM-1a4" secondAttribute="centerX" id="z34-5Q-jWs"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="FSK-VJ-plS"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="txtLb_" destination="ov3-g5-6jJ" id="kIp-mY-ej5"/>
+            </connections>
+            <point key="canvasLocation" x="291" y="131"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ico_nodata.png" width="38" height="29"/>
+    </resources>
+</document>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="jUR-6h-1Ys" customClass="BaseLockView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_private_lock.png" translatesAutoresizingMaskIntoConstraints="NO" id="cyw-bQ-fWa">
+                    <rect key="frame" x="225" y="185" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="NSZ-Rd-uzn"/>
+                        <constraint firstAttribute="height" constant="150" id="Wk8-1Y-Clm"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无权限查看该信息" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8I-WW-hlV">
+                    <rect key="frame" x="236" y="351" width="128" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="cyw-bQ-fWa" secondAttribute="centerY" constant="40" id="3rJ-I0-2vK"/>
+                <constraint firstItem="cyw-bQ-fWa" firstAttribute="centerX" secondItem="x8I-WW-hlV" secondAttribute="centerX" id="JSN-1A-oVl"/>
+                <constraint firstItem="x8I-WW-hlV" firstAttribute="top" secondItem="cyw-bQ-fWa" secondAttribute="bottom" constant="16" id="Sa7-35-44d"/>
+                <constraint firstAttribute="centerX" secondItem="cyw-bQ-fWa" secondAttribute="centerX" id="dvj-yj-i4y"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg_private_lock.png" width="512" height="512"/>
+    </resources>
+</document>

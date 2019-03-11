@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4XV-bc-9Yn" customClass="BaseCleFooterView">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="S7W-C4-vx7">
+                    <rect key="frame" x="321.5" y="15" width="20" height="20"/>
+                </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="加载更多" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGC-My-mbF">
+                    <rect key="frame" x="350" y="15" width="68" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="AGC-My-mbF" secondAttribute="centerX" id="N9u-b7-ntn"/>
+                <constraint firstAttribute="centerY" secondItem="AGC-My-mbF" secondAttribute="centerY" id="Y0T-cb-MB0"/>
+                <constraint firstAttribute="centerY" secondItem="S7W-C4-vx7" secondAttribute="centerY" id="eG2-4B-hlc"/>
+                <constraint firstItem="AGC-My-mbF" firstAttribute="leading" secondItem="S7W-C4-vx7" secondAttribute="trailing" constant="8" id="rlf-P5-IjS"/>
+            </constraints>
+            <connections>
+                <outlet property="detailLb_" destination="AGC-My-mbF" id="Dcx-gU-hd8"/>
+                <outlet property="indicatorView_" destination="S7W-C4-vx7" id="CzW-fu-FEr"/>
+            </connections>
+        </collectionReusableView>
+    </objects>
+</document>

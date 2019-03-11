@@ -1,0 +1,30 @@
+{
+"BaseInfo":
+{
+"debugURL" : "http://alongch.imwork.net:5588/erp/api",
+"releaseURL" : "http://120.24.74.199:8071/client/api",
+"isDebug" : "0",
+"cookie" : "",
+"loadingStr" : "正在加载...",
+"noDataStr" : "暂无数据",
+"des" : "loadType = normal/modal/null"
+},
+"Op":
+[
+ {
+ "key" : "doLogin",
+ "des" : "用户登录",
+ "value" : "doOrganization/login",
+ "loadType" : "modal",
+ "loadingStr" : "正在登录中...",
+ "noDataStr" : "没有数据"
+ },
+ {
+ "key" : "modifyPassword",
+ "des" : "修改密码",
+ "value" : "doOrganization/modifyPassword",
+ "loadType" : "modal",
+ "loadingStr" : "正在修改..."
+ }
+ ]
+}

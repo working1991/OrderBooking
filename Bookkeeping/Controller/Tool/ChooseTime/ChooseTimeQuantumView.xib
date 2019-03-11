@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChooseTimeQuantumView">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="zA7-OL-Kv3"/>
+                <outlet property="initialTimeBtn" destination="zxX-Qy-cGN" id="0p7-zu-ch4"/>
+                <outlet property="upToTimeBtn" destination="GSU-2N-fX5" id="pIg-6m-0wd"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="36"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxX-Qy-cGN">
+                    <rect key="frame" x="0.0" y="5" width="125" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="gBy-my-YNC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="yyyy-MM-dd">
+                        <color key="titleColor" red="0.19215686269999999" green="0.71764705880000002" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="gBy-my-YNC"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="chooseTime:" destination="-1" eventType="touchUpInside" id="aci-Ab-Csm"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSU-2N-fX5">
+                    <rect key="frame" x="155" y="5" width="125" height="26"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="yyyy-MM-dd">
+                        <color key="titleColor" red="0.19215686269999999" green="0.71764705880000002" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="chooseTime:" destination="-1" eventType="touchUpInside" id="Zbm-MQ-d96"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="至" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaM-Ro-sR0">
+                    <rect key="frame" x="125" y="8" width="30" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="cBf-zL-yCO"/>
+                        <constraint firstAttribute="height" constant="20" id="mOi-hP-taL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.32584697008132935" green="0.32583719491958618" blue="0.32584273815155029" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="GSU-2N-fX5" firstAttribute="leading" secondItem="eaM-Ro-sR0" secondAttribute="trailing" id="LIF-El-xpZ"/>
+                <constraint firstAttribute="trailing" secondItem="GSU-2N-fX5" secondAttribute="trailing" id="MB8-7k-Clv"/>
+                <constraint firstItem="GSU-2N-fX5" firstAttribute="centerY" secondItem="zxX-Qy-cGN" secondAttribute="centerY" id="Xfg-4T-R4O"/>
+                <constraint firstAttribute="bottom" secondItem="zxX-Qy-cGN" secondAttribute="bottom" constant="5" id="aBT-nP-A29"/>
+                <constraint firstItem="GSU-2N-fX5" firstAttribute="width" secondItem="zxX-Qy-cGN" secondAttribute="width" id="dZQ-4I-Vsc"/>
+                <constraint firstItem="GSU-2N-fX5" firstAttribute="top" secondItem="zxX-Qy-cGN" secondAttribute="top" id="gbf-7V-tyy"/>
+                <constraint firstItem="zxX-Qy-cGN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="h2T-M0-037"/>
+                <constraint firstItem="zxX-Qy-cGN" firstAttribute="centerY" secondItem="eaM-Ro-sR0" secondAttribute="centerY" id="k7e-U5-F4g"/>
+                <constraint firstItem="eaM-Ro-sR0" firstAttribute="leading" secondItem="zxX-Qy-cGN" secondAttribute="trailing" id="nwN-dT-69q"/>
+                <constraint firstItem="GSU-2N-fX5" firstAttribute="height" secondItem="zxX-Qy-cGN" secondAttribute="height" id="rPf-TQ-mLr"/>
+                <constraint firstItem="zxX-Qy-cGN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="sVq-Zb-hG6"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="gbf-7V-tyy"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="-29" y="81"/>
+        </view>
+    </objects>
+</document>
