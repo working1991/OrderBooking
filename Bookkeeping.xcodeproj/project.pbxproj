@@ -69,12 +69,6 @@
 		06618612223682A1009F5CB6 /* XHSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 06618432223682A0009F5CB6 /* XHSegmentControl.m */; };
 		06618613223682A1009F5CB6 /* XHSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06618433223682A0009F5CB6 /* XHSegmentViewController.m */; };
 		06618617223682A1009F5CB6 /* CalendarUntil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0661843C223682A0009F5CB6 /* CalendarUntil.m */; };
-		0661861A223682A1009F5CB6 /* ChooseTimeQureyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06618446223682A0009F5CB6 /* ChooseTimeQureyView.m */; };
-		0661861B223682A1009F5CB6 /* ChooseTimeQureyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06618447223682A0009F5CB6 /* ChooseTimeQureyView.xib */; };
-		0661861C223682A1009F5CB6 /* ChooseTimeCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06618448223682A0009F5CB6 /* ChooseTimeCtl.xib */; };
-		0661861D223682A1009F5CB6 /* ChooseTimeCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 06618449223682A0009F5CB6 /* ChooseTimeCtl.m */; };
-		0661861E223682A1009F5CB6 /* ChooseTimeQuantumView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0661844A223682A0009F5CB6 /* ChooseTimeQuantumView.m */; };
-		0661861F223682A1009F5CB6 /* ChooseTimeQuantumView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0661844B223682A0009F5CB6 /* ChooseTimeQuantumView.xib */; };
 		06618620223682A1009F5CB6 /* UIView+CYLTabBarControllerExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 06618451223682A0009F5CB6 /* UIView+CYLTabBarControllerExtention.m */; };
 		06618621223682A1009F5CB6 /* UITabBarItem+CYLTabBarControllerExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 06618452223682A0009F5CB6 /* UITabBarItem+CYLTabBarControllerExtention.m */; };
 		06618622223682A1009F5CB6 /* CYLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06618454223682A0009F5CB6 /* CYLTabBarController.m */; };
@@ -168,6 +162,18 @@
 		066187AC2236969F009F5CB6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 066187A92236969F009F5CB6 /* Info.plist */; };
 		066187AD2236969F009F5CB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 066187AA2236969F009F5CB6 /* LaunchScreen.storyboard */; };
 		066187AE2236969F009F5CB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 066187AB2236969F009F5CB6 /* Main.storyboard */; };
+		066187B42236A683009F5CB6 /* MineItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 066187B12236A682009F5CB6 /* MineItemCell.m */; };
+		066187B52236A683009F5CB6 /* MineItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187B32236A682009F5CB6 /* MineItemCell.xib */; };
+		066187BC2236A89C009F5CB6 /* CustomerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187B62236A89B009F5CB6 /* CustomerCell.xib */; };
+		066187BD2236A89C009F5CB6 /* CustomerCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 066187B72236A89B009F5CB6 /* CustomerCtl.m */; };
+		066187BE2236A89C009F5CB6 /* CustomerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 066187B92236A89C009F5CB6 /* CustomerCell.m */; };
+		066187BF2236A89C009F5CB6 /* CustomerCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187BB2236A89C009F5CB6 /* CustomerCtl.xib */; };
+		066187C32236A8A4009F5CB6 /* AddCustomerCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 066187C02236A8A4009F5CB6 /* AddCustomerCtl.m */; };
+		066187C42236A8A4009F5CB6 /* AddCustomerCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187C22236A8A4009F5CB6 /* AddCustomerCtl.xib */; };
+		066187C82236B0B3009F5CB6 /* SettingCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 066187C62236B0B3009F5CB6 /* SettingCtl.m */; };
+		066187C92236B0B3009F5CB6 /* SettingCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187C72236B0B3009F5CB6 /* SettingCtl.xib */; };
+		066187CD2236B1A1009F5CB6 /* ChangePasswordCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 066187CB2236B1A1009F5CB6 /* ChangePasswordCtl.m */; };
+		066187CE2236B1A1009F5CB6 /* ChangePasswordCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187CC2236B1A1009F5CB6 /* ChangePasswordCtl.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -298,15 +304,6 @@
 		06618434223682A0009F5CB6 /* XHSegmentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSegmentItem.h; sourceTree = "<group>"; };
 		0661843C223682A0009F5CB6 /* CalendarUntil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarUntil.m; sourceTree = "<group>"; };
 		0661843D223682A0009F5CB6 /* CalendarUntil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarUntil.h; sourceTree = "<group>"; };
-		06618444223682A0009F5CB6 /* ChooseTimeCtl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseTimeCtl.h; sourceTree = "<group>"; };
-		06618445223682A0009F5CB6 /* ChooseTimeQuantumView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseTimeQuantumView.h; sourceTree = "<group>"; };
-		06618446223682A0009F5CB6 /* ChooseTimeQureyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseTimeQureyView.m; sourceTree = "<group>"; };
-		06618447223682A0009F5CB6 /* ChooseTimeQureyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseTimeQureyView.xib; sourceTree = "<group>"; };
-		06618448223682A0009F5CB6 /* ChooseTimeCtl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseTimeCtl.xib; sourceTree = "<group>"; };
-		06618449223682A0009F5CB6 /* ChooseTimeCtl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseTimeCtl.m; sourceTree = "<group>"; };
-		0661844A223682A0009F5CB6 /* ChooseTimeQuantumView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseTimeQuantumView.m; sourceTree = "<group>"; };
-		0661844B223682A0009F5CB6 /* ChooseTimeQuantumView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseTimeQuantumView.xib; sourceTree = "<group>"; };
-		0661844C223682A0009F5CB6 /* ChooseTimeQureyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseTimeQureyView.h; sourceTree = "<group>"; };
 		0661844E223682A0009F5CB6 /* CYLPlusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLPlusButton.h; sourceTree = "<group>"; };
 		0661844F223682A0009F5CB6 /* CYLTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLTabBar.h; sourceTree = "<group>"; };
 		06618450223682A0009F5CB6 /* UIControl+CYLTabBarControllerExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+CYLTabBarControllerExtention.h"; sourceTree = "<group>"; };
@@ -466,6 +463,24 @@
 		066187A92236969F009F5CB6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		066187AA2236969F009F5CB6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		066187AB2236969F009F5CB6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		066187B12236A682009F5CB6 /* MineItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineItemCell.m; sourceTree = "<group>"; };
+		066187B22236A682009F5CB6 /* MineItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineItemCell.h; sourceTree = "<group>"; };
+		066187B32236A682009F5CB6 /* MineItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineItemCell.xib; sourceTree = "<group>"; };
+		066187B62236A89B009F5CB6 /* CustomerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomerCell.xib; sourceTree = "<group>"; };
+		066187B72236A89B009F5CB6 /* CustomerCtl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerCtl.m; sourceTree = "<group>"; };
+		066187B82236A89B009F5CB6 /* CustomerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerCell.h; sourceTree = "<group>"; };
+		066187B92236A89C009F5CB6 /* CustomerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerCell.m; sourceTree = "<group>"; };
+		066187BA2236A89C009F5CB6 /* CustomerCtl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerCtl.h; sourceTree = "<group>"; };
+		066187BB2236A89C009F5CB6 /* CustomerCtl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomerCtl.xib; sourceTree = "<group>"; };
+		066187C02236A8A4009F5CB6 /* AddCustomerCtl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCustomerCtl.m; sourceTree = "<group>"; };
+		066187C12236A8A4009F5CB6 /* AddCustomerCtl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCustomerCtl.h; sourceTree = "<group>"; };
+		066187C22236A8A4009F5CB6 /* AddCustomerCtl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCustomerCtl.xib; sourceTree = "<group>"; };
+		066187C52236B0B3009F5CB6 /* SettingCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingCtl.h; sourceTree = "<group>"; };
+		066187C62236B0B3009F5CB6 /* SettingCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingCtl.m; sourceTree = "<group>"; };
+		066187C72236B0B3009F5CB6 /* SettingCtl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCtl.xib; sourceTree = "<group>"; };
+		066187CA2236B1A1009F5CB6 /* ChangePasswordCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangePasswordCtl.h; sourceTree = "<group>"; };
+		066187CB2236B1A1009F5CB6 /* ChangePasswordCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordCtl.m; sourceTree = "<group>"; };
+		066187CC2236B1A1009F5CB6 /* ChangePasswordCtl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordCtl.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -743,6 +758,24 @@
 				066186992236923F009F5CB6 /* MineCtl.h */,
 				0661869A2236923F009F5CB6 /* MineCtl.m */,
 				0661869B2236923F009F5CB6 /* MineCtl.xib */,
+				066187B22236A682009F5CB6 /* MineItemCell.h */,
+				066187B12236A682009F5CB6 /* MineItemCell.m */,
+				066187B32236A682009F5CB6 /* MineItemCell.xib */,
+				066187BA2236A89C009F5CB6 /* CustomerCtl.h */,
+				066187B72236A89B009F5CB6 /* CustomerCtl.m */,
+				066187BB2236A89C009F5CB6 /* CustomerCtl.xib */,
+				066187B82236A89B009F5CB6 /* CustomerCell.h */,
+				066187B92236A89C009F5CB6 /* CustomerCell.m */,
+				066187B62236A89B009F5CB6 /* CustomerCell.xib */,
+				066187C12236A8A4009F5CB6 /* AddCustomerCtl.h */,
+				066187C02236A8A4009F5CB6 /* AddCustomerCtl.m */,
+				066187C22236A8A4009F5CB6 /* AddCustomerCtl.xib */,
+				066187C52236B0B3009F5CB6 /* SettingCtl.h */,
+				066187C62236B0B3009F5CB6 /* SettingCtl.m */,
+				066187C72236B0B3009F5CB6 /* SettingCtl.xib */,
+				066187CA2236B1A1009F5CB6 /* ChangePasswordCtl.h */,
+				066187CB2236B1A1009F5CB6 /* ChangePasswordCtl.m */,
+				066187CC2236B1A1009F5CB6 /* ChangePasswordCtl.xib */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -775,7 +808,6 @@
 			children = (
 				0661842E223682A0009F5CB6 /* XHSegmentController */,
 				0661843B223682A0009F5CB6 /* CalendarUntil */,
-				06618443223682A0009F5CB6 /* ChooseTime */,
 				0661844D223682A0009F5CB6 /* CYLTabBarController */,
 				0661845D223682A0009F5CB6 /* ImagePiker */,
 			);
@@ -802,22 +834,6 @@
 				0661843D223682A0009F5CB6 /* CalendarUntil.h */,
 			);
 			path = CalendarUntil;
-			sourceTree = "<group>";
-		};
-		06618443223682A0009F5CB6 /* ChooseTime */ = {
-			isa = PBXGroup;
-			children = (
-				06618444223682A0009F5CB6 /* ChooseTimeCtl.h */,
-				06618445223682A0009F5CB6 /* ChooseTimeQuantumView.h */,
-				06618446223682A0009F5CB6 /* ChooseTimeQureyView.m */,
-				06618447223682A0009F5CB6 /* ChooseTimeQureyView.xib */,
-				06618448223682A0009F5CB6 /* ChooseTimeCtl.xib */,
-				06618449223682A0009F5CB6 /* ChooseTimeCtl.m */,
-				0661844A223682A0009F5CB6 /* ChooseTimeQuantumView.m */,
-				0661844B223682A0009F5CB6 /* ChooseTimeQuantumView.xib */,
-				0661844C223682A0009F5CB6 /* ChooseTimeQureyView.h */,
-			);
-			path = ChooseTime;
 			sourceTree = "<group>";
 		};
 		0661844D223682A0009F5CB6 /* CYLTabBarController */ = {
@@ -1184,9 +1200,11 @@
 			files = (
 				06618769223694E8009F5CB6 /* BaseListDefault_Cell.xib in Resources */,
 				0661863C223682A1009F5CB6 /* request_config.json in Resources */,
+				066187CE2236B1A1009F5CB6 /* ChangePasswordCtl.xib in Resources */,
 				06618571223682A0009F5CB6 /* in.caf in Resources */,
 				0661869822368D5C009F5CB6 /* OrderListCtl.xib in Resources */,
 				06618573223682A0009F5CB6 /* qdy.html in Resources */,
+				066187B52236A683009F5CB6 /* MineItemCell.xib in Resources */,
 				0661878B223694E8009F5CB6 /* ico_nodata@2x.png in Resources */,
 				0661877F223694E8009F5CB6 /* BaseUIViewController.xib in Resources */,
 				06618786223694E8009F5CB6 /* back_black.png in Resources */,
@@ -1198,7 +1216,9 @@
 				06618785223694E8009F5CB6 /* bg_private_lock.png in Resources */,
 				0661876F223694E8009F5CB6 /* BaseTmpView.xib in Resources */,
 				06618783223694E8009F5CB6 /* BaseListController.xib in Resources */,
+				066187C42236A8A4009F5CB6 /* AddCustomerCtl.xib in Resources */,
 				0661869D2236923F009F5CB6 /* MineCtl.xib in Resources */,
+				066187C92236B0B3009F5CB6 /* SettingCtl.xib in Resources */,
 				066187AD2236969F009F5CB6 /* LaunchScreen.storyboard in Resources */,
 				06618765223694E8009F5CB6 /* BaseLockView.xib in Resources */,
 				0661877C223694E8009F5CB6 /* base_db1.sqlite in Resources */,
@@ -1210,20 +1230,19 @@
 				0661869322368D1E009F5CB6 /* ShowProductCtl.xib in Resources */,
 				0661878D223694E8009F5CB6 /* back_black@2x.png in Resources */,
 				06618574223682A0009F5CB6 /* BusinessOrderCardNotification.mp3 in Resources */,
+				066187BC2236A89C009F5CB6 /* CustomerCell.xib in Resources */,
 				0661878E223694E8009F5CB6 /* ico_nodata@3x.png in Resources */,
 				0661876D223694E8009F5CB6 /* BaseCleFooterView.xib in Resources */,
 				06618789223694E8009F5CB6 /* ico_empty@2x.png in Resources */,
 				06618784223694E8009F5CB6 /* BaseCleViewController.xib in Resources */,
 				06618771223694E8009F5CB6 /* BaseLoadingView.xib in Resources */,
+				066187BF2236A89C009F5CB6 /* CustomerCtl.xib in Resources */,
 				066187AE2236969F009F5CB6 /* Main.storyboard in Resources */,
-				0661861B223682A1009F5CB6 /* ChooseTimeQureyView.xib in Resources */,
 				06618538223682A0009F5CB6 /* QBImagePicker.storyboard in Resources */,
 				06618572223682A0009F5CB6 /* qdymr.gif in Resources */,
-				0661861F223682A1009F5CB6 /* ChooseTimeQuantumView.xib in Resources */,
 				06618570223682A0009F5CB6 /* 消息-业绩消息.txt in Resources */,
 				06618787223694E8009F5CB6 /* ico_fail@3x.png in Resources */,
 				06618788223694E8009F5CB6 /* ico_empty@3x.png in Resources */,
-				0661861C223682A1009F5CB6 /* ChooseTimeCtl.xib in Resources */,
 				06618775223694E8009F5CB6 /* MsgView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1241,6 +1260,7 @@
 				06618548223682A0009F5CB6 /* MASViewConstraint.m in Sources */,
 				06618566223682A0009F5CB6 /* SDWebImageDownloaderOperation.m in Sources */,
 				06618620223682A1009F5CB6 /* UIView+CYLTabBarControllerExtention.m in Sources */,
+				066187C32236A8A4009F5CB6 /* AddCustomerCtl.m in Sources */,
 				0661863A223682A1009F5CB6 /* ExDataParser.m in Sources */,
 				06618780223694E8009F5CB6 /* BaseCleViewController.m in Sources */,
 				06618790223694E8009F5CB6 /* MMHud.m in Sources */,
@@ -1256,9 +1276,9 @@
 				06618576223682A0009F5CB6 /* Config.m in Sources */,
 				06618625223682A1009F5CB6 /* UIControl+CYLTabBarControllerExtention.m in Sources */,
 				06618541223682A0009F5CB6 /* ViewController+MASAdditions.m in Sources */,
-				0661861E223682A1009F5CB6 /* ChooseTimeQuantumView.m in Sources */,
 				06618549223682A0009F5CB6 /* MASViewAttribute.m in Sources */,
 				06618766223694E8009F5CB6 /* BaseLockView.m in Sources */,
+				066187C82236B0B3009F5CB6 /* SettingCtl.m in Sources */,
 				066185FE223682A1009F5CB6 /* LoginCtl.m in Sources */,
 				06618792223694E8009F5CB6 /* MMLinearProgressView.m in Sources */,
 				06618546223682A0009F5CB6 /* View+MASAdditions.m in Sources */,
@@ -1288,10 +1308,12 @@
 				06618763223694E8009F5CB6 /* ShowImageView.m in Sources */,
 				06618779223694E8009F5CB6 /* BaseCommon.m in Sources */,
 				06618561223682A0009F5CB6 /* UIImage+GIF.m in Sources */,
+				066187BD2236A89C009F5CB6 /* CustomerCtl.m in Sources */,
 				0661878F223694E8009F5CB6 /* MMRadialProgressView.m in Sources */,
 				06618798223694E8009F5CB6 /* MMProgressHUDViewController.m in Sources */,
 				0661855F223682A0009F5CB6 /* UIImageView+HighlightedWebCache.m in Sources */,
 				0661879D223694E8009F5CB6 /* SBJsonWriter.m in Sources */,
+				066187BE2236A89C009F5CB6 /* CustomerCell.m in Sources */,
 				06618622223682A1009F5CB6 /* CYLTabBarController.m in Sources */,
 				0661853E223682A0009F5CB6 /* QBSlomoIconView.m in Sources */,
 				0661876B223694E8009F5CB6 /* BaseListDefault_Cell.m in Sources */,
@@ -1302,12 +1324,10 @@
 				0661853B223682A0009F5CB6 /* QBImagePickerController.m in Sources */,
 				06618523223682A0009F5CB6 /* TPKeyboardAvoidingTableView.m in Sources */,
 				06618522223682A0009F5CB6 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
-				0661861D223682A1009F5CB6 /* ChooseTimeCtl.m in Sources */,
 				06618617223682A1009F5CB6 /* CalendarUntil.m in Sources */,
 				06618544223682A0009F5CB6 /* MASLayoutConstraint.m in Sources */,
 				0661879F223694E8009F5CB6 /* SBJsonStreamParserAdapter.m in Sources */,
 				06618799223694E8009F5CB6 /* SBJsonStreamTokeniser.m in Sources */,
-				0661861A223682A1009F5CB6 /* ChooseTimeQureyView.m in Sources */,
 				06618542223682A0009F5CB6 /* MASCompositeConstraint.m in Sources */,
 				0661879E223694E8009F5CB6 /* SBJsonStreamWriter.m in Sources */,
 				06618796223694E8009F5CB6 /* MMVectorImage.m in Sources */,
@@ -1320,9 +1340,11 @@
 				0661856B223682A0009F5CB6 /* AppDelegate.m in Sources */,
 				06618569223682A0009F5CB6 /* UIView+WebCacheOperation.m in Sources */,
 				06618524223682A0009F5CB6 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				066187CD2236B1A1009F5CB6 /* ChangePasswordCtl.m in Sources */,
 				06618611223682A1009F5CB6 /* XHSegmentItem.m in Sources */,
 				06618521223682A0009F5CB6 /* UICustomLineLabel.m in Sources */,
 				06618540223682A0009F5CB6 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				066187B42236A683009F5CB6 /* MineItemCell.m in Sources */,
 				066187A7223694E8009F5CB6 /* RequestOperator.m in Sources */,
 				0661869722368D5C009F5CB6 /* OrderListCtl.m in Sources */,
 				066187A4223694E8009F5CB6 /* RequestCon.m in Sources */,

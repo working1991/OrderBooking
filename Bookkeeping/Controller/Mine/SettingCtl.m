@@ -1,32 +1,24 @@
 //
-//  MineCtl.m
+//  SettingCtl.m
 //  Bookkeeping
 //
 //  Created by BaiYun004 on 2019/3/11.
 //  Copyright © 2019 luoqw. All rights reserved.
 //
 
-#import "MineCtl.h"
-#import "MineItemCell.h"
-#import "CustomerCtl.h"
 #import "SettingCtl.h"
+#import "MineItemCell.h"
+#import "ChangePasswordCtl.h"
 
-@interface MineCtl ()
+@interface SettingCtl ()
 
 {
     NSArray     *itemInfoArray;
 }
 
-@property (weak, nonatomic) IBOutlet UIView *nameView;
-@property (weak, nonatomic) IBOutlet UIView *amoutView;
-@property (weak, nonatomic) IBOutlet UIView *orderNumView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLb;
-@property (weak, nonatomic) IBOutlet UILabel *amoutLb;
-@property (weak, nonatomic) IBOutlet UILabel *orderNumLb;
-
 @end
 
-@implementation MineCtl
+@implementation SettingCtl
 
 - (instancetype)init
 {
@@ -40,8 +32,7 @@
 - (void)initItemInfo
 {
     itemInfoArray = @[
-                      @[@{@"itemName":@"我的客户",@"icon":@"customer_list",@"itemType":@0},
-                        @{@"itemName":@"设置",@"icon":@"icon_setting",@"itemType":@1}]
+                      @[@{@"itemName":@"修改密码",@"icon":@"mine_change_password",@"itemType":@2}]
                       ];
 }
 
@@ -51,7 +42,6 @@
     
     [self.tableView_ registerNib:[UINib nibWithNibName:NSStringFromClass([MineItemCell class]) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:NSStringFromClass([MineItemCell class])];
     
-    [self initViewShape];
     [self initItemInfo];
     [self.tableView_ reloadData];
 }
@@ -60,29 +50,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-- (void)initViewShape
-{
-    CALayer *layer = self.nameView.layer;
-    layer.masksToBounds = YES;
-    layer.cornerRadius = 10;
-    
-    layer = self.orderNumView.layer;
-    layer.masksToBounds = YES;
-    layer.cornerRadius = 10;
-    
-    layer = self.amoutView.layer;
-    layer.masksToBounds = YES;
-    layer.cornerRadius = 10;
-}
-
-#pragma mark - Base
-- (void)finishLoadData:(BaseRequest *)request dataArr:(NSArray *)dataArr
-{
-    
-}
-
 
 #pragma mark - Pravite
 
@@ -141,21 +108,14 @@
     NSDictionary *itemDic = itemInfoArray[indexPath.section][indexPath.row];
     int type = [itemDic[@"itemType"] intValue];
     switch (type) {
-        case 0:
+        case 2:
         {
-            CustomerCtl *ctl = [[CustomerCtl alloc] init];
+            ChangePasswordCtl *ctl = [[ChangePasswordCtl alloc] init];
             ctl.title = itemDic[@"itemName"];
             [self.navigationController pushViewController:ctl animated:YES];
         }
             break;
-        case 1:
-        {
-            SettingCtl *ctl = [[SettingCtl alloc] init];
-            ctl.title = itemDic[@"itemName"];
-            [self.navigationController pushViewController:ctl animated:YES];
-        }
-            break;
-        
+            
         default:
             break;
     }

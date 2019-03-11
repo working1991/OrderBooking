@@ -1,5 +1,5 @@
 //
-//  MineCtl.h
+//  SettingCtl.h
 //  Bookkeeping
 //
 //  Created by BaiYun004 on 2019/3/11.
@@ -8,8 +8,6 @@
 
 #import "BaseListController.h"
 
-@interface MineCtl : BaseListController
-
-
+@interface SettingCtl : BaseListController
 
 @end

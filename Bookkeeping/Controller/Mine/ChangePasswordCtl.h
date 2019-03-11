@@ -1,15 +1,13 @@
 //
-//  MineCtl.h
+//  ChangePasswordCtl.h
 //  Bookkeeping
 //
 //  Created by BaiYun004 on 2019/3/11.
 //  Copyright © 2019 luoqw. All rights reserved.
 //
 
-#import "BaseListController.h"
+#import "BaseUIViewController.h"
 
-@interface MineCtl : BaseListController
-
-
+@interface ChangePasswordCtl : BaseUIViewController
 
 @end
