@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,13 +13,10 @@
             <connections>
                 <outlet property="accountTf" destination="UN2-Ht-Tps" id="kgG-SB-gDn"/>
                 <outlet property="accountView" destination="aTt-r1-Cpb" id="BVG-eC-Q35"/>
-                <outlet property="addressBtn" destination="6g7-UA-8lx" id="3vO-b1-yjQ"/>
-                <outlet property="forgetBtn" destination="4bs-Zv-B0I" id="dYV-Nm-68I"/>
                 <outlet property="loginBtn" destination="Ydb-8v-3NT" id="BmQ-SL-o68"/>
                 <outlet property="loginView" destination="5aX-w8-Rfa" id="Pad-3J-pGo"/>
                 <outlet property="pwdTf" destination="eNn-Rk-E6a" id="qcm-Lu-yFN"/>
                 <outlet property="pwdView" destination="unf-Hg-szL" id="AG7-g4-h7f"/>
-                <outlet property="switchBtn" destination="Mmm-Kc-YvS" id="TCj-mo-Asp"/>
                 <outlet property="versionLb" destination="gzM-NH-WSq" id="MD3-Pm-aP4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -29,9 +26,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="yhT-fo-bfi">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5aX-w8-Rfa" userLabel="LogIN">
                     <rect key="frame" x="30" y="112.5" width="315" height="342"/>
                     <subviews>
@@ -151,16 +145,6 @@
                                 </mask>
                             </variation>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bs-Zv-B0I">
-                            <rect key="frame" x="128" y="242" width="58" height="29"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" title="忘记密码">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="viewClicked:" destination="-1" eventType="touchUpInside" id="BbN-4L-VOH"/>
-                            </connections>
-                        </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_eher" translatesAutoresizingMaskIntoConstraints="NO" id="UsH-jp-tug">
                             <rect key="frame" x="60" y="0.0" width="194" height="67"/>
                             <constraints>
@@ -175,7 +159,6 @@
                         <constraint firstAttribute="trailing" secondItem="unf-Hg-szL" secondAttribute="trailing" id="6vE-uo-gyw"/>
                         <constraint firstAttribute="height" constant="300" id="FK1-jD-cxg"/>
                         <constraint firstAttribute="trailing" secondItem="Ydb-8v-3NT" secondAttribute="trailing" id="OlL-ry-Ins"/>
-                        <constraint firstItem="4bs-Zv-B0I" firstAttribute="top" secondItem="unf-Hg-szL" secondAttribute="bottom" constant="10" id="T8L-P5-elj"/>
                         <constraint firstItem="aTt-r1-Cpb" firstAttribute="top" secondItem="5aX-w8-Rfa" secondAttribute="top" constant="250" id="ZCM-fa-7YI"/>
                         <constraint firstAttribute="trailing" secondItem="aTt-r1-Cpb" secondAttribute="trailing" id="ZOQ-nD-hZm"/>
                         <constraint firstItem="Ydb-8v-3NT" firstAttribute="leading" secondItem="5aX-w8-Rfa" secondAttribute="leading" id="ZOg-ZX-Y7Z"/>
@@ -184,7 +167,6 @@
                         <constraint firstAttribute="width" constant="350" id="keZ-ei-UMx"/>
                         <constraint firstItem="unf-Hg-szL" firstAttribute="top" secondItem="aTt-r1-Cpb" secondAttribute="bottom" constant="15" id="pdk-Oc-puJ"/>
                         <constraint firstItem="Ydb-8v-3NT" firstAttribute="top" secondItem="unf-Hg-szL" secondAttribute="bottom" constant="60" id="sy7-fU-Ffe"/>
-                        <constraint firstItem="4bs-Zv-B0I" firstAttribute="centerX" secondItem="Ydb-8v-3NT" secondAttribute="centerX" id="uKo-QS-35t"/>
                         <constraint firstItem="UsH-jp-tug" firstAttribute="centerX" secondItem="5aX-w8-Rfa" secondAttribute="centerX" id="vOy-VQ-0jD"/>
                         <constraint firstAttribute="bottom" secondItem="Ydb-8v-3NT" secondAttribute="bottom" id="yiG-De-Des"/>
                         <constraint firstItem="unf-Hg-szL" firstAttribute="leading" secondItem="5aX-w8-Rfa" secondAttribute="leading" id="zLt-bF-c8t"/>
@@ -197,23 +179,6 @@
                         </mask>
                     </variation>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mmm-Kc-YvS">
-                    <rect key="frame" x="142" y="569" width="90" height="28"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.70842072150000002" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="90" id="KBc-g0-Lkg"/>
-                        <constraint firstAttribute="height" constant="28" id="pFw-rv-LtU"/>
-                    </constraints>
-                    <state key="normal" title="医美版">
-                        <color key="titleColor" red="0.31115168329999998" green="0.097355768080000002" blue="0.003784001106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="14"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="viewClicked:" destination="-1" eventType="touchUpInside" id="Sn3-KY-kNB"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="版本号：1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzM-NH-WSq">
                     <rect key="frame" x="141" y="607" width="93" height="40"/>
                     <constraints>
@@ -223,37 +188,20 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6g7-UA-8lx">
-                    <rect key="frame" x="335" y="616" width="20" height="22"/>
-                    <state key="normal" image="login_eye_close"/>
-                    <connections>
-                        <action selector="viewClicked:" destination="-1" eventType="touchUpInside" id="yx8-r7-i8w"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="6g7-UA-8lx" secondAttribute="trailing" constant="20" id="8ZR-0g-7Pi"/>
                 <constraint firstAttribute="trailing" secondItem="5aX-w8-Rfa" secondAttribute="trailing" constant="30" id="9uu-TE-9qq"/>
-                <constraint firstItem="6g7-UA-8lx" firstAttribute="centerY" secondItem="gzM-NH-WSq" secondAttribute="centerY" id="DpG-fm-iPI"/>
-                <constraint firstItem="yhT-fo-bfi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="GQw-iv-hdd"/>
                 <constraint firstItem="gzM-NH-WSq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KyC-RE-wYz"/>
                 <constraint firstItem="5aX-w8-Rfa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="P0a-Wy-a8l"/>
-                <constraint firstAttribute="trailing" secondItem="yhT-fo-bfi" secondAttribute="trailing" id="VAD-lx-pdw"/>
-                <constraint firstItem="yhT-fo-bfi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YPa-5f-533"/>
-                <constraint firstItem="gzM-NH-WSq" firstAttribute="top" secondItem="Mmm-Kc-YvS" secondAttribute="bottom" constant="10" id="fv2-8Z-mPq"/>
-                <constraint firstAttribute="bottom" secondItem="yhT-fo-bfi" secondAttribute="bottom" id="hIZ-jd-Io3"/>
                 <constraint firstAttribute="bottom" secondItem="gzM-NH-WSq" secondAttribute="bottom" constant="20" id="oUE-5I-Hxz"/>
                 <constraint firstItem="5aX-w8-Rfa" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-50" id="t19-Hi-hJy"/>
-                <constraint firstItem="Mmm-Kc-YvS" firstAttribute="centerX" secondItem="Ydb-8v-3NT" secondAttribute="centerX" id="yCW-ah-qqg"/>
             </constraints>
         </view>
     </objects>
     <resources>
         <image name="logIn_pwd_icon" width="23" height="23"/>
         <image name="logIn_user_icon" width="23" height="23"/>
-        <image name="login_bg" width="375" height="667"/>
         <image name="login_eher" width="194" height="66"/>
-        <image name="login_eye_close" width="20" height="12"/>
     </resources>
 </document>

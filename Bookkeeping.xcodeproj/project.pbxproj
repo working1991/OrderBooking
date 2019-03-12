@@ -174,6 +174,16 @@
 		066187C92236B0B3009F5CB6 /* SettingCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187C72236B0B3009F5CB6 /* SettingCtl.xib */; };
 		066187CD2236B1A1009F5CB6 /* ChangePasswordCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 066187CB2236B1A1009F5CB6 /* ChangePasswordCtl.m */; };
 		066187CE2236B1A1009F5CB6 /* ChangePasswordCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187CC2236B1A1009F5CB6 /* ChangePasswordCtl.xib */; };
+		066187D22237DB27009F5CB6 /* FirstClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 066187D02237DB27009F5CB6 /* FirstClassCell.m */; };
+		066187D32237DB27009F5CB6 /* FirstClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187D12237DB27009F5CB6 /* FirstClassCell.xib */; };
+		066187D72237DDC6009F5CB6 /* ShowProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 066187D52237DDC6009F5CB6 /* ShowProductCell.m */; };
+		066187D82237DDC6009F5CB6 /* ShowProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187D62237DDC6009F5CB6 /* ShowProductCell.xib */; };
+		066187DC2237E95C009F5CB6 /* ChooseStandardCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 066187DA2237E95C009F5CB6 /* ChooseStandardCtl.m */; };
+		066187DD2237E95C009F5CB6 /* ChooseStandardCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187DB2237E95C009F5CB6 /* ChooseStandardCtl.xib */; };
+		066187E12237EC02009F5CB6 /* ChooseStandardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 066187DE2237EC02009F5CB6 /* ChooseStandardCell.m */; };
+		066187E22237EC02009F5CB6 /* ChooseStandardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187DF2237EC02009F5CB6 /* ChooseStandardCell.xib */; };
+		066187E62237FE89009F5CB6 /* ConfirmOrderCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 066187E42237FE89009F5CB6 /* ConfirmOrderCtl.m */; };
+		066187E72237FE89009F5CB6 /* ConfirmOrderCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187E52237FE89009F5CB6 /* ConfirmOrderCtl.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -481,6 +491,21 @@
 		066187CA2236B1A1009F5CB6 /* ChangePasswordCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangePasswordCtl.h; sourceTree = "<group>"; };
 		066187CB2236B1A1009F5CB6 /* ChangePasswordCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordCtl.m; sourceTree = "<group>"; };
 		066187CC2236B1A1009F5CB6 /* ChangePasswordCtl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordCtl.xib; sourceTree = "<group>"; };
+		066187CF2237DB27009F5CB6 /* FirstClassCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstClassCell.h; sourceTree = "<group>"; };
+		066187D02237DB27009F5CB6 /* FirstClassCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstClassCell.m; sourceTree = "<group>"; };
+		066187D12237DB27009F5CB6 /* FirstClassCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstClassCell.xib; sourceTree = "<group>"; };
+		066187D42237DDC6009F5CB6 /* ShowProductCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowProductCell.h; sourceTree = "<group>"; };
+		066187D52237DDC6009F5CB6 /* ShowProductCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowProductCell.m; sourceTree = "<group>"; };
+		066187D62237DDC6009F5CB6 /* ShowProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowProductCell.xib; sourceTree = "<group>"; };
+		066187D92237E95C009F5CB6 /* ChooseStandardCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseStandardCtl.h; sourceTree = "<group>"; };
+		066187DA2237E95C009F5CB6 /* ChooseStandardCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseStandardCtl.m; sourceTree = "<group>"; };
+		066187DB2237E95C009F5CB6 /* ChooseStandardCtl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseStandardCtl.xib; sourceTree = "<group>"; };
+		066187DE2237EC02009F5CB6 /* ChooseStandardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseStandardCell.m; sourceTree = "<group>"; };
+		066187DF2237EC02009F5CB6 /* ChooseStandardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseStandardCell.xib; sourceTree = "<group>"; };
+		066187E02237EC02009F5CB6 /* ChooseStandardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseStandardCell.h; sourceTree = "<group>"; };
+		066187E32237FE89009F5CB6 /* ConfirmOrderCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfirmOrderCtl.h; sourceTree = "<group>"; };
+		066187E42237FE89009F5CB6 /* ConfirmOrderCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfirmOrderCtl.m; sourceTree = "<group>"; };
+		066187E52237FE89009F5CB6 /* ConfirmOrderCtl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmOrderCtl.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -915,6 +940,21 @@
 				0661868F22368D1E009F5CB6 /* ShowProductCtl.h */,
 				0661869022368D1E009F5CB6 /* ShowProductCtl.m */,
 				0661869122368D1E009F5CB6 /* ShowProductCtl.xib */,
+				066187CF2237DB27009F5CB6 /* FirstClassCell.h */,
+				066187D02237DB27009F5CB6 /* FirstClassCell.m */,
+				066187D12237DB27009F5CB6 /* FirstClassCell.xib */,
+				066187D42237DDC6009F5CB6 /* ShowProductCell.h */,
+				066187D52237DDC6009F5CB6 /* ShowProductCell.m */,
+				066187D62237DDC6009F5CB6 /* ShowProductCell.xib */,
+				066187D92237E95C009F5CB6 /* ChooseStandardCtl.h */,
+				066187DA2237E95C009F5CB6 /* ChooseStandardCtl.m */,
+				066187DB2237E95C009F5CB6 /* ChooseStandardCtl.xib */,
+				066187E02237EC02009F5CB6 /* ChooseStandardCell.h */,
+				066187DE2237EC02009F5CB6 /* ChooseStandardCell.m */,
+				066187DF2237EC02009F5CB6 /* ChooseStandardCell.xib */,
+				066187E32237FE89009F5CB6 /* ConfirmOrderCtl.h */,
+				066187E42237FE89009F5CB6 /* ConfirmOrderCtl.m */,
+				066187E52237FE89009F5CB6 /* ConfirmOrderCtl.xib */,
 			);
 			path = ShowProduct;
 			sourceTree = "<group>";
@@ -1198,6 +1238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				066187D32237DB27009F5CB6 /* FirstClassCell.xib in Resources */,
 				06618769223694E8009F5CB6 /* BaseListDefault_Cell.xib in Resources */,
 				0661863C223682A1009F5CB6 /* request_config.json in Resources */,
 				066187CE2236B1A1009F5CB6 /* ChangePasswordCtl.xib in Resources */,
@@ -1219,13 +1260,16 @@
 				066187C42236A8A4009F5CB6 /* AddCustomerCtl.xib in Resources */,
 				0661869D2236923F009F5CB6 /* MineCtl.xib in Resources */,
 				066187C92236B0B3009F5CB6 /* SettingCtl.xib in Resources */,
+				066187E22237EC02009F5CB6 /* ChooseStandardCell.xib in Resources */,
 				066187AD2236969F009F5CB6 /* LaunchScreen.storyboard in Resources */,
+				066187E72237FE89009F5CB6 /* ConfirmOrderCtl.xib in Resources */,
 				06618765223694E8009F5CB6 /* BaseLockView.xib in Resources */,
 				0661877C223694E8009F5CB6 /* base_db1.sqlite in Resources */,
 				0661814C2232AF07009F5CB6 /* Assets.xcassets in Resources */,
 				06618534223682A0009F5CB6 /* QBImagePicker.strings in Resources */,
 				0661878A223694E8009F5CB6 /* ico_fail@2x.png in Resources */,
 				0661876A223694E8009F5CB6 /* BaseListMore_Cell.xib in Resources */,
+				066187DD2237E95C009F5CB6 /* ChooseStandardCtl.xib in Resources */,
 				06618776223694E8009F5CB6 /* ShowImageView.xib in Resources */,
 				0661869322368D1E009F5CB6 /* ShowProductCtl.xib in Resources */,
 				0661878D223694E8009F5CB6 /* back_black@2x.png in Resources */,
@@ -1235,6 +1279,7 @@
 				0661876D223694E8009F5CB6 /* BaseCleFooterView.xib in Resources */,
 				06618789223694E8009F5CB6 /* ico_empty@2x.png in Resources */,
 				06618784223694E8009F5CB6 /* BaseCleViewController.xib in Resources */,
+				066187D82237DDC6009F5CB6 /* ShowProductCell.xib in Resources */,
 				06618771223694E8009F5CB6 /* BaseLoadingView.xib in Resources */,
 				066187BF2236A89C009F5CB6 /* CustomerCtl.xib in Resources */,
 				066187AE2236969F009F5CB6 /* Main.storyboard in Resources */,
@@ -1257,6 +1302,7 @@
 				06618773223694E8009F5CB6 /* BaseNoDataView.m in Sources */,
 				06618560223682A0009F5CB6 /* SDWebImageDownloader.m in Sources */,
 				06618630223682A1009F5CB6 /* User_Modal.m in Sources */,
+				066187DC2237E95C009F5CB6 /* ChooseStandardCtl.m in Sources */,
 				06618548223682A0009F5CB6 /* MASViewConstraint.m in Sources */,
 				06618566223682A0009F5CB6 /* SDWebImageDownloaderOperation.m in Sources */,
 				06618620223682A1009F5CB6 /* UIView+CYLTabBarControllerExtention.m in Sources */,
@@ -1291,6 +1337,8 @@
 				0661869222368D1E009F5CB6 /* ShowProductCtl.m in Sources */,
 				0661855C223682A0009F5CB6 /* MKAnnotationView+WebCache.m in Sources */,
 				06618543223682A0009F5CB6 /* MASConstraintMaker.m in Sources */,
+				066187D72237DDC6009F5CB6 /* ShowProductCell.m in Sources */,
+				066187E62237FE89009F5CB6 /* ConfirmOrderCtl.m in Sources */,
 				06618539223682A0009F5CB6 /* QBAlbumsViewController.m in Sources */,
 				06618797223694E8009F5CB6 /* MMProgressHUD+Animations.m in Sources */,
 				06618562223682A0009F5CB6 /* UIImage+MultiFormat.m in Sources */,
@@ -1317,6 +1365,7 @@
 				06618622223682A1009F5CB6 /* CYLTabBarController.m in Sources */,
 				0661853E223682A0009F5CB6 /* QBSlomoIconView.m in Sources */,
 				0661876B223694E8009F5CB6 /* BaseListDefault_Cell.m in Sources */,
+				066187E12237EC02009F5CB6 /* ChooseStandardCell.m in Sources */,
 				06618536223682A0009F5CB6 /* QBVideoIndicatorView.m in Sources */,
 				066187A5223694E8009F5CB6 /* DataManger.m in Sources */,
 				066185F0223682A0009F5CB6 /* TabBarControllerConfig.m in Sources */,
@@ -1345,6 +1394,7 @@
 				06618521223682A0009F5CB6 /* UICustomLineLabel.m in Sources */,
 				06618540223682A0009F5CB6 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				066187B42236A683009F5CB6 /* MineItemCell.m in Sources */,
+				066187D22237DB27009F5CB6 /* FirstClassCell.m in Sources */,
 				066187A7223694E8009F5CB6 /* RequestOperator.m in Sources */,
 				0661869722368D5C009F5CB6 /* OrderListCtl.m in Sources */,
 				066187A4223694E8009F5CB6 /* RequestCon.m in Sources */,

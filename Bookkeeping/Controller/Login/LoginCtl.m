@@ -77,9 +77,6 @@
     
     layer = self.loginBtn.layer;
     layer.cornerRadius = layer.bounds.size.height/2;
-    
-    layer = self.switchBtn.layer;
-    layer.cornerRadius = layer.bounds.size.height/2;
 }
 
 - (void)didReceiveMemoryWarning {
