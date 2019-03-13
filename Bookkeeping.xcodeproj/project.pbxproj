@@ -184,6 +184,12 @@
 		066187E22237EC02009F5CB6 /* ChooseStandardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187DF2237EC02009F5CB6 /* ChooseStandardCell.xib */; };
 		066187E62237FE89009F5CB6 /* ConfirmOrderCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 066187E42237FE89009F5CB6 /* ConfirmOrderCtl.m */; };
 		066187E72237FE89009F5CB6 /* ConfirmOrderCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187E52237FE89009F5CB6 /* ConfirmOrderCtl.xib */; };
+		066187EB22393A33009F5CB6 /* ChoosePayCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 066187E922393A33009F5CB6 /* ChoosePayCtl.m */; };
+		066187EC22393A33009F5CB6 /* ChoosePayCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187EA22393A33009F5CB6 /* ChoosePayCtl.xib */; };
+		066187F022393AF2009F5CB6 /* ChoosePayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 066187EE22393AF2009F5CB6 /* ChoosePayCell.m */; };
+		066187F122393AF2009F5CB6 /* ChoosePayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187EF22393AF2009F5CB6 /* ChoosePayCell.xib */; };
+		066187F5223947B7009F5CB6 /* ChooseCustomerCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 066187F3223947B7009F5CB6 /* ChooseCustomerCtl.m */; };
+		066187F6223947B7009F5CB6 /* ChooseCustomerCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187F4223947B7009F5CB6 /* ChooseCustomerCtl.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -506,6 +512,15 @@
 		066187E32237FE89009F5CB6 /* ConfirmOrderCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfirmOrderCtl.h; sourceTree = "<group>"; };
 		066187E42237FE89009F5CB6 /* ConfirmOrderCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfirmOrderCtl.m; sourceTree = "<group>"; };
 		066187E52237FE89009F5CB6 /* ConfirmOrderCtl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmOrderCtl.xib; sourceTree = "<group>"; };
+		066187E822393A33009F5CB6 /* ChoosePayCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChoosePayCtl.h; sourceTree = "<group>"; };
+		066187E922393A33009F5CB6 /* ChoosePayCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChoosePayCtl.m; sourceTree = "<group>"; };
+		066187EA22393A33009F5CB6 /* ChoosePayCtl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChoosePayCtl.xib; sourceTree = "<group>"; };
+		066187ED22393AF2009F5CB6 /* ChoosePayCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChoosePayCell.h; sourceTree = "<group>"; };
+		066187EE22393AF2009F5CB6 /* ChoosePayCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChoosePayCell.m; sourceTree = "<group>"; };
+		066187EF22393AF2009F5CB6 /* ChoosePayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChoosePayCell.xib; sourceTree = "<group>"; };
+		066187F2223947B7009F5CB6 /* ChooseCustomerCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseCustomerCtl.h; sourceTree = "<group>"; };
+		066187F3223947B7009F5CB6 /* ChooseCustomerCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseCustomerCtl.m; sourceTree = "<group>"; };
+		066187F4223947B7009F5CB6 /* ChooseCustomerCtl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseCustomerCtl.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -955,6 +970,15 @@
 				066187E32237FE89009F5CB6 /* ConfirmOrderCtl.h */,
 				066187E42237FE89009F5CB6 /* ConfirmOrderCtl.m */,
 				066187E52237FE89009F5CB6 /* ConfirmOrderCtl.xib */,
+				066187E822393A33009F5CB6 /* ChoosePayCtl.h */,
+				066187E922393A33009F5CB6 /* ChoosePayCtl.m */,
+				066187EA22393A33009F5CB6 /* ChoosePayCtl.xib */,
+				066187ED22393AF2009F5CB6 /* ChoosePayCell.h */,
+				066187EE22393AF2009F5CB6 /* ChoosePayCell.m */,
+				066187EF22393AF2009F5CB6 /* ChoosePayCell.xib */,
+				066187F2223947B7009F5CB6 /* ChooseCustomerCtl.h */,
+				066187F3223947B7009F5CB6 /* ChooseCustomerCtl.m */,
+				066187F4223947B7009F5CB6 /* ChooseCustomerCtl.xib */,
 			);
 			path = ShowProduct;
 			sourceTree = "<group>";
@@ -1249,6 +1273,7 @@
 				0661878B223694E8009F5CB6 /* ico_nodata@2x.png in Resources */,
 				0661877F223694E8009F5CB6 /* BaseUIViewController.xib in Resources */,
 				06618786223694E8009F5CB6 /* back_black.png in Resources */,
+				066187F122393AF2009F5CB6 /* ChoosePayCell.xib in Resources */,
 				066187AC2236969F009F5CB6 /* Info.plist in Resources */,
 				066185FB223682A1009F5CB6 /* LoginCtl.xib in Resources */,
 				0661876E223694E8009F5CB6 /* BaseNoDataView.xib in Resources */,
@@ -1273,6 +1298,7 @@
 				06618776223694E8009F5CB6 /* ShowImageView.xib in Resources */,
 				0661869322368D1E009F5CB6 /* ShowProductCtl.xib in Resources */,
 				0661878D223694E8009F5CB6 /* back_black@2x.png in Resources */,
+				066187EC22393A33009F5CB6 /* ChoosePayCtl.xib in Resources */,
 				06618574223682A0009F5CB6 /* BusinessOrderCardNotification.mp3 in Resources */,
 				066187BC2236A89C009F5CB6 /* CustomerCell.xib in Resources */,
 				0661878E223694E8009F5CB6 /* ico_nodata@3x.png in Resources */,
@@ -1280,6 +1306,7 @@
 				06618789223694E8009F5CB6 /* ico_empty@2x.png in Resources */,
 				06618784223694E8009F5CB6 /* BaseCleViewController.xib in Resources */,
 				066187D82237DDC6009F5CB6 /* ShowProductCell.xib in Resources */,
+				066187F6223947B7009F5CB6 /* ChooseCustomerCtl.xib in Resources */,
 				06618771223694E8009F5CB6 /* BaseLoadingView.xib in Resources */,
 				066187BF2236A89C009F5CB6 /* CustomerCtl.xib in Resources */,
 				066187AE2236969F009F5CB6 /* Main.storyboard in Resources */,
@@ -1314,6 +1341,7 @@
 				06618547223682A0009F5CB6 /* MASConstraint.m in Sources */,
 				06618636223682A1009F5CB6 /* Customer_Modal.m in Sources */,
 				06618627223682A1009F5CB6 /* SystemPicker.m in Sources */,
+				066187EB22393A33009F5CB6 /* ChoosePayCtl.m in Sources */,
 				066187A3223694E8009F5CB6 /* DataParser.m in Sources */,
 				066181522232AF07009F5CB6 /* main.m in Sources */,
 				066187A0223694E8009F5CB6 /* SBJsonStreamWriterState.m in Sources */,
@@ -1351,6 +1379,7 @@
 				06618575223682A0009F5CB6 /* Common.m in Sources */,
 				0661853A223682A0009F5CB6 /* QBAssetsViewController.m in Sources */,
 				06618767223694E8009F5CB6 /* BaseTmpView.m in Sources */,
+				066187F022393AF2009F5CB6 /* ChoosePayCell.m in Sources */,
 				06618626223682A1009F5CB6 /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
 				06618770223694E8009F5CB6 /* BaseCleFooterView.m in Sources */,
 				06618763223694E8009F5CB6 /* ShowImageView.m in Sources */,
@@ -1365,6 +1394,7 @@
 				06618622223682A1009F5CB6 /* CYLTabBarController.m in Sources */,
 				0661853E223682A0009F5CB6 /* QBSlomoIconView.m in Sources */,
 				0661876B223694E8009F5CB6 /* BaseListDefault_Cell.m in Sources */,
+				066187F5223947B7009F5CB6 /* ChooseCustomerCtl.m in Sources */,
 				066187E12237EC02009F5CB6 /* ChooseStandardCell.m in Sources */,
 				06618536223682A0009F5CB6 /* QBVideoIndicatorView.m in Sources */,
 				066187A5223694E8009F5CB6 /* DataManger.m in Sources */,

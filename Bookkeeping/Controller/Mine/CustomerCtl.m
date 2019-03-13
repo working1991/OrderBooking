@@ -169,4 +169,11 @@
     return myCell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [AddCustomerCtl start:^(Customer_Modal *model) {
+        [self onStart];
+    }];
+}
+
 @end
