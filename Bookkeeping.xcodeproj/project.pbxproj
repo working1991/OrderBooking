@@ -190,6 +190,20 @@
 		066187F122393AF2009F5CB6 /* ChoosePayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187EF22393AF2009F5CB6 /* ChoosePayCell.xib */; };
 		066187F5223947B7009F5CB6 /* ChooseCustomerCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 066187F3223947B7009F5CB6 /* ChooseCustomerCtl.m */; };
 		066187F6223947B7009F5CB6 /* ChooseCustomerCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187F4223947B7009F5CB6 /* ChooseCustomerCtl.xib */; };
+		066187FA223A9743009F5CB6 /* OrderListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 066187F8223A9743009F5CB6 /* OrderListCell.m */; };
+		066187FB223A9743009F5CB6 /* OrderListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187F9223A9743009F5CB6 /* OrderListCell.xib */; };
+		066187FF223A9BE0009F5CB6 /* OrderListItemCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 066187FD223A9BE0009F5CB6 /* OrderListItemCtl.m */; };
+		06618800223A9BE0009F5CB6 /* OrderListItemCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066187FE223A9BE0009F5CB6 /* OrderListItemCtl.xib */; };
+		06618804223A9FE4009F5CB6 /* OrderDetailCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 06618801223A9FE4009F5CB6 /* OrderDetailCtl.m */; };
+		06618805223A9FE4009F5CB6 /* OrderDetailCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06618803223A9FE4009F5CB6 /* OrderDetailCtl.xib */; };
+		0661880E223AA447009F5CB6 /* OrderDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0661880C223AA447009F5CB6 /* OrderDetailCell.m */; };
+		0661880F223AA447009F5CB6 /* OrderDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0661880D223AA447009F5CB6 /* OrderDetailCell.xib */; };
+		06618813223AAA99009F5CB6 /* PrintTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 06618812223AAA99009F5CB6 /* PrintTool.m */; };
+		0661881C223AAD09009F5CB6 /* UartXCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06618815223AAD08009F5CB6 /* UartXCtl.xib */; };
+		0661881D223AAD09009F5CB6 /* libUartLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06618816223AAD08009F5CB6 /* libUartLib.a */; };
+		0661881E223AAD09009F5CB6 /* UartXCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 06618817223AAD08009F5CB6 /* UartXCtl.m */; };
+		0661881F223AAD09009F5CB6 /* UartXCtl_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06618819223AAD09009F5CB6 /* UartXCtl_Cell.m */; };
+		06618820223AAD09009F5CB6 /* UartXCtl_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0661881A223AAD09009F5CB6 /* UartXCtl_Cell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -521,6 +535,28 @@
 		066187F2223947B7009F5CB6 /* ChooseCustomerCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseCustomerCtl.h; sourceTree = "<group>"; };
 		066187F3223947B7009F5CB6 /* ChooseCustomerCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseCustomerCtl.m; sourceTree = "<group>"; };
 		066187F4223947B7009F5CB6 /* ChooseCustomerCtl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseCustomerCtl.xib; sourceTree = "<group>"; };
+		066187F7223A9743009F5CB6 /* OrderListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderListCell.h; sourceTree = "<group>"; };
+		066187F8223A9743009F5CB6 /* OrderListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderListCell.m; sourceTree = "<group>"; };
+		066187F9223A9743009F5CB6 /* OrderListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderListCell.xib; sourceTree = "<group>"; };
+		066187FC223A9BE0009F5CB6 /* OrderListItemCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderListItemCtl.h; sourceTree = "<group>"; };
+		066187FD223A9BE0009F5CB6 /* OrderListItemCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderListItemCtl.m; sourceTree = "<group>"; };
+		066187FE223A9BE0009F5CB6 /* OrderListItemCtl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderListItemCtl.xib; sourceTree = "<group>"; };
+		06618801223A9FE4009F5CB6 /* OrderDetailCtl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailCtl.m; sourceTree = "<group>"; };
+		06618802223A9FE4009F5CB6 /* OrderDetailCtl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailCtl.h; sourceTree = "<group>"; };
+		06618803223A9FE4009F5CB6 /* OrderDetailCtl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderDetailCtl.xib; sourceTree = "<group>"; };
+		0661880B223AA447009F5CB6 /* OrderDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailCell.h; sourceTree = "<group>"; };
+		0661880C223AA447009F5CB6 /* OrderDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailCell.m; sourceTree = "<group>"; };
+		0661880D223AA447009F5CB6 /* OrderDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailCell.xib; sourceTree = "<group>"; };
+		06618811223AAA98009F5CB6 /* PrintTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintTool.h; sourceTree = "<group>"; };
+		06618812223AAA99009F5CB6 /* PrintTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrintTool.m; sourceTree = "<group>"; };
+		06618814223AAD08009F5CB6 /* UartLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UartLib.h; sourceTree = "<group>"; };
+		06618815223AAD08009F5CB6 /* UartXCtl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UartXCtl.xib; sourceTree = "<group>"; };
+		06618816223AAD08009F5CB6 /* libUartLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUartLib.a; sourceTree = "<group>"; };
+		06618817223AAD08009F5CB6 /* UartXCtl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UartXCtl.m; sourceTree = "<group>"; };
+		06618818223AAD09009F5CB6 /* UartXCtl_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UartXCtl_Cell.h; sourceTree = "<group>"; };
+		06618819223AAD09009F5CB6 /* UartXCtl_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UartXCtl_Cell.m; sourceTree = "<group>"; };
+		0661881A223AAD09009F5CB6 /* UartXCtl_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UartXCtl_Cell.xib; sourceTree = "<group>"; };
+		0661881B223AAD09009F5CB6 /* UartXCtl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UartXCtl.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -528,6 +564,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0661881D223AAD09009F5CB6 /* libUartLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -782,6 +819,7 @@
 		066183302236829F009F5CB6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				06618810223AAA8B009F5CB6 /* Print */,
 				0661868E22368C7B009F5CB6 /* Order */,
 				0661868D22368C58009F5CB6 /* ShowProduct */,
 				066183DA223682A0009F5CB6 /* Mine */,
@@ -989,6 +1027,18 @@
 				0661869422368D5C009F5CB6 /* OrderListCtl.h */,
 				0661869522368D5C009F5CB6 /* OrderListCtl.m */,
 				0661869622368D5C009F5CB6 /* OrderListCtl.xib */,
+				066187F7223A9743009F5CB6 /* OrderListCell.h */,
+				066187F8223A9743009F5CB6 /* OrderListCell.m */,
+				066187F9223A9743009F5CB6 /* OrderListCell.xib */,
+				066187FC223A9BE0009F5CB6 /* OrderListItemCtl.h */,
+				066187FD223A9BE0009F5CB6 /* OrderListItemCtl.m */,
+				066187FE223A9BE0009F5CB6 /* OrderListItemCtl.xib */,
+				06618802223A9FE4009F5CB6 /* OrderDetailCtl.h */,
+				06618801223A9FE4009F5CB6 /* OrderDetailCtl.m */,
+				06618803223A9FE4009F5CB6 /* OrderDetailCtl.xib */,
+				0661880B223AA447009F5CB6 /* OrderDetailCell.h */,
+				0661880C223AA447009F5CB6 /* OrderDetailCell.m */,
+				0661880D223AA447009F5CB6 /* OrderDetailCell.xib */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -1199,6 +1249,23 @@
 			path = BaseModal;
 			sourceTree = "<group>";
 		};
+		06618810223AAA8B009F5CB6 /* Print */ = {
+			isa = PBXGroup;
+			children = (
+				06618811223AAA98009F5CB6 /* PrintTool.h */,
+				06618812223AAA99009F5CB6 /* PrintTool.m */,
+				06618816223AAD08009F5CB6 /* libUartLib.a */,
+				06618814223AAD08009F5CB6 /* UartLib.h */,
+				0661881B223AAD09009F5CB6 /* UartXCtl.h */,
+				06618817223AAD08009F5CB6 /* UartXCtl.m */,
+				06618815223AAD08009F5CB6 /* UartXCtl.xib */,
+				06618818223AAD09009F5CB6 /* UartXCtl_Cell.h */,
+				06618819223AAD09009F5CB6 /* UartXCtl_Cell.m */,
+				0661881A223AAD09009F5CB6 /* UartXCtl_Cell.xib */,
+			);
+			path = Print;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1263,6 +1330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				066187D32237DB27009F5CB6 /* FirstClassCell.xib in Resources */,
+				0661880F223AA447009F5CB6 /* OrderDetailCell.xib in Resources */,
 				06618769223694E8009F5CB6 /* BaseListDefault_Cell.xib in Resources */,
 				0661863C223682A1009F5CB6 /* request_config.json in Resources */,
 				066187CE2236B1A1009F5CB6 /* ChangePasswordCtl.xib in Resources */,
@@ -1272,10 +1340,12 @@
 				066187B52236A683009F5CB6 /* MineItemCell.xib in Resources */,
 				0661878B223694E8009F5CB6 /* ico_nodata@2x.png in Resources */,
 				0661877F223694E8009F5CB6 /* BaseUIViewController.xib in Resources */,
+				0661881C223AAD09009F5CB6 /* UartXCtl.xib in Resources */,
 				06618786223694E8009F5CB6 /* back_black.png in Resources */,
 				066187F122393AF2009F5CB6 /* ChoosePayCell.xib in Resources */,
 				066187AC2236969F009F5CB6 /* Info.plist in Resources */,
 				066185FB223682A1009F5CB6 /* LoginCtl.xib in Resources */,
+				06618820223AAD09009F5CB6 /* UartXCtl_Cell.xib in Resources */,
 				0661876E223694E8009F5CB6 /* BaseNoDataView.xib in Resources */,
 				0661878C223694E8009F5CB6 /* ico_nodata.png in Resources */,
 				06618764223694E8009F5CB6 /* BaseErrorView.xib in Resources */,
@@ -1293,6 +1363,7 @@
 				0661814C2232AF07009F5CB6 /* Assets.xcassets in Resources */,
 				06618534223682A0009F5CB6 /* QBImagePicker.strings in Resources */,
 				0661878A223694E8009F5CB6 /* ico_fail@2x.png in Resources */,
+				06618800223A9BE0009F5CB6 /* OrderListItemCtl.xib in Resources */,
 				0661876A223694E8009F5CB6 /* BaseListMore_Cell.xib in Resources */,
 				066187DD2237E95C009F5CB6 /* ChooseStandardCtl.xib in Resources */,
 				06618776223694E8009F5CB6 /* ShowImageView.xib in Resources */,
@@ -1312,9 +1383,11 @@
 				066187AE2236969F009F5CB6 /* Main.storyboard in Resources */,
 				06618538223682A0009F5CB6 /* QBImagePicker.storyboard in Resources */,
 				06618572223682A0009F5CB6 /* qdymr.gif in Resources */,
+				066187FB223A9743009F5CB6 /* OrderListCell.xib in Resources */,
 				06618570223682A0009F5CB6 /* 消息-业绩消息.txt in Resources */,
 				06618787223694E8009F5CB6 /* ico_fail@3x.png in Resources */,
 				06618788223694E8009F5CB6 /* ico_empty@3x.png in Resources */,
+				06618805223A9FE4009F5CB6 /* OrderDetailCtl.xib in Resources */,
 				06618775223694E8009F5CB6 /* MsgView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1340,12 +1413,16 @@
 				06618791223694E8009F5CB6 /* MMProgressHUDOverlayView.m in Sources */,
 				06618547223682A0009F5CB6 /* MASConstraint.m in Sources */,
 				06618636223682A1009F5CB6 /* Customer_Modal.m in Sources */,
+				066187FA223A9743009F5CB6 /* OrderListCell.m in Sources */,
 				06618627223682A1009F5CB6 /* SystemPicker.m in Sources */,
+				0661881F223AAD09009F5CB6 /* UartXCtl_Cell.m in Sources */,
 				066187EB22393A33009F5CB6 /* ChoosePayCtl.m in Sources */,
 				066187A3223694E8009F5CB6 /* DataParser.m in Sources */,
 				066181522232AF07009F5CB6 /* main.m in Sources */,
+				066187FF223A9BE0009F5CB6 /* OrderListItemCtl.m in Sources */,
 				066187A0223694E8009F5CB6 /* SBJsonStreamWriterState.m in Sources */,
 				0661879C223694E8009F5CB6 /* SBJsonStreamParserState.m in Sources */,
+				0661881E223AAD09009F5CB6 /* UartXCtl.m in Sources */,
 				06618563223682A0009F5CB6 /* SDWebImageCompat.m in Sources */,
 				06618576223682A0009F5CB6 /* Config.m in Sources */,
 				06618625223682A1009F5CB6 /* UIControl+CYLTabBarControllerExtention.m in Sources */,
@@ -1381,6 +1458,7 @@
 				06618767223694E8009F5CB6 /* BaseTmpView.m in Sources */,
 				066187F022393AF2009F5CB6 /* ChoosePayCell.m in Sources */,
 				06618626223682A1009F5CB6 /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
+				06618813223AAA99009F5CB6 /* PrintTool.m in Sources */,
 				06618770223694E8009F5CB6 /* BaseCleFooterView.m in Sources */,
 				06618763223694E8009F5CB6 /* ShowImageView.m in Sources */,
 				06618779223694E8009F5CB6 /* BaseCommon.m in Sources */,
@@ -1409,6 +1487,7 @@
 				06618799223694E8009F5CB6 /* SBJsonStreamTokeniser.m in Sources */,
 				06618542223682A0009F5CB6 /* MASCompositeConstraint.m in Sources */,
 				0661879E223694E8009F5CB6 /* SBJsonStreamWriter.m in Sources */,
+				06618804223A9FE4009F5CB6 /* OrderDetailCtl.m in Sources */,
 				06618796223694E8009F5CB6 /* MMVectorImage.m in Sources */,
 				0661853F223682A0009F5CB6 /* QBAssetCell.m in Sources */,
 				06618794223694E8009F5CB6 /* MMProgressHUD+Class.m in Sources */,
@@ -1445,6 +1524,7 @@
 				06618795223694E8009F5CB6 /* MMProgressHUDWindow.m in Sources */,
 				066187A2223694E8009F5CB6 /* PageInfo_DataModal.m in Sources */,
 				06618568223682A0009F5CB6 /* UIImageView+WebCache.m in Sources */,
+				0661880E223AA447009F5CB6 /* OrderDetailCell.m in Sources */,
 				06618613223682A1009F5CB6 /* XHSegmentViewController.m in Sources */,
 				06618525223682A0009F5CB6 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				0661879B223694E8009F5CB6 /* SBJsonParser.m in Sources */,
@@ -1601,6 +1681,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Bookkeeping/ExLib/ShareSDK/Support/PlatformSDK/WeChatSDK",
+					"$(PROJECT_DIR)/Bookkeeping/Controller/Print",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.luoqw.Bookkeeping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1628,6 +1709,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Bookkeeping/ExLib/ShareSDK/Support/PlatformSDK/WeChatSDK",
+					"$(PROJECT_DIR)/Bookkeeping/Controller/Print",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.luoqw.Bookkeeping;
 				PRODUCT_NAME = "$(TARGET_NAME)";

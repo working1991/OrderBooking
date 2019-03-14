@@ -6,8 +6,8 @@
 //  Copyright © 2019 luoqw. All rights reserved.
 //
 
-#import "BaseUIViewController.h"
+#import "XHSegmentViewController.h"
 
-@interface OrderListCtl : BaseUIViewController
+@interface OrderListCtl : XHSegmentViewController
 
 @end
