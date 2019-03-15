@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingCtl">
             <connections>
+                <outlet property="loginOffBtn" destination="2Yo-R1-RpE" id="lXj-YV-oVx"/>
                 <outlet property="tableView_" destination="ZCU-dw-4jc" id="M1x-9j-NIo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,18 +23,57 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZCU-dw-4jc">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="592"/>
                     <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i7U-Jx-nbL">
+                    <rect key="frame" x="0.0" y="612" width="375" height="55"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vk6-L5-qZo">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                            <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="HTw-Qf-P1E"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Yo-R1-RpE">
+                            <rect key="frame" x="30" y="5.5" width="315" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="Nfr-up-DSe"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="退出登录">
+                                <color key="titleColor" red="0.0039215686269999999" green="0.66274509800000003" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="viewClicked:" destination="-1" eventType="touchUpInside" id="MKf-q4-Z5z"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="2Yo-R1-RpE" firstAttribute="centerY" secondItem="i7U-Jx-nbL" secondAttribute="centerY" id="1SA-ZC-K66"/>
+                        <constraint firstItem="Vk6-L5-qZo" firstAttribute="leading" secondItem="i7U-Jx-nbL" secondAttribute="leading" id="JtP-C2-z9v"/>
+                        <constraint firstAttribute="height" constant="55" id="NoG-wT-tZ5"/>
+                        <constraint firstItem="Vk6-L5-qZo" firstAttribute="top" secondItem="i7U-Jx-nbL" secondAttribute="top" id="jhh-8k-HSN"/>
+                        <constraint firstItem="2Yo-R1-RpE" firstAttribute="centerX" secondItem="i7U-Jx-nbL" secondAttribute="centerX" id="mXB-PM-kKH"/>
+                        <constraint firstItem="2Yo-R1-RpE" firstAttribute="leading" secondItem="i7U-Jx-nbL" secondAttribute="leading" constant="30" id="ot0-OG-Dz3"/>
+                        <constraint firstAttribute="trailing" secondItem="Vk6-L5-qZo" secondAttribute="trailing" id="ynh-Ws-4WM"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="ZCU-dw-4jc" secondAttribute="trailing" id="2S9-71-XP2"/>
+                <constraint firstItem="i7U-Jx-nbL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4iV-2m-61Y"/>
                 <constraint firstItem="ZCU-dw-4jc" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="N1n-HN-LZh"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="ZCU-dw-4jc" secondAttribute="bottom" id="eAo-dO-Igt"/>
+                <constraint firstItem="i7U-Jx-nbL" firstAttribute="top" secondItem="ZCU-dw-4jc" secondAttribute="bottom" id="O50-Wz-20f"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="i7U-Jx-nbL" secondAttribute="bottom" id="W2g-YF-2Kj"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="i7U-Jx-nbL" secondAttribute="trailing" id="gBR-2d-Y8S"/>
                 <constraint firstItem="ZCU-dw-4jc" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="tMM-DU-vij"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="140" y="154.27286356821591"/>
         </view>
     </objects>
 </document>

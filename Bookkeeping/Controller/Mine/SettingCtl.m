@@ -9,12 +9,15 @@
 #import "SettingCtl.h"
 #import "MineItemCell.h"
 #import "ChangePasswordCtl.h"
+#import "ManagerCtl.h"
 
 @interface SettingCtl ()
 
 {
     NSArray     *itemInfoArray;
 }
+
+@property (weak, nonatomic) IBOutlet UIButton *loginOffBtn;
 
 @end
 
@@ -49,6 +52,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewClickResponse:(id)sender
+{
+    if (sender == _loginOffBtn) {
+        [[ManagerCtl defaultManagerCtl] loginOff];
+    }
 }
 
 #pragma mark - Pravite

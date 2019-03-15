@@ -46,6 +46,7 @@
 - (void)dealloc
 {
     [self.scrollView removeObserver:self forKeyPath:@"contentOffset"];
+    self.scrollView.delegate = nil;
 }
 
 - (void)viewDidAppear:(BOOL)animated

@@ -26,18 +26,11 @@
 			<key>CFBundleURLName</key>
 			<string></string>
 			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>wxe70d077349ae1306</string>
-			</array>
+			<array/>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>wechat</string>
-		<string>weixin</string>
-	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -45,10 +38,6 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>店乐宝需要使用您的相机，进行拍照或扫描二维码</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>店乐宝需要使用您的系统相册，进行选择图片上传</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LauchScreen</string>
 	<key>UIMainStoryboardFile</key>
