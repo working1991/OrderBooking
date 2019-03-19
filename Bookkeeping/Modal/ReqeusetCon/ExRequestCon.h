@@ -21,6 +21,20 @@
 //修改密码
 - (void)modifyPassword:(NSString *)userName oldPassword:(NSString *)oldPassword newPassword:(NSString *)newPassword;
 
+//获取商品分类
+- (void)getProuductGorpByCompanyId:(NSString *)companyId;
+
+//商品列表
+- (void)getProductList:(NSString *)companyId groupId:(NSString *)groupId;
+
+//商品搜索
+- (void)searchProductList:(NSString *)companyId keyword:(NSString *)keyword;
+
+//商品详情
+- (void)getProductDetail:(NSString *)productId;
+
+//新增、修改客户
+- (void)addCustomer:(Customer_Modal *)modal;
 
 @end
 

@@ -145,9 +145,8 @@
     loginModal.account = self.accountTf.text;
     loginModal.password = self.pwdTf.text;
 
-    [[ManagerCtl defaultManagerCtl] loginOK:self modal:loginModal];
-//    loginCon = [self getNewRequestCon:NO];
-//    [loginCon doLogin:loginModal.account pwd:loginModal.password];
+    loginCon = [self getNewRequestCon:NO];
+    [loginCon doLogin:loginModal.account pwd:loginModal.password];
 }
 
 -(void)change:(NSNotification *)mesg

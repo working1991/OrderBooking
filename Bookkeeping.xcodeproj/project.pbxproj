@@ -199,6 +199,7 @@
 		0661881E223AAD09009F5CB6 /* UartXCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 06618817223AAD08009F5CB6 /* UartXCtl.m */; };
 		0661881F223AAD09009F5CB6 /* UartXCtl_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06618819223AAD09009F5CB6 /* UartXCtl_Cell.m */; };
 		06618820223AAD09009F5CB6 /* UartXCtl_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0661881A223AAD09009F5CB6 /* UartXCtl_Cell.xib */; };
+		06D4836B223FD2FC00851805 /* Product_Modal.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D4836A223FD2FC00851805 /* Product_Modal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -547,6 +548,8 @@
 		06618819223AAD09009F5CB6 /* UartXCtl_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UartXCtl_Cell.m; sourceTree = "<group>"; };
 		0661881A223AAD09009F5CB6 /* UartXCtl_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UartXCtl_Cell.xib; sourceTree = "<group>"; };
 		0661881B223AAD09009F5CB6 /* UartXCtl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UartXCtl.h; sourceTree = "<group>"; };
+		06D48369223FD2FC00851805 /* Product_Modal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product_Modal.h; sourceTree = "<group>"; };
+		06D4836A223FD2FC00851805 /* Product_Modal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Product_Modal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -901,9 +904,9 @@
 		06618460223682A0009F5CB6 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				0661848A223682A0009F5CB6 /* ReqeusetCon */,
 				06618474223682A0009F5CB6 /* User */,
 				06618483223682A0009F5CB6 /* Base_Modal */,
-				0661848A223682A0009F5CB6 /* ReqeusetCon */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -915,6 +918,8 @@
 				06618478223682A0009F5CB6 /* User_Modal.m */,
 				06618477223682A0009F5CB6 /* Customer_Modal.h */,
 				06618481223682A0009F5CB6 /* Customer_Modal.m */,
+				06D48369223FD2FC00851805 /* Product_Modal.h */,
+				06D4836A223FD2FC00851805 /* Product_Modal.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1182,22 +1187,22 @@
 		0661874A223694E8009F5CB6 /* BaseModal */ = {
 			isa = PBXGroup;
 			children = (
+				06618754223694E8009F5CB6 /* RequestCfg_DataModal.h */,
 				0661874B223694E8009F5CB6 /* RequestCfg_DataModal.m */,
+				06618753223694E8009F5CB6 /* PageInfo_DataModal.h */,
 				0661874C223694E8009F5CB6 /* PageInfo_DataModal.m */,
 				0661874D223694E8009F5CB6 /* BaseRequest.h */,
-				0661874E223694E8009F5CB6 /* DataParser.m */,
-				0661874F223694E8009F5CB6 /* RequestCon.m */,
-				06618750223694E8009F5CB6 /* DataManger.m */,
-				06618751223694E8009F5CB6 /* OpCfg_DataModal.m */,
-				06618752223694E8009F5CB6 /* RequestOperator.m */,
-				06618753223694E8009F5CB6 /* PageInfo_DataModal.h */,
-				06618754223694E8009F5CB6 /* RequestCfg_DataModal.h */,
-				06618755223694E8009F5CB6 /* DataParser.h */,
 				06618756223694E8009F5CB6 /* BaseRequest.m */,
+				0661874E223694E8009F5CB6 /* DataParser.m */,
 				06618757223694E8009F5CB6 /* RequestCon.h */,
-				06618758223694E8009F5CB6 /* RequestOperator.h */,
-				06618759223694E8009F5CB6 /* OpCfg_DataModal.h */,
+				0661874F223694E8009F5CB6 /* RequestCon.m */,
 				0661875A223694E8009F5CB6 /* DataManger.h */,
+				06618750223694E8009F5CB6 /* DataManger.m */,
+				06618759223694E8009F5CB6 /* OpCfg_DataModal.h */,
+				06618751223694E8009F5CB6 /* OpCfg_DataModal.m */,
+				06618758223694E8009F5CB6 /* RequestOperator.h */,
+				06618752223694E8009F5CB6 /* RequestOperator.m */,
+				06618755223694E8009F5CB6 /* DataParser.h */,
 			);
 			path = BaseModal;
 			sourceTree = "<group>";
@@ -1385,6 +1390,7 @@
 				0661877A223694E8009F5CB6 /* MyLog.m in Sources */,
 				0661855D223682A0009F5CB6 /* SDWebImageManager.m in Sources */,
 				06618567223682A0009F5CB6 /* NSData+ImageContentType.m in Sources */,
+				06D4836B223FD2FC00851805 /* Product_Modal.m in Sources */,
 				066185EF223682A0009F5CB6 /* ManagerCtl.m in Sources */,
 				06618623223682A1009F5CB6 /* CYLTabBar.m in Sources */,
 				0661869222368D1E009F5CB6 /* ShowProductCtl.m in Sources */,
@@ -1615,7 +1621,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JAS4V282TV;
+				DEVELOPMENT_TEAM = HM9NVV7KC2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1633,7 +1639,7 @@
 					"$(PROJECT_DIR)/Bookkeeping/ExLib/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)/Bookkeeping/Controller/Print",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.luoqw.Bookkeeping;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eher.EherEmployee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1646,7 +1652,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JAS4V282TV;
+				DEVELOPMENT_TEAM = HM9NVV7KC2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1664,7 +1670,7 @@
 					"$(PROJECT_DIR)/Bookkeeping/ExLib/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)/Bookkeeping/Controller/Print",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.luoqw.Bookkeeping;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eher.EherEmployee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;

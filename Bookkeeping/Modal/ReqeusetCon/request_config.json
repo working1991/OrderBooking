@@ -1,8 +1,8 @@
 {
 "BaseInfo":
 {
-"debugURL" : "http://alongch.imwork.net:5588/erp/api",
-"releaseURL" : "http://120.24.74.199:8071/client/api",
+"debugURL" : "http://193.112.93.94:8080/api",
+"releaseURL" : "http://193.112.93.94:8080/api",
 "isDebug" : "0",
 "cookie" : "",
 "loadingStr" : "正在加载...",
@@ -14,7 +14,7 @@
  {
  "key" : "doLogin",
  "des" : "用户登录",
- "value" : "doOrganization/login",
+ "value" : "app/login",
  "loadType" : "modal",
  "loadingStr" : "正在登录中...",
  "noDataStr" : "没有数据"
@@ -22,9 +22,57 @@
  {
  "key" : "modifyPassword",
  "des" : "修改密码",
- "value" : "doOrganization/modifyPassword",
+ "value" : "app/modifyPassword",
  "loadType" : "modal",
  "loadingStr" : "正在修改..."
+ },
+ {
+     "key" : "modifyPassword",
+     "des" : "修改密码",
+     "value" : "app/modifyPassword",
+     "loadType" : "modal",
+     "loadingStr" : "正在修改...",
+     "noDataStr" : "没有数据"
+ },
+ {
+     "key" : "getProductGrop",
+     "des" : "获取商品分类",
+     "value" : "product/grop",
+     "loadType" : "normal",
+     "loadingStr" : "正在加载...",
+     "noDataStr" : "没有数据"
+ },
+ {
+     "key" : "getProductList",
+     "des" : "获取商品列表",
+     "value" : "product/product_list",
+     "loadType" : "normal",
+     "loadingStr" : "正在加载...",
+     "noDataStr" : "没有数据"
+ },
+ {
+     "key" : "searchProduct",
+     "des" : "获取商品列表",
+     "value" : "product/search",
+     "loadType" : "normal",
+     "loadingStr" : "正在加载...",
+     "noDataStr" : "没有数据"
+ },
+ {
+     "key" : "getProductDetail",
+     "des" : "获取商品详情",
+     "value" : "product/detail",
+     "loadType" : "normal",
+     "loadingStr" : "正在加载...",
+     "noDataStr" : "没有数据"
+ },
+ {
+     "key" : "addCutomer",
+     "des" : "新增或者修改客户",
+     "value" : "customers/addOrUpdate",
+     "loadType" : "modal",
+     "loadingStr" : "正在保存..",
+     "noDataStr" : "没有数据"
  }
  ]
 }

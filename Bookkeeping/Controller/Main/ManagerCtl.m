@@ -264,13 +264,10 @@ static User_Modal *roleModal;
         
         modal.id_ = [userDic objectForKey:@"id"];
         modal.name = [userDic objectForKey:@"name"];
-//        modal.phone = [userDic objectForKey:@"mobile"];
+        modal.telphone = [userDic objectForKey:@"mobile"];
         modal.account = [userDic objectForKey:@"account"];
         modal.password = userDic[@"password"];
-
-//        }
-        
-        
+        modal.companyId = userDic[@"companyId"];
         return modal;
     }
     return nil;
@@ -282,11 +279,11 @@ static User_Modal *roleModal;
     if (modal.id_) {
         NSMutableDictionary *userDic = [NSMutableDictionary dictionary];
         userDic[@"id"] = modal.id_?modal.id_:@"";
-//        userDic[@"name"] = modal.name?modal.name:@"";
-//        userDic[@"mobile"] = modal.telphone?modal.telphone:@"";
+        userDic[@"name"] = modal.name?modal.name:@"";
+        userDic[@"mobile"] = modal.telphone?modal.telphone:@"";
         userDic[@"account"] = modal.account?modal.account:@"";
         userDic[@"password"] = modal.password?modal.password:@"";
-//        userDic[@"imagePath"] = modal.headImgModal.url_?modal.headImgModal.url_:@"";
+        userDic[@"companyId"] = modal.companyId?modal.companyId:@"";
 
         
         [userNameList addObject:userDic];

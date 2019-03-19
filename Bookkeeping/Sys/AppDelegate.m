@@ -26,9 +26,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-
-    //设置一下基础地址
-    [RequestCon setBaseURL:[Config getServiceAddr]];
     
     [self setShowAppearence];
     [self updateContentCtl];

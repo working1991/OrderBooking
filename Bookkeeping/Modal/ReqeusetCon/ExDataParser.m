@@ -33,39 +33,39 @@
     
     if( responseDic ){
         if ([responseDic isKindOfClass:[NSDictionary class]]) {
-            restCode = [responseDic objectForKey:@"retCode"];
+            restCode = [NSString stringWithFormat:@"%@", [responseDic objectForKey:@"retCode"]];
             restMsg = [responseDic objectForKey:@"retMsg"];
-            
-            //新接口解析
-            if (!restCode && !restMsg) {
-                restCode = [responseDic objectForKey:@"code"];
-                restCode = [restCode isEqualToString:@"0"]?Request_OK:restCode;
-                restMsg = [responseDic objectForKey:@"message"];
-            }
-            
             dic = [responseDic objectForKey:@"data"];
         }
       
         //公共解析方法
-        if ([opKey isEqualToString:@"modifyPassword"]
+        if ([opKey isEqualToString:@"modifyPassword"] ||
+            [opKey isEqualToString:@"addCutomer"]
             ) {
             arr = [self parserBaseReturnRestCode:dic];
         }
         
         //登录
-        else if( [opKey isEqualToString:@"doLogin"] ){
-            
+        else if([opKey isEqualToString:@"doLogin"]){
+            arr = [self parserDoLogin:dic];
         }
-        //验证码
-        else if ( [opKey isEqualToString:@"getVerifyCode"] ){
-            
+        //商品分类
+        else if ([opKey isEqualToString:@"getProductGrop"]){
+            arr = [self parserProductGrop:dic];
         }
-        
-        
+        //商品列表
+        else if ([opKey isEqualToString:@"getProductList"] ||
+                 [opKey isEqualToString:@"searchProduct"]){
+            arr = [self parserProductList:dic];
+        }
+        //商品详情
+        else if ([opKey isEqualToString:@"getProductDetail"]){
+            arr = [self parserProductGrop:dic];
+        }
     }
     
     //date:2015-11-17 如果返回成功了，但是arr没有，则赋值一下arr
-    if( [restCode isEqualToString:Request_OK] && !arr ){
+    if(!arr){
         arr = [NSMutableArray new];
     }
     
@@ -80,6 +80,101 @@
     return arr;
 }
 
+//登录
++ (NSMutableArray *)parserDoLogin:(NSDictionary *)dic
+{
+    NSMutableArray *arr = nil;
+    arr = [[NSMutableArray alloc] init];
+    Base_Modal *baseModal = [[Base_Modal alloc]init];
+    if (dic && [dic isKindOfClass:[NSDictionary class]]) {
+        User_Modal *modal = [[User_Modal alloc] init];
+        modal.id_ = dic[@"id"];
+        modal.createTime = dic[@"createTime"];
+        modal.updateTime = dic[@"updateTime"];
+        modal.account = dic[@"userName"];
+        modal.name = dic[@"name"];
+        modal.telphone = dic[@"mobile"];
+        modal.companyId = dic[@"companyId"];
+        
+        baseModal = modal;
+    }
+    [arr addObject:baseModal];
+    return arr;
+}
+
+//商品分类
++ (NSMutableArray *)parserProductGrop:(NSDictionary *)dic
+{
+    NSMutableArray *arr = nil;
+    if (dic && [dic isKindOfClass:[NSArray class]]) {
+        arr = [[NSMutableArray alloc] init];
+        NSArray *list = (NSArray *)dic;
+        for (NSDictionary *productDic in list) {
+            Base_Modal *modal = [Base_Modal new];
+            modal.id_ = productDic[@"id"];
+            modal.name = productDic[@"name"];
+            modal.des = productDic[@"description"];
+            [arr addObject:modal];
+        }
+    }
+    return arr;
+}
+
+//商品列表
++(NSMutableArray *)parserProductList:(NSDictionary *)dic
+{
+    NSMutableArray *arr = nil;
+    if ( dic && [dic isKindOfClass:[NSDictionary class]] ) {
+        int totalCount = [[dic objectForKey:@"total"] intValue];
+        int totalPage = totalCount / PageSize + (totalCount % PageSize == 0 ? 0 : 1);
+        NSArray *tmpArr = [dic objectForKey:@"list"];
+        
+        if( tmpArr && [tmpArr isKindOfClass:[NSArray class]] ){
+            arr = [[NSMutableArray alloc] init];
+            for ( NSDictionary *tmpDic in tmpArr ) {
+                Product_Modal *modal = [[Product_Modal alloc] init];
+                modal.id_ = tmpDic[@"id"];
+                modal.createTime = tmpDic[@"createTime"];
+                modal.updateTime = tmpDic[@"update_time"];
+                modal.imgUrl = tmpDic[@"thumbnail"];
+                modal.name = tmpDic[@"name"];
+                modal.code = tmpDic[@"code"];
+                modal.companyId = tmpDic[@"company_id"];
+                modal.unitPrice = tmpDic[@"cost_price"];
+                modal.des = tmpDic[@"description"];
+                
+                modal.totalPage_ = totalPage;
+                modal.totalSize_ = totalCount;
+                
+                [arr addObject:modal];
+            }
+        }
+    }
+    return arr;
+}
+
+#warning 商品结构错误
+//商品详情
++ (NSMutableArray *)parserProductDetail:(NSDictionary *)tmpDic
+{
+    NSMutableArray *arr = nil;
+    arr = [[NSMutableArray alloc] init];
+    if (tmpDic && [tmpDic isKindOfClass:[NSDictionary class]]) {
+        Product_Modal *modal = [[Product_Modal alloc] init];
+        modal.id_ = tmpDic[@"id"];
+        modal.imgUrl = tmpDic[@"thumbnail"];
+        modal.name = tmpDic[@"name"];
+        modal.code = tmpDic[@"code"];
+        modal.companyId = tmpDic[@"company_id"];
+        modal.unitPrice = tmpDic[@"cost_price"];
+        modal.des = tmpDic[@"description"];
+        
+        [arr addObject:modal];
+    }
+    
+    return arr;
+}
+
 #pragma mark - Public
 
 //公用部分，只需要获取code
@@ -87,6 +182,10 @@
 {
     NSMutableArray *arr = [NSMutableArray array];
     Base_Modal *modal = [[Base_Modal alloc]init];
+    
+    if ([dic isKindOfClass:[NSString class]]) {
+        modal.id_ = (NSString *)dic;
+    }
     
     [arr addObject:modal];
     

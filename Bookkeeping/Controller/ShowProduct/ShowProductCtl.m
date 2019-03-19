@@ -11,8 +11,15 @@
 #import "ShowProductCell.h"
 #import "ChooseStandardCtl.h"
 #import "ConfirmOrderCtl.h"
+#import "ManagerCtl.h"
 
 @interface ShowProductCtl ()
+
+{
+    RequestCon *groupCon;
+    NSArray *groupArr;
+    NSInteger selectIndex;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *firstClassTableView;
 
@@ -44,6 +51,36 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Base
+- (void)beginLoad:(id)dataModal exParam:(id)exParam
+{
+    [self loadGropList];
+}
+
+- (void)loadGropList
+{
+    groupCon = [self getNewRequestCon:NO];
+    [groupCon getProuductGorpByCompanyId:[ManagerCtl getRoleInfo].companyId];
+}
+
+- (void)startRequest:(RequestCon *)request
+{
+    Base_Modal *grouModal = groupArr[selectIndex];
+    [request getProductList:[ManagerCtl getRoleInfo].companyId groupId:grouModal.id_];
+}
+
+- (void)finishLoadData:(BaseRequest *)request dataArr:(NSArray *)dataArr
+{
+    if (request == groupCon) {
+        groupArr = dataArr;
+        if (groupArr.count > 0) {
+            selectIndex = 0;
+            [self onStart];
+        }
+        
+    }
+}
+
 #pragma mark - Private
 
 - (void)chooseStandard:(UIButton *)sender
@@ -58,7 +95,10 @@
 #pragma mark - UITableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    if (tableView == self.firstClassTableView) {
+        return 50;
+    }
+    return [super tableView:tableView numberOfRowsInSection:section];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -78,11 +118,17 @@
         
         return myCell;
     }
-    ShowProductCell *myCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ShowProductCell class]) forIndexPath:indexPath];
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    if (!cell) {
+        ShowProductCell *myCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ShowProductCell class]) forIndexPath:indexPath];
+        
+        [myCell.chooseBtn addTarget:self action:@selector(chooseStandard:) forControlEvents:UIControlEventTouchUpInside];
+        
+        cell = myCell;
+    }
     
-    [myCell.chooseBtn addTarget:self action:@selector(chooseStandard:) forControlEvents:UIControlEventTouchUpInside];
     
-    return myCell;
+    return cell;
 }
 
 

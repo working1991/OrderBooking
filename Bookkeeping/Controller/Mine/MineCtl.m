@@ -10,6 +10,7 @@
 #import "MineItemCell.h"
 #import "CustomerCtl.h"
 #import "SettingCtl.h"
+#import "ManagerCtl.h"
 
 @interface MineCtl ()
 
@@ -59,6 +60,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.nameLb.text = [ManagerCtl getRoleInfo].name;
 }
 
 

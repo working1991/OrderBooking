@@ -24,4 +24,6 @@ typedef enum {
 @property (strong, nonatomic) NSString        *account;
 @property (strong, nonatomic) NSString        *password;
 
+@property (strong, nonatomic) NSString        *companyId;//公司
+
 @end

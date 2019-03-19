@@ -30,7 +30,7 @@
 #define Request_Timeout             25
 
 //请求成功Code
-#define Request_OK                  @"000000"
+#define Request_OK                  @"0"
 
 //自动更新Code
 #define Request_NewVersion          @"000099"

@@ -12,7 +12,6 @@
 #import "Common.h"
 #import "Config.h"
 
-static RequestCfg_DataModal *oldRequestCfgModal;
 static RequestCfg_DataModal *requestCfgModal;
 static NSString             *myCookie;
 static BOOL                 bShowModelCacheEnable = NO;

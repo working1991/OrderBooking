@@ -8,8 +8,15 @@
 
 #import "ChooseStandardCtl.h"
 #import "ChooseStandardCell.h"
+#import "ManagerCtl.h"
+#import "Product_Modal.h"
 
 @interface ChooseStandardCtl ()
+
+{
+    Product_Modal *inModal;
+    Product_Modal *detailModal;
+}
 
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UIImageView *iconImgView;
@@ -38,6 +45,24 @@
 }
 
 #pragma mark - Base
+- (void)beginLoad:(id)dataModal exParam:(id)exParam
+{
+    inModal = dataModal;
+    [super beginLoad:dataModal exParam:exParam];
+}
+
+- (void)startRequest:(RequestCon *)request
+{
+    [request getProductDetail:inModal.id_];
+}
+
+- (void)finishLoadData:(BaseRequest *)request dataArr:(NSArray *)dataArr
+{
+    if (request == requestCon_) {
+        detailModal = dataArr.firstObject;
+    }
+}
+
 - (void)viewClickResponse:(id)sender
 {
     if (sender == self.closeBtn) {
