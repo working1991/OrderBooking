@@ -37,7 +37,7 @@
  {
      "key" : "getProductGrop",
      "des" : "获取商品分类",
-     "value" : "product/grop",
+     "value" : "product/group",
      "loadType" : "normal",
      "loadingStr" : "正在加载...",
      "noDataStr" : "没有数据"

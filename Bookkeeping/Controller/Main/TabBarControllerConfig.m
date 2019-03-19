@@ -57,8 +57,9 @@
 }
 - (NSArray *)viewControllers {
     //首页
-    UIViewController *productCtl = [[ShowProductCtl alloc] init];
+    ShowProductCtl *productCtl = [[ShowProductCtl alloc] init];
     UIViewController *productNav = [EherNavigationController getNav:productCtl barHidden:NO];
+    [productCtl beginLoad:nil exParam:nil];
 
     //订单
     UIViewController *orderCtl = [[OrderListCtl alloc] init];

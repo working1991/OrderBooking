@@ -167,9 +167,9 @@ static User_Modal *roleModal;
     if ([viewController isKindOfClass:[UINavigationController class]]) {
         UINavigationController *nav = (UINavigationController *)viewController;
         BaseUIViewController *ctl = nav.viewControllers.firstObject;
-        if ([ctl isKindOfClass:[ShowProductCtl class]]) {
-            [ctl onStart];
-        }
+//        if ([ctl isKindOfClass:[ShowProductCtl class]]) {
+//            [ctl onStart];
+//        }
     }
 }
 

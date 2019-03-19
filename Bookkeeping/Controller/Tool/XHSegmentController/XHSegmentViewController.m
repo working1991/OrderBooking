@@ -35,18 +35,27 @@
 //    self.view.backgroundColor = [UIColor whiteColor];
     
     [self layoutInfoView];
+    
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     //  监听contentScrollView
     [self.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
+    self.scrollView.delegate = self;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.scrollView removeObserver:self forKeyPath:@"contentOffset"];
+    self.scrollView.delegate = nil;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-}
-
-- (void)dealloc
-{
-    [self.scrollView removeObserver:self forKeyPath:@"contentOffset"];
-    self.scrollView.delegate = nil;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -68,7 +77,6 @@
 - (void)selectPrevious
 {
     if (self.segmentControl.selectIndex > 0) {
-        
         self.segmentControl.selectIndex = self.segmentControl.selectIndex - 1;
     }
 }
@@ -84,7 +92,6 @@
         _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.pagingEnabled = YES;
         _scrollView.decelerationRate = 0.5;
-        _scrollView.delegate = self;
 //        _scrollView.alwaysBounceVertical = NO;
         _scrollView.scrollsToTop = NO;
         _scrollView.backgroundColor = [UIColor whiteColor];
