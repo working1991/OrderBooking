@@ -7,9 +7,11 @@
 //
 
 #import "ChooseStandardCtl.h"
-#import "ChooseStandardCell.h"
 #import "ManagerCtl.h"
 #import "Product_Modal.h"
+#import "Standard_Modal.h"
+#import "UIImageView+WebCache.h"
+#import "TypeListCtl.h"
 
 @interface ChooseStandardCtl ()
 
@@ -24,19 +26,31 @@
 @property (weak, nonatomic) IBOutlet UIButton *closeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *buyBtn;
 
-@property (strong, nonatomic) void (^finished)(Base_Modal *);
+@property (weak, nonatomic) IBOutlet UIView     *titleView;
+@property (weak, nonatomic) IBOutlet UIView     *contentView;
+
+@property (strong, nonatomic) void (^finished)(Product_Modal *);
 
 @end
 
 @implementation ChooseStandardCtl
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self.tableView_ registerNib:[UINib nibWithNibName:NSStringFromClass([ChooseStandardCell class]) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:NSStringFromClass([ChooseStandardCell class])];
+    
     
     [Common addTapGesture:self.topView target:self numberOfTap:1 sel:@selector(hide)];
+    
+    self.segmentControl.backgroundColor = [UIColor clearColor];
+    self.segmentTitleColor = [Common getColor:@"999999"];
+    self.segmentHighlightColor = Color_Default;
+    self.segmentTitleFont = [UIFont systemFontOfSize:16];
+    self.scrollView.bounces = NO;
+    self.segmentType = XHSegmentTypeFilledSelf;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,11 +58,34 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.scrollView.frame) * self.viewControllers.count, CGRectGetHeight(self.scrollView.frame));
+}
+
+- (void)layoutInfoView
+{
+    [self.titleView addSubview:self.segmentControl];
+    self.segmentControl.translatesAutoresizingMaskIntoConstraints = NO;
+    [Common copyConstraint:self.titleView srcView:self.titleView desView:self.segmentControl];
+    
+    [self.contentView addSubview:self.scrollView];
+    self.scrollView.translatesAutoresizingMaskIntoConstraints = NO;
+    [Common copyConstraint:self.contentView srcView:self.contentView desView:self.scrollView];
+}
+
+
 #pragma mark - Base
 - (void)beginLoad:(id)dataModal exParam:(id)exParam
 {
     inModal = dataModal;
     [super beginLoad:dataModal exParam:exParam];
+}
+
+- (UIView *)getRequestProcessView:(BaseRequest *)request
+{
+    return self.scrollView;
 }
 
 - (void)startRequest:(RequestCon *)request
@@ -60,6 +97,7 @@
 {
     if (request == requestCon_) {
         detailModal = dataArr.firstObject;
+        [self updateDetailInfo];
     }
 }
 
@@ -68,41 +106,73 @@
     if (sender == self.closeBtn) {
         [self hide];
     } else if (sender == self.buyBtn) {
-        if (self.finished) {
-            self.finished(nil);
+        BOOL bHave = NO;
+        for (Standard_Modal *modal in detailModal.typeArr) {
+            if (modal.saleCount > 0) {
+                bHave = YES;
+                break;
+            }
         }
-        [self hide];
+        if (bHave) {
+            if (self.finished) {
+                self.finished(detailModal);
+            }
+            [self hide];
+        } else {
+            [BaseUIViewController showAlertView:@"未选择规格" msg:nil cancel:@"确定"];
+        }
+        
     }
 }
 
 #pragma mark - Private
-
-#pragma mark - UITableView
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (void)updateDetailInfo
 {
-    return 4;
+    self.nameLb.text = detailModal.name;
+    [self.iconImgView sd_setImageWithURL:[NSURL URLWithString:detailModal.imgUrl]];
+    
+    NSMutableArray *typeArr = [NSMutableArray array];
+    for (NSInteger i=0; i<detailModal.typeArr.count; i++) {
+        Standard_Modal *model = detailModal.typeArr[i];
+        BOOL bHave = NO;
+        for (NSInteger j=0; j<typeArr.count; j++) {
+            NSDictionary *typeDic = typeArr[j];
+            if ([model.firstSpecId isEqualToString:typeDic[@"id"]]) {
+                NSMutableArray *list = [NSMutableArray arrayWithArray:typeDic[@"list"]];
+                [list addObject:model];
+                NSMutableDictionary *mDic = [NSMutableDictionary dictionaryWithDictionary:typeDic];
+                mDic[@"list"] = list;
+                [typeArr replaceObjectAtIndex:j withObject:mDic];
+                bHave = YES;
+                break;
+            }
+        }
+        if (!bHave) {
+            [typeArr addObject:@{@"id":model.firstSpecId?model.firstSpecId:@"", @"name":model.firstSpecName?model.firstSpecName:@"", @"list": @[model]}];
+        }
+    }
+    
+    NSMutableArray *viewCtls = [NSMutableArray array];
+    for (NSDictionary *typeDic in typeArr) {
+        TypeListCtl *ctl = [[TypeListCtl alloc] init];
+        ctl.title = typeDic[@"name"];
+        [ctl beginLoad:nil exParam:typeDic[@"list"]];
+        [viewCtls addObject:ctl];
+    }
+    if (viewCtls.count>0) {
+        self.viewControllers = viewCtls;
+    }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 90;
-}
 
--(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    ChooseStandardCell *myCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ChooseStandardCell class]) forIndexPath:indexPath];
-    
-    
-    
-    return myCell;
-}
 
 #pragma mark - Public
 //开始
-+(ChooseStandardCtl *) start:(Base_Modal *)model showInfoView:(UIView *)showInfoView finished:(void(^)(Base_Modal *))finished
++(ChooseStandardCtl *) start:(Product_Modal *)model showInfoView:(UIView *)showInfoView finished:(void(^)(Product_Modal *))finished
 {
     ChooseStandardCtl *ctl = [ChooseStandardCtl new];
     ctl.finished = finished;
+    [ctl beginLoad:model exParam:nil];
     [ctl showChooseDate:showInfoView];
     return ctl;
 }

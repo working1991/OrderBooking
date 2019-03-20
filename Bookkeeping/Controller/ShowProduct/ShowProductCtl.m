@@ -12,6 +12,8 @@
 #import "ChooseStandardCtl.h"
 #import "ConfirmOrderCtl.h"
 #import "ManagerCtl.h"
+#import "Product_Modal.h"
+#import "UIImageView+WebCache.h"
 
 @interface ShowProductCtl ()
 
@@ -73,6 +75,7 @@
 {
     if (request == groupCon) {
         groupArr = dataArr;
+        [self.firstClassTableView reloadData];
         if (groupArr.count > 0) {
             selectIndex = 0;
             [self onStart];
@@ -85,8 +88,10 @@
 
 - (void)chooseStandard:(UIButton *)sender
 {
-    ChooseStandardCtl *ctl = [ChooseStandardCtl start:nil showInfoView:self.view finished:^(Base_Modal *model) {
+    Product_Modal *modal = requestCon_.dataArr_[sender.tag];
+    ChooseStandardCtl *ctl = [ChooseStandardCtl start:modal showInfoView:self.view finished:^(Product_Modal *product) {
         ConfirmOrderCtl *ctl = [ConfirmOrderCtl new];
+        [ctl beginLoad:product exParam:nil];
         [self.navigationController pushViewController:ctl animated:YES];
     }];
     [self addChildViewController:ctl];
@@ -96,7 +101,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (tableView == self.firstClassTableView) {
-        return 50;
+        return groupArr.count;
     }
     return [super tableView:tableView numberOfRowsInSection:section];
 }
@@ -114,7 +119,10 @@
     if (tableView == self.firstClassTableView) {
         FirstClassCell *myCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([FirstClassCell class]) forIndexPath:indexPath];
         
-        
+        Base_Modal *model = groupArr[indexPath.row];
+        myCell.nameLb.text = model.name;
+        myCell.nameLb.textColor = selectIndex==indexPath.row?Color_Default:[Common getColor:@"333333"];
+        myCell.backgroundColor = selectIndex==indexPath.row?[Common getColor:@"f2f2f2"]:[UIColor whiteColor];
         
         return myCell;
     }
@@ -122,6 +130,12 @@
     if (!cell) {
         ShowProductCell *myCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ShowProductCell class]) forIndexPath:indexPath];
         
+        Product_Modal *modal = requestCon_.dataArr_[indexPath.row];
+        myCell.nameLb.text = modal.name;
+        [myCell.iconImgView sd_setImageWithURL:[NSURL URLWithString:modal.imgUrl]];
+        myCell.priceLb.text = [NSString stringWithFormat:@"¥%@元/件", modal.unitPrice];
+        
+        myCell.chooseBtn.tag = indexPath.row;
         [myCell.chooseBtn addTarget:self action:@selector(chooseStandard:) forControlEvents:UIControlEventTouchUpInside];
         
         cell = myCell;
@@ -131,5 +145,15 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView == self.firstClassTableView) {
+        selectIndex = indexPath.row;
+        [self.firstClassTableView reloadData];
+        [self onStart];
+    } else {
+        
+    }
+}
 
 @end

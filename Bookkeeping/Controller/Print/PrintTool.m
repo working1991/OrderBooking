@@ -8,6 +8,7 @@
 
 #import "PrintTool.h"
 #import "UartXCtl.h"
+#import "HLPrinter.h"
 
 @interface PrintTool ()
 @property (nonatomic, strong) NSArray   *infos;
@@ -27,61 +28,61 @@
 }
 
 //订单
-- (BOOL)printOrderInfo:(Base_Modal *)dataModal bReprint:(BOOL)bReprint
+- (BOOL)printOrderInfo:(Base_Modal *)dataModal
 {
-    NSMutableArray *arr = [[NSMutableArray alloc] init];
-//    [arr addObject:[NSString stringWithFormat:NSLocalizedString(@"编号：%@\n", nil),dataModal.orderNum]];
-//    if( dataModal.customerCode && ![dataModal.customerCode isEqualToString:@""] ){
-//        [arr addObject:[NSString stringWithFormat:NSLocalizedString(@"客户名称：%@(%@)\n", nil),dataModal.customerName,dataModal.customerCode]];
-//    }else {
-//        [arr addObject:[NSString stringWithFormat:NSLocalizedString(@"客户名称：%@\n", nil),dataModal.customerName]];
-//    }
-//    [arr addObject:[NSString stringWithFormat:NSLocalizedString(@"开单时间：%@\n", nil),dataModal.createTime]];
-//    [arr addObject:[NSString stringWithFormat:NSLocalizedString(@"参与员工：%@\n", nil),[Employee_Modal getEmployeesNameAndPostNameString:dataModal.partorArr]]];
-//    [arr addObject:[NSString stringWithFormat:NSLocalizedString(@"订单总金额：￥%@\n", nil),dataModal.realPrice ? dataModal.realPrice :dataModal.totalPrice]];
-//    if ( dataModal.productArr.count > 0 || dataModal.presentArr.count > 0 ) {
-//        [arr addObject:@"--------------------------------\n"];
-//    }
-//
-//    for ( int i = 0 ; i < [dataModal.productArr count]; ++i ) {
-//        Product_Modal *productModal = [dataModal.productArr objectAtIndex:i];
-//        if( dataModal.orderType == OrderType_MemberCardOrder ){
-//            [arr addObject:[NSString stringWithFormat:NSLocalizedString(@"  名称：%@\n", nil),NSLocalizedString(@"客户充值", nil)]];
-//            [arr addObject:[NSString stringWithFormat:NSLocalizedString(@"  充值金额：￥%@\n", nil),dataModal.totalPrice]];
-//        }
-//        else if( dataModal.orderType == OrderType_ChargeCardOrder ){
-//            [arr addObject:[NSString stringWithFormat:NSLocalizedString(@"  名称：%@\n", nil),NSLocalizedString(@"金额卡充值", nil)]];
-//            [arr addObject:[NSString stringWithFormat:NSLocalizedString(@"  充值金额：￥%@\n", nil),dataModal.totalPrice]];
-//        }else{
-//            [arr addObject:[NSString stringWithFormat:NSLocalizedString(@"  名称：%@\n", nil),productModal.name]];
-//            [arr addObject:[NSString stringWithFormat:NSLocalizedString(@"  数量：%@\n", nil),productModal.times]];
-//            [arr addObject:[NSString stringWithFormat:NSLocalizedString(@"  单价：￥%@\n", nil),productModal.price]];
-//        }
-//    }
-//    if ( [dataModal getAllPresent].count > 0 ) {
-//        if ( dataModal.productArr.count > 0 ) {
-//            [arr addObject:@"  ----------------------------\n"];
-//        }
-//        [arr addObject:NSLocalizedString(@"  赠品清单：\n", nil)];
-//        for (MyPresent_Modal *subModal in [dataModal getAllPresent]) {
-//            [arr addObject:[NSString stringWithFormat:@"   %@ x%@\n",subModal.name,subModal.useTiems]];
-//        }
-//    }
-//
-//    [arr addObject:@"--------------------------------\n"];
-    [arr addObject:@"温馨提示：离店时请携带随身物品\n"];
-//    [arr addObject:[NSString stringWithFormat:NSLocalizedString(@"操作者：%@\n", nil),[ManagerCtl getRoleInfo].name]];
-//    [arr addObject:[NSString stringWithFormat:NSLocalizedString(@"打单时间：%@\n", nil),[Common getCurrentDateTime]]];
-    [arr addObject:@"\n\n\n"];
+    HLPrinter *printer = [[HLPrinter alloc] init];
+    NSString *title = @"测试电商";
+    NSString *str1 = @"测试电商服务中心(销售单)";
+    [printer appendText:title alignment:HLTextAlignmentCenter fontSize:HLFontSizeTitleBig];
+    [printer appendText:str1 alignment:HLTextAlignmentCenter];
+    [printer appendBarCodeWithInfo:@"RN3456789012"];
+    [printer appendSeperatorLine];
     
-    return [self printInfos:arr bReprint:bReprint];
+    [printer appendTitle:@"时间:" value:@"2016-04-27 10:01:50" valueOffset:150];
+    [printer appendTitle:@"订单:" value:@"4000020160427100150" valueOffset:150];
+    [printer appendText:@"地址:深圳市南山区学府路东深大店" alignment:HLTextAlignmentLeft];
+    
+    [printer appendSeperatorLine];
+    [printer appendLeftText:@"商品" middleText:@"数量" rightText:@"单价" isTitle:YES];
+    CGFloat total = 0.0;
+    NSDictionary *dict1 = @{@"name":@"铅笔测试一下哈哈",@"amount":@"5",@"price":@"2.0"};
+    NSDictionary *dict2 = @{@"name":@"abcdefghijfdf",@"amount":@"1",@"price":@"1.0"};
+    NSDictionary *dict3 = @{@"name":@"abcde笔记本啊啊",@"amount":@"3",@"price":@"3.0"};
+    NSArray *goodsArray = @[dict1, dict2, dict3];
+    for (NSDictionary *dict in goodsArray) {
+        [printer appendLeftText:dict[@"name"] middleText:dict[@"amount"] rightText:dict[@"price"] isTitle:NO];
+        total += [dict[@"price"] floatValue] * [dict[@"amount"] intValue];
+    }
+    
+    [printer appendSeperatorLine];
+    NSString *totalStr = [NSString stringWithFormat:@"%.2f",total];
+    [printer appendTitle:@"总计:" value:totalStr];
+    [printer appendTitle:@"实收:" value:@"100.00"];
+    NSString *leftStr = [NSString stringWithFormat:@"%.2f",100.00 - total];
+    [printer appendTitle:@"找零:" value:leftStr];
+    
+    [printer appendSeperatorLine];
+    
+    [printer appendText:@"位图方式二维码" alignment:HLTextAlignmentCenter];
+    [printer appendQRCodeWithInfo:@"www.baidu.com"];
+    
+    [printer appendSeperatorLine];
+    [printer appendText:@"指令方式二维码" alignment:HLTextAlignmentCenter];
+    [printer appendQRCodeWithInfo:@"www.baidu.com" size:10];
+    
+    [printer appendFooter:nil];
+    [printer appendImage:[UIImage imageNamed:@"ico180"] alignment:HLTextAlignmentCenter maxWidth:300];
+    
+    // 你也可以利用UIWebView加载HTML小票的方式，这样可以在远程修改小票的样式和布局。
+    // 注意点：需要等UIWebView加载完成后，再截取UIWebView的屏幕快照，然后利用添加图片的方法，加进printer
+    // 截取屏幕快照，可以用UIWebView+UIImage中的catogery方法 - (UIImage *)imageForWebView
+    return [self printInfos:printer];
 }
 
 
-
--(BOOL) printInfos:(NSArray *)infos bReprint:(BOOL)bReprint
+-(BOOL) printInfos:(HLPrinter *)printer
 {
-    return [UartXCtl print:infos bReprint:bReprint];
+    return [UartXCtl print:printer];
 }
 
 

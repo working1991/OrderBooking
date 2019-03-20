@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060444E422427DB80068D4EB /* Standard_Modal.m in Sources */ = {isa = PBXBuildFile; fileRef = 060444E322427DB80068D4EB /* Standard_Modal.m */; };
+		060444E8224281DC0068D4EB /* TypeListCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 060444E6224281DC0068D4EB /* TypeListCtl.m */; };
+		060444E9224281DC0068D4EB /* TypeListCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060444E7224281DC0068D4EB /* TypeListCtl.xib */; };
 		0661814C2232AF07009F5CB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0661814B2232AF07009F5CB6 /* Assets.xcassets */; };
 		066181522232AF07009F5CB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 066181512232AF07009F5CB6 /* main.m */; };
 		06618520223682A0009F5CB6 /* UIButton+EnlargeEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 066182732236829E009F5CB6 /* UIButton+EnlargeEdge.m */; };
@@ -195,14 +198,27 @@
 		0661880F223AA447009F5CB6 /* OrderDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0661880D223AA447009F5CB6 /* OrderDetailCell.xib */; };
 		06618813223AAA99009F5CB6 /* PrintTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 06618812223AAA99009F5CB6 /* PrintTool.m */; };
 		0661881C223AAD09009F5CB6 /* UartXCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06618815223AAD08009F5CB6 /* UartXCtl.xib */; };
-		0661881D223AAD09009F5CB6 /* libUartLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06618816223AAD08009F5CB6 /* libUartLib.a */; };
 		0661881E223AAD09009F5CB6 /* UartXCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 06618817223AAD08009F5CB6 /* UartXCtl.m */; };
 		0661881F223AAD09009F5CB6 /* UartXCtl_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06618819223AAD09009F5CB6 /* UartXCtl_Cell.m */; };
 		06618820223AAD09009F5CB6 /* UartXCtl_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0661881A223AAD09009F5CB6 /* UartXCtl_Cell.xib */; };
+		069765D122413C0500CAA024 /* HLPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 069765BD22413C0500CAA024 /* HLPrinter.m */; };
+		069765D222413C0500CAA024 /* UIWebView+UIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 069765BE22413C0500CAA024 /* UIWebView+UIImage.m */; };
+		069765D322413C0500CAA024 /* SEPrinterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 069765C022413C0500CAA024 /* SEPrinterManager.m */; };
+		069765D422413C0500CAA024 /* UIImage+Bitmap.m in Sources */ = {isa = PBXBuildFile; fileRef = 069765C222413C0500CAA024 /* UIImage+Bitmap.m */; };
+		069765D522413C0500CAA024 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 069765C722413C0500CAA024 /* SVRadialGradientLayer.m */; };
+		069765D622413C0500CAA024 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 069765CA22413C0500CAA024 /* SVProgressAnimatedView.m */; };
+		069765D722413C0500CAA024 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 069765CD22413C0500CAA024 /* SVProgressHUD.m */; };
+		069765D822413C0500CAA024 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 069765CE22413C0500CAA024 /* SVIndefiniteAnimatedView.m */; };
+		069765D922413C0500CAA024 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 069765CF22413C0500CAA024 /* SVProgressHUD.bundle */; };
 		06D4836B223FD2FC00851805 /* Product_Modal.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D4836A223FD2FC00851805 /* Product_Modal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		060444E222427DB80068D4EB /* Standard_Modal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Standard_Modal.h; sourceTree = "<group>"; };
+		060444E322427DB80068D4EB /* Standard_Modal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Standard_Modal.m; sourceTree = "<group>"; };
+		060444E5224281DC0068D4EB /* TypeListCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypeListCtl.h; sourceTree = "<group>"; };
+		060444E6224281DC0068D4EB /* TypeListCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TypeListCtl.m; sourceTree = "<group>"; };
+		060444E7224281DC0068D4EB /* TypeListCtl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeListCtl.xib; sourceTree = "<group>"; };
 		0661813F2232AF07009F5CB6 /* Bookkeeping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookkeeping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0661814B2232AF07009F5CB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		066181512232AF07009F5CB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -540,14 +556,31 @@
 		0661880D223AA447009F5CB6 /* OrderDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailCell.xib; sourceTree = "<group>"; };
 		06618811223AAA98009F5CB6 /* PrintTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintTool.h; sourceTree = "<group>"; };
 		06618812223AAA99009F5CB6 /* PrintTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrintTool.m; sourceTree = "<group>"; };
-		06618814223AAD08009F5CB6 /* UartLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UartLib.h; sourceTree = "<group>"; };
 		06618815223AAD08009F5CB6 /* UartXCtl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UartXCtl.xib; sourceTree = "<group>"; };
-		06618816223AAD08009F5CB6 /* libUartLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUartLib.a; sourceTree = "<group>"; };
 		06618817223AAD08009F5CB6 /* UartXCtl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UartXCtl.m; sourceTree = "<group>"; };
 		06618818223AAD09009F5CB6 /* UartXCtl_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UartXCtl_Cell.h; sourceTree = "<group>"; };
 		06618819223AAD09009F5CB6 /* UartXCtl_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UartXCtl_Cell.m; sourceTree = "<group>"; };
 		0661881A223AAD09009F5CB6 /* UartXCtl_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UartXCtl_Cell.xib; sourceTree = "<group>"; };
 		0661881B223AAD09009F5CB6 /* UartXCtl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UartXCtl.h; sourceTree = "<group>"; };
+		069765BD22413C0500CAA024 /* HLPrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPrinter.m; sourceTree = "<group>"; };
+		069765BE22413C0500CAA024 /* UIWebView+UIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+UIImage.m"; sourceTree = "<group>"; };
+		069765BF22413C0500CAA024 /* UIImage+Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Bitmap.h"; sourceTree = "<group>"; };
+		069765C022413C0500CAA024 /* SEPrinterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEPrinterManager.m; sourceTree = "<group>"; };
+		069765C122413C0500CAA024 /* UIWebView+UIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+UIImage.h"; sourceTree = "<group>"; };
+		069765C222413C0500CAA024 /* UIImage+Bitmap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Bitmap.m"; sourceTree = "<group>"; };
+		069765C322413C0500CAA024 /* HLPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPrinter.h; sourceTree = "<group>"; };
+		069765C422413C0500CAA024 /* SEPrinterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEPrinterManager.h; sourceTree = "<group>"; };
+		069765C522413C0500CAA024 /* SEBLEConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEBLEConst.h; sourceTree = "<group>"; };
+		069765C722413C0500CAA024 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		069765C822413C0500CAA024 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		069765C922413C0500CAA024 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		069765CA22413C0500CAA024 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		069765CB22413C0500CAA024 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		069765CC22413C0500CAA024 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		069765CD22413C0500CAA024 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		069765CE22413C0500CAA024 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		069765CF22413C0500CAA024 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		069765D022413C0500CAA024 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
 		06D48369223FD2FC00851805 /* Product_Modal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product_Modal.h; sourceTree = "<group>"; };
 		06D4836A223FD2FC00851805 /* Product_Modal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Product_Modal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -557,7 +590,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0661881D223AAD09009F5CB6 /* libUartLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,7 +621,6 @@
 				066182702236829E009F5CB6 /* ExLib */,
 				06618460223682A0009F5CB6 /* Modal */,
 				066183152236829E009F5CB6 /* Sys */,
-				066183182236829E009F5CB6 /* View */,
 				0661814B2232AF07009F5CB6 /* Assets.xcassets */,
 				066181512232AF07009F5CB6 /* main.m */,
 			);
@@ -754,13 +785,6 @@
 			path = Sys;
 			sourceTree = "<group>";
 		};
-		066183182236829E009F5CB6 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		0661832B2236829F009F5CB6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -920,6 +944,8 @@
 				06618481223682A0009F5CB6 /* Customer_Modal.m */,
 				06D48369223FD2FC00851805 /* Product_Modal.h */,
 				06D4836A223FD2FC00851805 /* Product_Modal.m */,
+				060444E222427DB80068D4EB /* Standard_Modal.h */,
+				060444E322427DB80068D4EB /* Standard_Modal.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -960,6 +986,9 @@
 				066187D92237E95C009F5CB6 /* ChooseStandardCtl.h */,
 				066187DA2237E95C009F5CB6 /* ChooseStandardCtl.m */,
 				066187DB2237E95C009F5CB6 /* ChooseStandardCtl.xib */,
+				060444E5224281DC0068D4EB /* TypeListCtl.h */,
+				060444E6224281DC0068D4EB /* TypeListCtl.m */,
+				060444E7224281DC0068D4EB /* TypeListCtl.xib */,
 				066187E02237EC02009F5CB6 /* ChooseStandardCell.h */,
 				066187DE2237EC02009F5CB6 /* ChooseStandardCell.m */,
 				066187DF2237EC02009F5CB6 /* ChooseStandardCell.xib */,
@@ -1210,10 +1239,10 @@
 		06618810223AAA8B009F5CB6 /* Print */ = {
 			isa = PBXGroup;
 			children = (
+				069765C622413C0500CAA024 /* SVProgressHUD */,
+				069765BC22413C0500CAA024 /* BLEPrinter */,
 				06618811223AAA98009F5CB6 /* PrintTool.h */,
 				06618812223AAA99009F5CB6 /* PrintTool.m */,
-				06618816223AAD08009F5CB6 /* libUartLib.a */,
-				06618814223AAD08009F5CB6 /* UartLib.h */,
 				0661881B223AAD09009F5CB6 /* UartXCtl.h */,
 				06618817223AAD08009F5CB6 /* UartXCtl.m */,
 				06618815223AAD08009F5CB6 /* UartXCtl.xib */,
@@ -1222,6 +1251,41 @@
 				0661881A223AAD09009F5CB6 /* UartXCtl_Cell.xib */,
 			);
 			path = Print;
+			sourceTree = "<group>";
+		};
+		069765BC22413C0500CAA024 /* BLEPrinter */ = {
+			isa = PBXGroup;
+			children = (
+				069765C522413C0500CAA024 /* SEBLEConst.h */,
+				069765C322413C0500CAA024 /* HLPrinter.h */,
+				069765BD22413C0500CAA024 /* HLPrinter.m */,
+				069765C122413C0500CAA024 /* UIWebView+UIImage.h */,
+				069765BE22413C0500CAA024 /* UIWebView+UIImage.m */,
+				069765BF22413C0500CAA024 /* UIImage+Bitmap.h */,
+				069765C222413C0500CAA024 /* UIImage+Bitmap.m */,
+				069765C422413C0500CAA024 /* SEPrinterManager.h */,
+				069765C022413C0500CAA024 /* SEPrinterManager.m */,
+			);
+			name = BLEPrinter;
+			path = "../../../../../../Downloads/SEBLEPrinter-master/SEBLEPrinter/BLEPrinter";
+			sourceTree = "<group>";
+		};
+		069765C622413C0500CAA024 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				069765C722413C0500CAA024 /* SVRadialGradientLayer.m */,
+				069765C822413C0500CAA024 /* SVIndefiniteAnimatedView.h */,
+				069765C922413C0500CAA024 /* SVProgressHUD.h */,
+				069765CA22413C0500CAA024 /* SVProgressAnimatedView.m */,
+				069765CB22413C0500CAA024 /* SVProgressHUD-Prefix.pch */,
+				069765CC22413C0500CAA024 /* SVRadialGradientLayer.h */,
+				069765CD22413C0500CAA024 /* SVProgressHUD.m */,
+				069765CE22413C0500CAA024 /* SVIndefiniteAnimatedView.m */,
+				069765CF22413C0500CAA024 /* SVProgressHUD.bundle */,
+				069765D022413C0500CAA024 /* SVProgressAnimatedView.h */,
+			);
+			name = SVProgressHUD;
+			path = "../../../../../../Downloads/SEBLEPrinter-master/SEBLEPrinter/SVProgressHUD";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1319,9 +1383,11 @@
 				0661814C2232AF07009F5CB6 /* Assets.xcassets in Resources */,
 				06618534223682A0009F5CB6 /* QBImagePicker.strings in Resources */,
 				0661878A223694E8009F5CB6 /* ico_fail@2x.png in Resources */,
+				060444E9224281DC0068D4EB /* TypeListCtl.xib in Resources */,
 				06618800223A9BE0009F5CB6 /* OrderListItemCtl.xib in Resources */,
 				0661876A223694E8009F5CB6 /* BaseListMore_Cell.xib in Resources */,
 				066187DD2237E95C009F5CB6 /* ChooseStandardCtl.xib in Resources */,
+				069765D922413C0500CAA024 /* SVProgressHUD.bundle in Resources */,
 				06618776223694E8009F5CB6 /* ShowImageView.xib in Resources */,
 				0661869322368D1E009F5CB6 /* ShowProductCtl.xib in Resources */,
 				0661878D223694E8009F5CB6 /* back_black@2x.png in Resources */,
@@ -1361,9 +1427,11 @@
 				06618620223682A1009F5CB6 /* UIView+CYLTabBarControllerExtention.m in Sources */,
 				066187C32236A8A4009F5CB6 /* AddCustomerCtl.m in Sources */,
 				0661863A223682A1009F5CB6 /* ExDataParser.m in Sources */,
+				060444E8224281DC0068D4EB /* TypeListCtl.m in Sources */,
 				06618780223694E8009F5CB6 /* BaseCleViewController.m in Sources */,
 				06618790223694E8009F5CB6 /* MMHud.m in Sources */,
 				06618791223694E8009F5CB6 /* MMProgressHUDOverlayView.m in Sources */,
+				069765D222413C0500CAA024 /* UIWebView+UIImage.m in Sources */,
 				06618547223682A0009F5CB6 /* MASConstraint.m in Sources */,
 				06618636223682A1009F5CB6 /* Customer_Modal.m in Sources */,
 				066187FA223A9743009F5CB6 /* OrderListCell.m in Sources */,
@@ -1392,6 +1460,7 @@
 				06618567223682A0009F5CB6 /* NSData+ImageContentType.m in Sources */,
 				06D4836B223FD2FC00851805 /* Product_Modal.m in Sources */,
 				066185EF223682A0009F5CB6 /* ManagerCtl.m in Sources */,
+				069765D722413C0500CAA024 /* SVProgressHUD.m in Sources */,
 				06618623223682A1009F5CB6 /* CYLTabBar.m in Sources */,
 				0661869222368D1E009F5CB6 /* ShowProductCtl.m in Sources */,
 				0661855C223682A0009F5CB6 /* MKAnnotationView+WebCache.m in Sources */,
@@ -1400,6 +1469,7 @@
 				066187E62237FE89009F5CB6 /* ConfirmOrderCtl.m in Sources */,
 				06618539223682A0009F5CB6 /* QBAlbumsViewController.m in Sources */,
 				06618797223694E8009F5CB6 /* MMProgressHUD+Animations.m in Sources */,
+				069765D122413C0500CAA024 /* HLPrinter.m in Sources */,
 				06618562223682A0009F5CB6 /* UIImage+MultiFormat.m in Sources */,
 				0661856A223682A0009F5CB6 /* UIButton+WebCache.m in Sources */,
 				0661877D223694E8009F5CB6 /* KeyChainTool.m in Sources */,
@@ -1419,6 +1489,7 @@
 				06618561223682A0009F5CB6 /* UIImage+GIF.m in Sources */,
 				066187BD2236A89C009F5CB6 /* CustomerCtl.m in Sources */,
 				0661878F223694E8009F5CB6 /* MMRadialProgressView.m in Sources */,
+				069765D822413C0500CAA024 /* SVIndefiniteAnimatedView.m in Sources */,
 				06618798223694E8009F5CB6 /* MMProgressHUDViewController.m in Sources */,
 				0661855F223682A0009F5CB6 /* UIImageView+HighlightedWebCache.m in Sources */,
 				0661879D223694E8009F5CB6 /* SBJsonWriter.m in Sources */,
@@ -1430,6 +1501,7 @@
 				066187E12237EC02009F5CB6 /* ChooseStandardCell.m in Sources */,
 				06618536223682A0009F5CB6 /* QBVideoIndicatorView.m in Sources */,
 				066187A5223694E8009F5CB6 /* DataManger.m in Sources */,
+				069765D322413C0500CAA024 /* SEPrinterManager.m in Sources */,
 				066185F0223682A0009F5CB6 /* TabBarControllerConfig.m in Sources */,
 				06618777223694E8009F5CB6 /* BaseConfig.m in Sources */,
 				0661853B223682A0009F5CB6 /* QBImagePickerController.m in Sources */,
@@ -1446,12 +1518,14 @@
 				0661853F223682A0009F5CB6 /* QBAssetCell.m in Sources */,
 				06618794223694E8009F5CB6 /* MMProgressHUD+Class.m in Sources */,
 				066185EE223682A0009F5CB6 /* EherNavigationController.m in Sources */,
+				069765D522413C0500CAA024 /* SVRadialGradientLayer.m in Sources */,
 				06618781223694E8009F5CB6 /* BaseUIViewController.m in Sources */,
 				06618535223682A0009F5CB6 /* QBVideoIconView.m in Sources */,
 				06618537223682A0009F5CB6 /* QBAlbumCell.m in Sources */,
 				0661856B223682A0009F5CB6 /* AppDelegate.m in Sources */,
 				06618569223682A0009F5CB6 /* UIView+WebCacheOperation.m in Sources */,
 				06618524223682A0009F5CB6 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				069765D422413C0500CAA024 /* UIImage+Bitmap.m in Sources */,
 				066187CD2236B1A1009F5CB6 /* ChangePasswordCtl.m in Sources */,
 				06618611223682A1009F5CB6 /* XHSegmentItem.m in Sources */,
 				06618521223682A0009F5CB6 /* UICustomLineLabel.m in Sources */,
@@ -1470,6 +1544,7 @@
 				06618774223694E8009F5CB6 /* MsgView.m in Sources */,
 				06618772223694E8009F5CB6 /* BaseLoadingView.m in Sources */,
 				0661853C223682A0009F5CB6 /* QBCheckmarkView.m in Sources */,
+				069765D622413C0500CAA024 /* SVProgressAnimatedView.m in Sources */,
 				0661879A223694E8009F5CB6 /* SBJsonStreamParser.m in Sources */,
 				06618768223694E8009F5CB6 /* BaseListMore_Cell.m in Sources */,
 				06618565223682A0009F5CB6 /* SDImageCache.m in Sources */,
@@ -1488,6 +1563,7 @@
 				06618782223694E8009F5CB6 /* BaseListController.m in Sources */,
 				0661877B223694E8009F5CB6 /* MyDataBase.m in Sources */,
 				0661863B223682A1009F5CB6 /* ExRequestCon.m in Sources */,
+				060444E422427DB80068D4EB /* Standard_Modal.m in Sources */,
 				06618624223682A1009F5CB6 /* CYLPlusButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

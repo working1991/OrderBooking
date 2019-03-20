@@ -52,7 +52,7 @@
 - (void)updateView
 {
     int newNum = [_cntTf.text intValue];
-    if( newNum <= 1 ){
+    if( newNum <= 0 ){
         self.desBtn.alpha = 0.3;
     }else{
         self.desBtn.alpha = 1.0;
@@ -61,8 +61,8 @@
 
 - (void)updateNum:(int)newNum
 {
-    if (newNum<1) {
-        newNum = 1;
+    if (newNum<0) {
+        newNum = 0;
     }
     _cntTf.text = [NSString stringWithFormat:@"%i", newNum];
     if (self.numChange) {
@@ -73,10 +73,10 @@
 
 - (IBAction)desClick:(UIButton *)sender {
     int newNum = [_cntTf.text intValue] -1;
-    if (newNum > 0) {
+    if (newNum >= 0) {
         [self updateNum:newNum];
     } else {
-        NSLog(@"num can not less than 1");
+        NSLog(@"num can not less than 0");
     }
 }
 - (IBAction)addClick:(UIButton *)sender {

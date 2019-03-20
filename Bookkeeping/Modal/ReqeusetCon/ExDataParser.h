@@ -11,6 +11,7 @@
 #import "Base_Modal.h"
 #import "User_Modal.h"
 #import "Product_Modal.h"
+#import "Standard_Modal.h"
 
 @interface DataParser (ExDataParser)
 

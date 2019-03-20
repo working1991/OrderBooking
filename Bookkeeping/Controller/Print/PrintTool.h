@@ -14,7 +14,7 @@
 + (PrintTool *)sharedManager;
 
 //订单
-- (BOOL)printOrderInfo:(Base_Modal *)dataModal bReprint:(BOOL)bReprint;
+- (BOOL)printOrderInfo:(Base_Modal *)dataModal;
 
 
 @end

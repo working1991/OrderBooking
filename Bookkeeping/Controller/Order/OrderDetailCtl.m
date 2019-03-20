@@ -59,7 +59,7 @@
 - (void)viewClickResponse:(id)sender
 {
     if(sender == self.operateBtn) {
-        [[PrintTool sharedManager] printOrderInfo:nil bReprint:YES];
+        [[PrintTool sharedManager] printOrderInfo:nil];
     }
 }
 

@@ -35,7 +35,7 @@
 #pragma mark - Private
 - (void)printOrderInfo:(UIButton *)sender
 {
-   [[PrintTool sharedManager] printOrderInfo:nil bReprint:YES];
+   [[PrintTool sharedManager] printOrderInfo:nil];
 }
 
 

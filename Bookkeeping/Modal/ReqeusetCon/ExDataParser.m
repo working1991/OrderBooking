@@ -60,7 +60,7 @@
         }
         //商品详情
         else if ([opKey isEqualToString:@"getProductDetail"]){
-            arr = [self parserProductGrop:dic];
+            arr = [self parserProductDetail:dic];
         }
     }
     
@@ -153,7 +153,6 @@
     return arr;
 }
 
-#warning 商品结构错误
 //商品详情
 + (NSMutableArray *)parserProductDetail:(NSDictionary *)tmpDic
 {
@@ -164,10 +163,19 @@
         modal.id_ = tmpDic[@"id"];
         modal.imgUrl = tmpDic[@"thumbnail"];
         modal.name = tmpDic[@"name"];
-        modal.code = tmpDic[@"code"];
-        modal.companyId = tmpDic[@"company_id"];
         modal.unitPrice = tmpDic[@"cost_price"];
-        modal.des = tmpDic[@"description"];
+        NSMutableArray *typeArr = [NSMutableArray array];
+        for (NSDictionary *typeDic in tmpDic[@"productSysSpecDtos"]) {
+            Standard_Modal *typeModel = [Standard_Modal new];
+            typeModel.firstSpecId = typeDic[@"firstSpecId"];
+            typeModel.firstSpecName = typeDic[@"firstSpecName"];
+            typeModel.productReSpecId = typeDic[@"productReSpecId"];
+            typeModel.productSpecPrice = [typeDic[@"productSpecPrice"] doubleValue];
+            typeModel.secondSpecName = typeDic[@"secondSpecName"];
+            
+            [typeArr addObject:typeModel];
+        }
+        modal.typeArr = typeArr;
         
         [arr addObject:modal];
     }

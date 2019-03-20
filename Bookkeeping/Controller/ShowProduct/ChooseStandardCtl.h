@@ -6,10 +6,11 @@
 //  Copyright © 2019 luoqw. All rights reserved.
 //
 
-#import "BaseListController.h"
+#import "XHSegmentViewController.h"
+#import "Product_Modal.h"
 
-@interface ChooseStandardCtl : BaseListController
+@interface ChooseStandardCtl : XHSegmentViewController
 
-+(ChooseStandardCtl *) start:(Base_Modal *)model showInfoView:(UIView *)showInfoView finished:(void(^)(Base_Modal *))finished;
++(ChooseStandardCtl *) start:(Product_Modal *)model showInfoView:(UIView *)showInfoView finished:(void(^)(Product_Modal *))finished;
 
 @end

@@ -10,11 +10,16 @@
 #import "ChooseStandardCell.h"
 #import "ChoosePayCtl.h"
 #import "ChooseCustomerCtl.h"
+#import "Product_Modal.h"
+#import "Standard_Modal.h"
+#import "UIImageView+WebCache.h"
 
 @interface ConfirmOrderCtl ()
 
 {
     Base_Modal *payModel;
+    Product_Modal *productModel;
+    NSMutableArray  *selectArr;
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *customerBtn;
@@ -32,11 +37,21 @@
 
 @implementation ConfirmOrderCtl
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        bHeadRefresh_ = NO;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
     [self.tableView_ registerNib:[UINib nibWithNibName:NSStringFromClass([ChooseStandardCell class]) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:NSStringFromClass([ChooseStandardCell class])];
+    [self updateDetailInfo];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,6 +60,12 @@
 }
 
 #pragma mark - Base
+- (void)beginLoad:(id)dataModal exParam:(id)exParam
+{
+    productModel = dataModal;
+    [self updateDetailInfo];
+}
+
 - (void)viewClickResponse:(id)sender
 {
     if (sender == self.customerBtn) {
@@ -59,6 +80,40 @@
 }
 
 #pragma mark - Private
+
+- (void)updateDetailInfo
+{
+    if (!productModel) {
+        return;
+    }
+    self.nameLb.text = productModel.name;
+    [self.iconImgView sd_setImageWithURL:[NSURL URLWithString:productModel.imgUrl]];
+    
+    NSMutableArray *typeArr = [NSMutableArray array];
+    selectArr = [NSMutableArray array];
+    for (NSInteger i=0; i<productModel.typeArr.count; i++) {
+        Standard_Modal *model = productModel.typeArr[i];
+        if (model.saleCount <= 0) {
+            continue;
+        }
+        [selectArr addObject:model];
+        BOOL bHave = NO;
+        for (NSInteger j=0; j<typeArr.count; j++) {
+            NSDictionary *typeDic = typeArr[j];
+            if ([model.firstSpecId isEqualToString:typeDic[@"id"]]) {
+                NSMutableArray *list = [NSMutableArray arrayWithArray:typeDic[@"list"]];
+                NSMutableDictionary *mDic = [NSMutableDictionary dictionaryWithDictionary:typeDic];
+                mDic[@"list"] = list;
+                bHave = YES;
+                break;
+            }
+        }
+        if (!bHave) {
+            [typeArr addObject:@{@"id":model.firstSpecId?model.firstSpecId:@"", @"name":model.firstSpecName?model.firstSpecName:@"", @"list": @[model]}];
+        }
+    }
+    [self.tableView_ reloadData];
+}
 
 - (void)chooseCustomer:(UIButton *)sender
 {
@@ -79,7 +134,7 @@
 #pragma mark - UITableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return selectArr.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -92,6 +147,14 @@
     ChooseStandardCell *myCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ChooseStandardCell class]) forIndexPath:indexPath];
     
     
+    Standard_Modal *model = selectArr[indexPath.row];
+    myCell.nameLb.text = [NSString stringWithFormat:@"尺码：%@（%@）", model.secondSpecName, model.firstSpecName];
+    myCell.originalPriceLb.hidden = YES;
+    myCell.priceLb.text = [NSString stringWithFormat:@"¥%.2lf元/件", model.productSpecPrice];
+    myCell.cntTf.text = [NSString stringWithFormat:@"%d", model.saleCount];
+    myCell.numChange = ^(int currentNum) {
+        model.saleCount = currentNum;
+    };
     
     return myCell;
 }

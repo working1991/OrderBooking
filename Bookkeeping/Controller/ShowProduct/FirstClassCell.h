@@ -10,4 +10,6 @@
 
 @interface FirstClassCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLb;
+
 @end
