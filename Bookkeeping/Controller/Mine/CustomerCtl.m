@@ -16,10 +16,7 @@
 
 @interface CustomerCtl ()
 
-{
-    NSMutableArray      *keyArr_;
-    NSMutableDictionary *dataDic_;
-}
+
 
 @end
 
@@ -149,8 +146,7 @@
             dataModal.fristChar = [PinYinForObjc chineseConvertToPinYinHead:dataModal.name];
         }
         if( dataModal.fristChar && [dataModal.fristChar isKindOfClass:[NSString class]] ){
-            const int *pChar = (const int *)[dataModal.fristChar cStringUsingEncoding:NSUTF8StringEncoding];
-            int value = *pChar;
+            int value = [dataModal.fristChar characterAtIndex:0];
             if( value >= 'A' && value <= 'Z' ){
                 NSString *tmp = [NSString stringWithFormat:@"%c",value];
                 //判断是否已经添加

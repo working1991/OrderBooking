@@ -10,4 +10,9 @@
 
 @interface CustomerCtl : BaseListController
 
+{
+    NSMutableArray      *keyArr_;
+    NSMutableDictionary *dataDic_;
+}
+
 @end

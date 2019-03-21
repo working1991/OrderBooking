@@ -10,13 +10,13 @@
 
 @interface ChooseCustomerCtl ()
 
-@property (strong, nonatomic) void (^finished)(Base_Modal *);
+@property (strong, nonatomic) void (^finished)(Customer_Modal *);
 
 @end
 
 @implementation ChooseCustomerCtl
 
-- (instancetype)initWithFinish:(void(^)(Base_Modal *))finished
+- (instancetype)initWithFinish:(void(^)(Customer_Modal *))finished
 {
     self = [super init];
     if (self) {
@@ -35,10 +35,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+
+-(void) loadDetail:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath
 {
+    Customer_Modal *modal =  [[dataDic_ objectForKey:[keyArr_ objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
     if (self.finished) {
-        self.finished(nil);
+        self.finished(modal);
     }
     [self.navigationController popViewControllerAnimated:YES];
 }

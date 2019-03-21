@@ -203,8 +203,9 @@
 
 - (void)chooseCustomer:(UIButton *)sender
 {
-    ChooseCustomerCtl *ctl = [[ChooseCustomerCtl alloc] initWithFinish:^(Base_Modal *model) {
-        [sender setTitle:@"客户" forState:UIControlStateNormal];
+    ChooseCustomerCtl *ctl = [[ChooseCustomerCtl alloc] initWithFinish:^(Customer_Modal *model) {
+        customerModel = model;
+        [sender setTitle:model.name forState:UIControlStateNormal];
     }];
     [self.navigationController pushViewController:ctl animated:YES];
 }

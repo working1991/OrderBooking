@@ -10,6 +10,6 @@
 
 @interface ChooseCustomerCtl : CustomerCtl
 
-- (instancetype)initWithFinish:(void(^)(Base_Modal *))finished;
+- (instancetype)initWithFinish:(void(^)(Customer_Modal *))finished;
 
 @end
