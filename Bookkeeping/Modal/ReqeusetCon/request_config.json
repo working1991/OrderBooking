@@ -75,6 +75,14 @@
      "noDataStr" : "没有数据"
  },
  {
+     "key" : "queryCustomerList",
+     "des" : "客户列表",
+     "value" : "customers/query",
+     "loadType" : "normal",
+     "loadingStr" : "正在加载...",
+     "noDataStr" : "没有数据"
+ },
+ {
      "key" : "addCutomer",
      "des" : "新增或者修改客户",
      "value" : "customers/addOrUpdate",

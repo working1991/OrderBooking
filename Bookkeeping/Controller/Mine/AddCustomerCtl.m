@@ -14,10 +14,8 @@
 {
     SexType sexType;
     RequestCon *addCon;
+    Customer_Modal        *cusModel;
 }
-
-
-@property (nonatomic, strong) Customer_Modal        *addCusModal;
 
 @end
 
@@ -27,7 +25,6 @@
 {
     self = [super init];
     if (self) {
-        self.title = @"新增客户";
         rightBarStr_ = @"保存";
     }
     return self;
@@ -50,6 +47,12 @@
     
     self.sexSeg.selectedSegmentIndex = 0;
     sexType = self.sexSeg.selectedSegmentIndex==0;
+    
+    if (cusModel.id_) {
+        self.nameTf.text = cusModel.name;
+        self.phoneTf.text = cusModel.telphone;
+        self.addressTf.text = cusModel.address;
+    }
 }
 
 -(void)dealloc
@@ -65,7 +68,7 @@
 
 - (void)beginLoad:(id)dataModal exParam:(id)exParam
 {
-    
+    cusModel = dataModal;
 }
 
 - (void)requestFinish:(BaseRequest *)request dataArr:(NSArray *)dataArr
@@ -95,11 +98,11 @@
         
         if( [dataModal.restCode isEqualToString:Request_OK] ){
             [BaseUIViewController showHUDSuccessView:@"保存成功" msg:nil];
-            self.addCusModal.id_ = dataModal.id_;
+            cusModel.id_ = dataModal.id_;
             if ( self.finished ) {
-                self.finished(self.addCusModal);
+                self.finished(cusModel);
             }
-            [self.navigationController popToViewController:self.navigationController.viewControllers.firstObject animated:YES];
+            [self.navigationController popViewControllerAnimated:YES];
         }
         else if( dataModal.restMsg ){
             [BaseUIViewController showAlertView:@"保存失败" msg:dataModal.restMsg cancel:@"知道了"];
@@ -132,19 +135,19 @@
     if( [self.nameTf.text isEqualToString:@""] ){
         [BaseUIViewController showAlertView:@"客户姓名不能为空" msg:nil cancel:@"知道了"];
     }
-    else if(self.phoneTf.text.length > 0  &&  (self.phoneTf.text.length != 11)){
-        [BaseUIViewController showAlertView:@"推荐人手机号码格式错误" msg:@"请重新输入" cancel:@"知道了"];
-    }
+//    else if(self.phoneTf.text.length > 0  &&  (self.phoneTf.text.length != 11)){
+//        [BaseUIViewController showAlertView:@"手机号码格式错误" msg:@"请重新输入" cancel:@"知道了"];
+//    }
     else {
         Customer_Modal *dataModal = [[Customer_Modal alloc] init];
         dataModal.name = self.nameTf.text;
-
-        
         dataModal.telphone = self.phoneTf.text;
+        dataModal.address = self.addressTf.text;
+        dataModal.companyId = [ManagerCtl getRoleInfo].companyId;
   
-        self.addCusModal = dataModal;
+        cusModel = dataModal;
         addCon = [self getNewRequestCon:NO];
-//        [addCon addMemberCustomer:dataModal];
+        [addCon addCustomer:dataModal];
         self.navigationItem.rightBarButtonItem.enabled = NO;
         self.navigationItem.rightBarButtonItem.tintColor = [Common getColor:@"999999"];
     }
@@ -166,26 +169,6 @@
         }
     }
     return YES;
-}
-
-
-#pragma mark - Public
-
-//start
-+(void) start:(void(^)(Customer_Modal *))finished
-{
-    AddCustomerCtl *ctl = [[AddCustomerCtl alloc] init];
-    ctl.finished = finished;
-
-    [[ManagerCtl getCurrentNav] pushViewController:ctl animated:YES];
-}
-
-+(void) startWithWechatUser:(NSString *)wechatUser finished:(void(^)(Customer_Modal *))finished
-{
-    AddCustomerCtl *ctl = [[AddCustomerCtl alloc] init];
-    ctl.finished = finished;
-    [ctl beginLoad:wechatUser exParam:nil];
-    [[ManagerCtl getCurrentNav] pushViewController:ctl animated:YES];
 }
 
 @end

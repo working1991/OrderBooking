@@ -10,6 +10,7 @@
 #import "DataParser.h"
 #import "Base_Modal.h"
 #import "User_Modal.h"
+#import "Customer_Modal.h"
 #import "Product_Modal.h"
 #import "Standard_Modal.h"
 

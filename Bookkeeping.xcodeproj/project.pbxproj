@@ -11,6 +11,13 @@
 		060444E8224281DC0068D4EB /* TypeListCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 060444E6224281DC0068D4EB /* TypeListCtl.m */; };
 		060444E9224281DC0068D4EB /* TypeListCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060444E7224281DC0068D4EB /* TypeListCtl.xib */; };
 		060444EC2243CA770068D4EB /* Order_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 060444EB2243CA770068D4EB /* Order_Model.m */; };
+		060444FB2243EECA0068D4EB /* NSString+PinYin4Cocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 060444F02243EEC90068D4EB /* NSString+PinYin4Cocoa.m */; };
+		060444FC2243EECA0068D4EB /* unicode_to_hanyu_pinyin.txt in Resources */ = {isa = PBXBuildFile; fileRef = 060444F12243EEC90068D4EB /* unicode_to_hanyu_pinyin.txt */; };
+		060444FD2243EECA0068D4EB /* PinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 060444F52243EEC90068D4EB /* PinyinHelper.m */; };
+		060444FE2243EECA0068D4EB /* HanyuPinyinOutputFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 060444F72243EEC90068D4EB /* HanyuPinyinOutputFormat.m */; };
+		060444FF2243EECA0068D4EB /* ChineseToPinyinResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 060444F82243EEC90068D4EB /* ChineseToPinyinResource.m */; };
+		060445002243EECA0068D4EB /* PinyinFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 060444F92243EEC90068D4EB /* PinyinFormatter.m */; };
+		060445012243EECA0068D4EB /* PinYinForObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 060444FA2243EEC90068D4EB /* PinYinForObjc.m */; };
 		0661814C2232AF07009F5CB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0661814B2232AF07009F5CB6 /* Assets.xcassets */; };
 		066181522232AF07009F5CB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 066181512232AF07009F5CB6 /* main.m */; };
 		06618520223682A0009F5CB6 /* UIButton+EnlargeEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 066182732236829E009F5CB6 /* UIButton+EnlargeEdge.m */; };
@@ -222,6 +229,19 @@
 		060444E7224281DC0068D4EB /* TypeListCtl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeListCtl.xib; sourceTree = "<group>"; };
 		060444EA2243CA770068D4EB /* Order_Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Order_Model.h; sourceTree = "<group>"; };
 		060444EB2243CA770068D4EB /* Order_Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Order_Model.m; sourceTree = "<group>"; };
+		060444EE2243EEC90068D4EB /* PinyinHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinyinHelper.h; sourceTree = "<group>"; };
+		060444EF2243EEC90068D4EB /* HanyuPinyinOutputFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HanyuPinyinOutputFormat.h; sourceTree = "<group>"; };
+		060444F02243EEC90068D4EB /* NSString+PinYin4Cocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PinYin4Cocoa.m"; sourceTree = "<group>"; };
+		060444F12243EEC90068D4EB /* unicode_to_hanyu_pinyin.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = unicode_to_hanyu_pinyin.txt; sourceTree = "<group>"; };
+		060444F22243EEC90068D4EB /* ChineseToPinyinResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseToPinyinResource.h; sourceTree = "<group>"; };
+		060444F32243EEC90068D4EB /* PinYinForObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinYinForObjc.h; sourceTree = "<group>"; };
+		060444F42243EEC90068D4EB /* PinyinFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinyinFormatter.h; sourceTree = "<group>"; };
+		060444F52243EEC90068D4EB /* PinyinHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinHelper.m; sourceTree = "<group>"; };
+		060444F62243EEC90068D4EB /* NSString+PinYin4Cocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PinYin4Cocoa.h"; sourceTree = "<group>"; };
+		060444F72243EEC90068D4EB /* HanyuPinyinOutputFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HanyuPinyinOutputFormat.m; sourceTree = "<group>"; };
+		060444F82243EEC90068D4EB /* ChineseToPinyinResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseToPinyinResource.m; sourceTree = "<group>"; };
+		060444F92243EEC90068D4EB /* PinyinFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinFormatter.m; sourceTree = "<group>"; };
+		060444FA2243EEC90068D4EB /* PinYinForObjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinYinForObjc.m; sourceTree = "<group>"; };
 		0661813F2232AF07009F5CB6 /* Bookkeeping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookkeeping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0661814B2232AF07009F5CB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		066181512232AF07009F5CB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -599,6 +619,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		060444ED2243EEC90068D4EB /* PinYin */ = {
+			isa = PBXGroup;
+			children = (
+				060444EE2243EEC90068D4EB /* PinyinHelper.h */,
+				060444EF2243EEC90068D4EB /* HanyuPinyinOutputFormat.h */,
+				060444F02243EEC90068D4EB /* NSString+PinYin4Cocoa.m */,
+				060444F12243EEC90068D4EB /* unicode_to_hanyu_pinyin.txt */,
+				060444F22243EEC90068D4EB /* ChineseToPinyinResource.h */,
+				060444F32243EEC90068D4EB /* PinYinForObjc.h */,
+				060444F42243EEC90068D4EB /* PinyinFormatter.h */,
+				060444F52243EEC90068D4EB /* PinyinHelper.m */,
+				060444F62243EEC90068D4EB /* NSString+PinYin4Cocoa.h */,
+				060444F72243EEC90068D4EB /* HanyuPinyinOutputFormat.m */,
+				060444F82243EEC90068D4EB /* ChineseToPinyinResource.m */,
+				060444F92243EEC90068D4EB /* PinyinFormatter.m */,
+				060444FA2243EEC90068D4EB /* PinYinForObjc.m */,
+			);
+			path = PinYin;
+			sourceTree = "<group>";
+		};
 		066181362232AF07009F5CB6 = {
 			isa = PBXGroup;
 			children = (
@@ -633,6 +673,7 @@
 		066182702236829E009F5CB6 /* ExLib */ = {
 			isa = PBXGroup;
 			children = (
+				060444ED2243EEC90068D4EB /* PinYin */,
 				066182712236829E009F5CB6 /* UIButton+EnlargeEdge */,
 				066182742236829E009F5CB6 /* UILineLable */,
 				066182772236829E009F5CB6 /* TPKeyboardAvoiding */,
@@ -1394,6 +1435,7 @@
 				066187DD2237E95C009F5CB6 /* ChooseStandardCtl.xib in Resources */,
 				069765D922413C0500CAA024 /* SVProgressHUD.bundle in Resources */,
 				06618776223694E8009F5CB6 /* ShowImageView.xib in Resources */,
+				060444FC2243EECA0068D4EB /* unicode_to_hanyu_pinyin.txt in Resources */,
 				0661869322368D1E009F5CB6 /* ShowProductCtl.xib in Resources */,
 				0661878D223694E8009F5CB6 /* back_black@2x.png in Resources */,
 				066187EC22393A33009F5CB6 /* ChoosePayCtl.xib in Resources */,
@@ -1428,6 +1470,7 @@
 				06618630223682A1009F5CB6 /* User_Modal.m in Sources */,
 				066187DC2237E95C009F5CB6 /* ChooseStandardCtl.m in Sources */,
 				06618548223682A0009F5CB6 /* MASViewConstraint.m in Sources */,
+				060444FE2243EECA0068D4EB /* HanyuPinyinOutputFormat.m in Sources */,
 				06618566223682A0009F5CB6 /* SDWebImageDownloaderOperation.m in Sources */,
 				06618620223682A1009F5CB6 /* UIView+CYLTabBarControllerExtention.m in Sources */,
 				066187C32236A8A4009F5CB6 /* AddCustomerCtl.m in Sources */,
@@ -1453,6 +1496,7 @@
 				06618576223682A0009F5CB6 /* Config.m in Sources */,
 				06618625223682A1009F5CB6 /* UIControl+CYLTabBarControllerExtention.m in Sources */,
 				06618541223682A0009F5CB6 /* ViewController+MASAdditions.m in Sources */,
+				060444FD2243EECA0068D4EB /* PinyinHelper.m in Sources */,
 				06618549223682A0009F5CB6 /* MASViewAttribute.m in Sources */,
 				06618766223694E8009F5CB6 /* BaseLockView.m in Sources */,
 				066187C82236B0B3009F5CB6 /* SettingCtl.m in Sources */,
@@ -1473,6 +1517,7 @@
 				066187D72237DDC6009F5CB6 /* ShowProductCell.m in Sources */,
 				066187E62237FE89009F5CB6 /* ConfirmOrderCtl.m in Sources */,
 				06618539223682A0009F5CB6 /* QBAlbumsViewController.m in Sources */,
+				060445002243EECA0068D4EB /* PinyinFormatter.m in Sources */,
 				06618797223694E8009F5CB6 /* MMProgressHUD+Animations.m in Sources */,
 				069765D122413C0500CAA024 /* HLPrinter.m in Sources */,
 				06618562223682A0009F5CB6 /* UIImage+MultiFormat.m in Sources */,
@@ -1484,6 +1529,7 @@
 				06618612223682A1009F5CB6 /* XHSegmentControl.m in Sources */,
 				06618575223682A0009F5CB6 /* Common.m in Sources */,
 				0661853A223682A0009F5CB6 /* QBAssetsViewController.m in Sources */,
+				060444FB2243EECA0068D4EB /* NSString+PinYin4Cocoa.m in Sources */,
 				06618767223694E8009F5CB6 /* BaseTmpView.m in Sources */,
 				066187F022393AF2009F5CB6 /* ChoosePayCell.m in Sources */,
 				06618626223682A1009F5CB6 /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
@@ -1505,6 +1551,7 @@
 				066187F5223947B7009F5CB6 /* ChooseCustomerCtl.m in Sources */,
 				066187E12237EC02009F5CB6 /* ChooseStandardCell.m in Sources */,
 				06618536223682A0009F5CB6 /* QBVideoIndicatorView.m in Sources */,
+				060444FF2243EECA0068D4EB /* ChineseToPinyinResource.m in Sources */,
 				066187A5223694E8009F5CB6 /* DataManger.m in Sources */,
 				069765D322413C0500CAA024 /* SEPrinterManager.m in Sources */,
 				066185F0223682A0009F5CB6 /* TabBarControllerConfig.m in Sources */,
@@ -1538,6 +1585,7 @@
 				066187B42236A683009F5CB6 /* MineItemCell.m in Sources */,
 				066187D22237DB27009F5CB6 /* FirstClassCell.m in Sources */,
 				066187A7223694E8009F5CB6 /* RequestOperator.m in Sources */,
+				060445012243EECA0068D4EB /* PinYinForObjc.m in Sources */,
 				0661869722368D5C009F5CB6 /* OrderListCtl.m in Sources */,
 				066187A4223694E8009F5CB6 /* RequestCon.m in Sources */,
 				06618564223682A0009F5CB6 /* SDWebImagePrefetcher.m in Sources */,

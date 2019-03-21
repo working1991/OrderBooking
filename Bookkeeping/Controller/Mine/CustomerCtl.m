@@ -12,14 +12,18 @@
 #import "Customer_Modal.h"
 #import "UIImageView+WebCache.h"
 #import "AddCustomerCtl.h"
+#import "PinYinForObjc.h"
 
-@interface CustomerCtl ()<UITextFieldDelegate,UISearchBarDelegate>
-@property (strong,nonatomic) UISearchBar *searchbar;
+@interface CustomerCtl ()
+
+{
+    NSMutableArray      *keyArr_;
+    NSMutableDictionary *dataDic_;
+}
+
 @end
 
 @implementation CustomerCtl
-
-@synthesize searchbar;
 
 -(id)init
 {
@@ -37,143 +41,158 @@
     // Do any additional setup after loading the view from its nib.
 
     [self.tableView_ registerNib:[UINib nibWithNibName:NSStringFromClass([CustomerCell class]) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:NSStringFromClass([CustomerCell class])];
-    
-    searchbar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
-//    searchbar.showsCancelButton = NO;
-    searchbar.placeholder = @"搜索关键字";
-    searchbar.delegate = self;
-    searchbar.tintColor=[UIColor blueColor];
-    searchbar.returnKeyType = UIReturnKeySearch;
-    [self clearBorderOfSearchBar:searchbar];
-    self.tableView_.tableHeaderView = searchbar;
-    self.tableView_.contentInset = UIEdgeInsetsZero;
-    
-    for (UIView * obj in searchbar.subviews) {
-        if ( [obj isKindOfClass:[UITextField class]] ) {
-            UITextField *tf = (UITextField *)obj;
-            tf.returnKeyType = UIReturnKeyDefault;
-        }
-    }
-    
     [self onStart];
-}
-
-//去除搜索框的边框
-- (void)clearBorderOfSearchBar:(UISearchBar *)searchBar
-{
-    for (UIView *view in searchBar.subviews) {
-        if ([view isKindOfClass:NSClassFromString(@"UIView")] && view.subviews.count > 0) {
-            [[view.subviews objectAtIndex:0] removeFromSuperview];
-            break;
-        }
-    }
-    [searchBar setBackgroundColor:[Common getColor:@"F2F2F2"]];
-}
-
-#pragma mark --UISearchDelegate
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
-{
-    [searchbar resignFirstResponder];
-    
-    //    if ( ![searchbar.text isEqualToString:@""] ) {
-    [requestCon_.dataArr_ removeAllObjects];
-    [self.tableView_ reloadData];
-    [self onStart];
-    //    }
-    //    else {
-    //        [BaseUIViewController showAlertView:@"请输入关键字" msg:nil cancel:@"知道了"];
-    //    }
-    
-    //    searchbar.text = @"";
-}
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
-{
-    
-    searchbar.text = @"";
-    [requestCon_.dataArr_ removeAllObjects];
-    [self.tableView_ reloadData];
-    [self onStart];
-    
-    [searchbar resignFirstResponder];
-}
-
-- (void)searchBarTextDidBeginEditing:(UISearchBar *) searchBar
-{
-    UITextField *searchBarTextField = nil;
-    NSArray *views = ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0) ? searchBar.subviews : [[searchBar.subviews objectAtIndex:0] subviews];
-    for (UIView *subview in views)
-    {
-        if ([subview isKindOfClass:[UITextField class]])
-        {
-            searchBarTextField = (UITextField *)subview;
-            break;
-        }
-    }
-    searchBarTextField.enablesReturnKeyAutomatically = NO;
 }
 
 #pragma mark - Base
 
--(CGFloat)getProcessViewTopMore
+- (void)rightBarBtnResponse:(id)sender
 {
-    return searchbar.bounds.size.height;
-    
+    AddCustomerCtl *ctl = [AddCustomerCtl new];
+    ctl.title = @"新增客户";
+    ctl.finished = ^(Customer_Modal *model) {
+        [self onStart];
+    };
+    [self.navigationController pushViewController:ctl animated:YES];
 }
 
 -(void) startRequest:(RequestCon *)request
 {
-//    [request queryCustomerList:[ManagerCtl getRoleInfo].id_ organizationId:[ManagerCtl getRoleInfo].organizationId keyword:self.searchbar.text];
+    [request queryCustomerList:[ManagerCtl getRoleInfo].companyId];
 }
+
+-(void) loadDataCompleate:(BaseRequest *)request dataArr:(NSArray *)dataArr code:(BaseErrorCode)code
+{
+    if( request == requestCon_ ){
+        self.tableView_.tintColor = Color_Default;
+        [self processData];
+    }
+    [super loadDataCompleate:request dataArr:dataArr code:code];
+}
+
 
 -(void) loadDetail:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath
 {
-    Customer_Modal *baseModal =  [requestCon_.dataArr_ objectAtIndex:indexPath.row];
-
-//    CustomerDetailCtl *ctl = [[CustomerDetailCtl alloc] init];
-//    [ctl beginLoad:baseModal exParam:nil];
-//    [self.navigationController pushViewController:ctl animated:YES];
-}
-
-
-- (void)rightBarBtnResponse:(id)sender
-{
-    [AddCustomerCtl start:^(Customer_Modal *model) {
+    Customer_Modal *modal =  [[dataDic_ objectForKey:[keyArr_ objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
+    AddCustomerCtl *ctl = [AddCustomerCtl new];
+    ctl.title = @"新增客户";
+    [ctl beginLoad:modal exParam:nil];
+    ctl.finished = ^(Customer_Modal *model) {
         [self onStart];
-    }];
+    };
+    [self.navigationController pushViewController:ctl animated:YES];
 }
 
 #pragma mark - TableView Delegate
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return [[dataDic_ objectForKey:[keyArr_ objectAtIndex:section]] count];
 }
 
--(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 55.0;
+    return [keyArr_ count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString *key = [keyArr_ objectAtIndex:section];
+    return key;
+}
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return keyArr_;
+}
+
+-(CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 30.0;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 50;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     CustomerCell *myCell = (CustomerCell*)[super tableView:tableView cellForRowAtIndexPath:indexPath];
+    //更多Cell
     if( !myCell ){
         myCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([CustomerCell class]) forIndexPath:indexPath];
-//        myCell.tintColor = Color_Default;
-//        
-//        Customer_Modal *model = [requestCon_.dataArr_ objectAtIndex:indexPath.row];
-//        
-//        myCell.nameLb.text = model.name;
-//        [myCell.headImgView sd_setImageWithURL:[NSURL URLWithString:model.imgUrl] placeholderImage:[UIImage imageNamed:@"head_default"]];
-
+        Customer_Modal *modal =  [[dataDic_ objectForKey:[keyArr_ objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
+        
+        [myCell setDefineTypeName:modal.name];
+        myCell.nameLb.text = modal.name;
+        myCell.phoneLb.text = modal.telphone;
+        
     }
     return myCell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+
+#pragma mark - Private
+
+//排序
+-(void) processData
 {
-    [AddCustomerCtl start:^(Customer_Modal *model) {
-        [self onStart];
+    //处理索引
+    [keyArr_ removeAllObjects];
+    keyArr_ = [[NSMutableArray alloc] init];
+    dataDic_ = [[NSMutableDictionary alloc] init];
+    
+    BOOL bHaveOther = NO;
+    for ( Customer_Modal * dataModal in requestCon_.dataArr_ ) {
+        if( dataModal.name && [dataModal.name isKindOfClass:[NSString class]] ){
+            dataModal.fristChar = [PinYinForObjc chineseConvertToPinYinHead:dataModal.name];
+        }
+        if( dataModal.fristChar && [dataModal.fristChar isKindOfClass:[NSString class]] ){
+            const int *pChar = (const int *)[dataModal.fristChar cStringUsingEncoding:NSUTF8StringEncoding];
+            int value = *pChar;
+            if( value >= 'A' && value <= 'Z' ){
+                NSString *tmp = [NSString stringWithFormat:@"%c",value];
+                //判断是否已经添加
+                BOOL bFind = NO;
+                for ( NSString *str in keyArr_ ) {
+                    if( [str isEqualToString:tmp] ){
+                        bFind = YES;
+                        break;
+                    }
+                }
+                if( !bFind ){
+                    [keyArr_ addObject:tmp];
+                    NSMutableArray *arr = [[NSMutableArray alloc] init];
+                    [dataDic_ setObject:arr forKey:tmp];
+                    [arr addObject:dataModal];
+                }else{
+                    NSMutableArray *arr = [dataDic_ objectForKey:tmp];
+                    [arr addObject:dataModal];
+                }
+            }else if( !bHaveOther ){
+                bHaveOther = YES;
+                
+                NSMutableArray *arr = [[NSMutableArray alloc] init];
+                [dataDic_ setObject:arr forKey:@"#"];
+                [arr addObject:dataModal];
+            }else{
+                NSMutableArray *arr = [dataDic_ objectForKey:@"#"];
+                [arr addObject:dataModal];
+            }
+        }
+    }
+    
+    NSArray *sortArr = [keyArr_ sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [(NSString*)obj1 compare:(NSString*)obj2];
     }];
+    keyArr_ = [NSMutableArray arrayWithArray:sortArr];
+    
+    if( bHaveOther ){
+        //[keyArr_ addObject:@"#"];
+        [keyArr_ insertObject:@"#" atIndex:0];
+    }
 }
+
 
 @end

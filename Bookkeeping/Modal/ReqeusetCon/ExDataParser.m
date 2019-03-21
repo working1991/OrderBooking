@@ -63,6 +63,10 @@
         else if ([opKey isEqualToString:@"getProductDetail"]){
             arr = [self parserProductDetail:dic];
         }
+        //客户列表
+        else if ([opKey isEqualToString:@"queryCustomerList"]){
+            arr = [self parserCustomerList:dic];
+        }
     }
     
     //date:2015-11-17 如果返回成功了，但是arr没有，则赋值一下arr
@@ -181,6 +185,29 @@
         [arr addObject:modal];
     }
     
+    return arr;
+}
+
+//客户列表
++(NSMutableArray *)parserCustomerList:(NSDictionary *)dic
+{
+    NSMutableArray *arr = nil;
+    if ( dic && [dic isKindOfClass:[NSArray class]] ) {
+        arr = [[NSMutableArray alloc] init];
+        NSArray *tmpArr = (NSArray *)dic;
+        for ( NSDictionary *tmpDic in tmpArr ) {
+            Customer_Modal *modal = [Customer_Modal new];
+            modal.id_ = tmpDic[@"id"];
+            modal.name = tmpDic[@"name"];
+            modal.companyId = tmpDic[@"companyId"];
+            modal.telphone = tmpDic[@"mobile"];
+            modal.address = tmpDic[@"address"];
+            modal.createTime = tmpDic[@"createTime"];
+            modal.updateTime = tmpDic[@"updateTime"];
+            
+            [arr addObject:modal];
+        }
+    }
     return arr;
 }
 

@@ -10,6 +10,7 @@
 
 @interface Customer_Modal : User_Modal
 
+@property (strong, nonatomic) NSString        *fristChar;
 @property (strong, nonatomic) NSString        *address;
 
 @end

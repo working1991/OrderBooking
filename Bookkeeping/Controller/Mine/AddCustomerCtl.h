@@ -18,7 +18,4 @@
 
 @property(nonatomic,strong) void (^finished)(Customer_Modal *);
 
-//start
-+(void) start:(void(^)(Customer_Modal *))finished;
-
 @end

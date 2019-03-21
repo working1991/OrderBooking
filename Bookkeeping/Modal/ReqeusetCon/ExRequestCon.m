@@ -70,11 +70,19 @@
     }
 }
 
+//客户列表
+- (void)queryCustomerList:(NSString *)companyId
+{
+    NSDictionary *dic = @{@"company_id":companyId?companyId:@""};
+    [self startPostRequest:@"queryCustomerList" bodyDic:dic];
+}
+
+
 //新增、修改客户
 - (void)addCustomer:(Customer_Modal *)modal
 {
-    NSDictionary *dic = @{@"company_id":modal.companyId?modal.companyId:@"", @"name":modal.name?modal.name:@"", @"id":modal.id_?modal.id_:@"", @"mobile":modal.telphone?modal.telphone:@"", @"address":modal.address?modal.address:@""};
-    [self startPostListRequest:@"searchProduct" bodyDic:dic];
+    NSDictionary *dic = @{@"company_id":modal.companyId?modal.companyId:@"", @"name":modal.name?modal.name:@"", @"id":modal.id_?modal.id_:Null_Default, @"mobile":modal.telphone?modal.telphone:@"", @"address":modal.address?modal.address:@""};
+    [self startPostRequest:@"addCutomer" bodyDic:dic];
 }
 
 

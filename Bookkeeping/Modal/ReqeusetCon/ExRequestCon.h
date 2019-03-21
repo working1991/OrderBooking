@@ -38,10 +38,11 @@
 //确认下单
 - (void)confirmOrder:(Order_Model *)model;
 
+//客户列表
+- (void)queryCustomerList:(NSString *)companyId;
+
 //新增、修改客户
 - (void)addCustomer:(Customer_Modal *)modal;
-
-
 
 @end
 

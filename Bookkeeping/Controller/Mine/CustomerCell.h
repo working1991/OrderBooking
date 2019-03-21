@@ -11,6 +11,10 @@
 @interface CustomerCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView    *headImgView;
+@property (weak, nonatomic) IBOutlet UILabel    *headLb;
 @property (weak, nonatomic) IBOutlet UILabel        *nameLb;
+@property (weak, nonatomic) IBOutlet UILabel        *phoneLb;
+
+- (void)setDefineTypeName:(NSString *)name;
 
 @end
