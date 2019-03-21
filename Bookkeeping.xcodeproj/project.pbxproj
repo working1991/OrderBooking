@@ -10,6 +10,7 @@
 		060444E422427DB80068D4EB /* Standard_Modal.m in Sources */ = {isa = PBXBuildFile; fileRef = 060444E322427DB80068D4EB /* Standard_Modal.m */; };
 		060444E8224281DC0068D4EB /* TypeListCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 060444E6224281DC0068D4EB /* TypeListCtl.m */; };
 		060444E9224281DC0068D4EB /* TypeListCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060444E7224281DC0068D4EB /* TypeListCtl.xib */; };
+		060444EC2243CA770068D4EB /* Order_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 060444EB2243CA770068D4EB /* Order_Model.m */; };
 		0661814C2232AF07009F5CB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0661814B2232AF07009F5CB6 /* Assets.xcassets */; };
 		066181522232AF07009F5CB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 066181512232AF07009F5CB6 /* main.m */; };
 		06618520223682A0009F5CB6 /* UIButton+EnlargeEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 066182732236829E009F5CB6 /* UIButton+EnlargeEdge.m */; };
@@ -219,6 +220,8 @@
 		060444E5224281DC0068D4EB /* TypeListCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypeListCtl.h; sourceTree = "<group>"; };
 		060444E6224281DC0068D4EB /* TypeListCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TypeListCtl.m; sourceTree = "<group>"; };
 		060444E7224281DC0068D4EB /* TypeListCtl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeListCtl.xib; sourceTree = "<group>"; };
+		060444EA2243CA770068D4EB /* Order_Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Order_Model.h; sourceTree = "<group>"; };
+		060444EB2243CA770068D4EB /* Order_Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Order_Model.m; sourceTree = "<group>"; };
 		0661813F2232AF07009F5CB6 /* Bookkeeping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookkeeping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0661814B2232AF07009F5CB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		066181512232AF07009F5CB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -946,6 +949,8 @@
 				06D4836A223FD2FC00851805 /* Product_Modal.m */,
 				060444E222427DB80068D4EB /* Standard_Modal.h */,
 				060444E322427DB80068D4EB /* Standard_Modal.m */,
+				060444EA2243CA770068D4EB /* Order_Model.h */,
+				060444EB2243CA770068D4EB /* Order_Model.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1550,6 +1555,7 @@
 				06618565223682A0009F5CB6 /* SDImageCache.m in Sources */,
 				0661869C2236923F009F5CB6 /* MineCtl.m in Sources */,
 				06618545223682A0009F5CB6 /* NSArray+MASAdditions.m in Sources */,
+				060444EC2243CA770068D4EB /* Order_Model.m in Sources */,
 				06618795223694E8009F5CB6 /* MMProgressHUDWindow.m in Sources */,
 				066187A2223694E8009F5CB6 /* PageInfo_DataModal.m in Sources */,
 				06618568223682A0009F5CB6 /* UIImageView+WebCache.m in Sources */,

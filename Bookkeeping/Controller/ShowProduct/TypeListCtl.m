@@ -60,10 +60,11 @@
     ChooseStandardCell *myCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ChooseStandardCell class]) forIndexPath:indexPath];
     
     Standard_Modal *model = sourceArr[indexPath.row];
+    myCell.minNum = 0;
     myCell.nameLb.text = [NSString stringWithFormat:@"尺码：%@", model.secondSpecName];
     myCell.originalPriceLb.hidden = YES;
     myCell.priceLb.text = [NSString stringWithFormat:@"¥%.2lf元/件", model.productSpecPrice];
-    myCell.cntTf.text = [NSString stringWithFormat:@"%d", model.saleCount];
+    [myCell updateNum:model.saleCount];
     myCell.numChange = ^(int currentNum) {
         model.saleCount = currentNum;
     };

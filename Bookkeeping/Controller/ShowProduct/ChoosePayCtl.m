@@ -29,7 +29,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    payTypeArr = @[@{@"name": @"微信"},@{@"name": @"支付宝"},@{@"name": @"现金"},@{@"name": @"赊账"}];
+    payTypeArr = @[
+  @{@"name": @"现金", @"code": @"1"},
+  @{@"name": @"支付宝", @"code": @"2"},
+  @{@"name": @"微信", @"code": @"3"},
+  @{@"name": @"赊账", @"code": @"4"}];
     
     [self.tableView_ registerNib:[UINib nibWithNibName:NSStringFromClass([ChoosePayCell class]) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:NSStringFromClass([ChoosePayCell class])];
     
@@ -78,6 +82,7 @@
         Base_Modal *model = [Base_Modal new];
         NSDictionary *payDic = payTypeArr[indexPath.row];
         model.name = payDic[@"name"];
+        model.code = payDic[@"code"];
         self.finished(model);
     }
     [self hide];

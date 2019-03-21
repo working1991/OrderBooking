@@ -40,7 +40,8 @@
       
         //公共解析方法
         if ([opKey isEqualToString:@"modifyPassword"] ||
-            [opKey isEqualToString:@"addCutomer"]
+            [opKey isEqualToString:@"addCutomer"] ||
+            [opKey isEqualToString:@"confirmOrder"]
             ) {
             arr = [self parserBaseReturnRestCode:dic];
         }

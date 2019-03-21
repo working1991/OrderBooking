@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *cntTf;
 @property (weak, nonatomic) IBOutlet UIButton    *desBtn;
 
+@property (assign ,nonatomic) int minNum;
 @property (strong, nonatomic) void (^numChange)(int currentNum);
 @property (strong, nonatomic) void (^itemChoosed)(BOOL isChoose);
 

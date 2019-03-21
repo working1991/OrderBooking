@@ -81,7 +81,7 @@
     [self onStart];
     //    }
     //    else {
-    //        [BaseUIViewController showAlertView:@"请输入关键字" msg:nil cancel:@"确定"];
+    //        [BaseUIViewController showAlertView:@"请输入关键字" msg:nil cancel:@"知道了"];
     //    }
     
     //    searchbar.text = @"";

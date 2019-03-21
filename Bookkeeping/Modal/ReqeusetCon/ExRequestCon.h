@@ -10,6 +10,8 @@
 #import "RequestCon.h"
 #import "Base_Modal.h"
 #import "Customer_Modal.h"
+#import "Standard_Modal.h"
+#import "Order_Model.h"
 
 @interface RequestCon (ExReqeustCon)
 
@@ -33,8 +35,13 @@
 //商品详情
 - (void)getProductDetail:(NSString *)productId;
 
+//确认下单
+- (void)confirmOrder:(Order_Model *)model;
+
 //新增、修改客户
 - (void)addCustomer:(Customer_Modal *)modal;
+
+
 
 @end
 

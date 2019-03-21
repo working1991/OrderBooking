@@ -67,8 +67,12 @@
 
 - (void)startRequest:(RequestCon *)request
 {
-    Base_Modal *grouModal = groupArr[selectIndex];
-    [request getProductList:[ManagerCtl getRoleInfo].companyId groupId:grouModal.id_];
+    if (bSearch) {
+        [request searchProductList:[ManagerCtl getRoleInfo].companyId keyword:self.searchKeyBar.text];
+    } else {
+        Base_Modal *grouModal = groupArr[selectIndex];
+        [request getProductList:[ManagerCtl getRoleInfo].companyId groupId:grouModal.id_];
+    }
 }
 
 - (void)finishLoadData:(BaseRequest *)request dataArr:(NSArray *)dataArr
@@ -81,6 +85,17 @@
             [self onStart];
         }
         
+    }
+}
+
+- (void)searchButtonResponse:(id)sender {
+    if (self.searchKeyBar.text.length==0) {
+        [BaseUIViewController showAlertView:@"请输入关键字" msg:nil cancel:@"知道了"];
+        return;
+    } else {
+        bSearch = YES;
+        [self.firstClassTableView reloadData];
+        [self onStart];
     }
 }
 
@@ -121,8 +136,8 @@
         
         Base_Modal *model = groupArr[indexPath.row];
         myCell.nameLb.text = model.name;
-        myCell.nameLb.textColor = selectIndex==indexPath.row?Color_Default:[Common getColor:@"333333"];
-        myCell.backgroundColor = selectIndex==indexPath.row?[Common getColor:@"f2f2f2"]:[UIColor whiteColor];
+        myCell.nameLb.textColor = (!bSearch&&selectIndex==indexPath.row)?Color_Default:[Common getColor:@"333333"];
+        myCell.backgroundColor = (!bSearch&&selectIndex==indexPath.row)?[Common getColor:@"f2f2f2"]:[UIColor whiteColor];
         
         return myCell;
     }
@@ -149,10 +164,28 @@
 {
     if (tableView == self.firstClassTableView) {
         selectIndex = indexPath.row;
+        bSearch = NO;
+        self.searchKeyBar.text = nil;
         [self.firstClassTableView reloadData];
         [self onStart];
     } else {
         
+    }
+}
+
+#pragma mark - searchBarDelegate
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    
+    bSearch = YES;
+    [self.firstClassTableView reloadData];
+    [super searchBarSearchButtonClicked:searchBar];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar
+    textDidChange:(NSString *)searchText {
+    if ([searchText isEqualToString:@""]) {
+        bSearch = NO;
+        [self onStart];
     }
 }
 

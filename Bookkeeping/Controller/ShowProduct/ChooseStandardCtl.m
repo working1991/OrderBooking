@@ -119,7 +119,7 @@
             }
             [self hide];
         } else {
-            [BaseUIViewController showAlertView:@"未选择规格" msg:nil cancel:@"确定"];
+            [BaseUIViewController showAlertView:@"未选择规格" msg:nil cancel:@"知道了"];
         }
         
     }

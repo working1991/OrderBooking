@@ -67,6 +67,14 @@
      "noDataStr" : "没有数据"
  },
  {
+     "key" : "confirmOrder",
+     "des" : "获取商品详情",
+     "value" : "orders/order",
+     "loadType" : "modal",
+     "loadingStr" : "正在下单...",
+     "noDataStr" : "没有数据"
+ },
+ {
      "key" : "addCutomer",
      "des" : "新增或者修改客户",
      "value" : "customers/addOrUpdate",

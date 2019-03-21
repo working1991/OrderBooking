@@ -102,10 +102,10 @@
             [self.navigationController popToViewController:self.navigationController.viewControllers.firstObject animated:YES];
         }
         else if( dataModal.restMsg ){
-            [BaseUIViewController showAlertView:@"保存失败" msg:dataModal.restMsg cancel:@"确定"];
+            [BaseUIViewController showAlertView:@"保存失败" msg:dataModal.restMsg cancel:@"知道了"];
         }
         else{
-            [BaseUIViewController showAlertView:@"保存失败" msg:@"请稍候再试" cancel:NSLocalizedString(@"确定", nil)];
+            [BaseUIViewController showAlertView:@"保存失败" msg:@"请稍候再试" cancel:NSLocalizedString(@"知道了", nil)];
         }
     }
 }
@@ -130,10 +130,10 @@
 {
     [self.view endEditing:YES];
     if( [self.nameTf.text isEqualToString:@""] ){
-        [BaseUIViewController showAlertView:@"客户姓名不能为空" msg:nil cancel:@"确定"];
+        [BaseUIViewController showAlertView:@"客户姓名不能为空" msg:nil cancel:@"知道了"];
     }
     else if(self.phoneTf.text.length > 0  &&  (self.phoneTf.text.length != 11)){
-        [BaseUIViewController showAlertView:@"推荐人手机号码格式错误" msg:@"请重新输入" cancel:@"确定"];
+        [BaseUIViewController showAlertView:@"推荐人手机号码格式错误" msg:@"请重新输入" cancel:@"知道了"];
     }
     else {
         Customer_Modal *dataModal = [[Customer_Modal alloc] init];

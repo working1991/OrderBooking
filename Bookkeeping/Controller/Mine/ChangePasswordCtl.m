@@ -41,7 +41,7 @@
             [BaseUIViewController showHUDSuccessView:@"修改成功" msg:nil];
             [[ManagerCtl defaultManagerCtl] loginOff];
         } else {
-            [BaseUIViewController showAlertView:@"修改失败" msg:modal.restMsg?modal.restMsg:@"请稍后重试" cancel:@"确定"];
+            [BaseUIViewController showAlertView:@"修改失败" msg:modal.restMsg?modal.restMsg:@"请稍后重试" cancel:@"知道了"];
         }
     }
 }
@@ -50,13 +50,13 @@
 {
     if (sender == self.saveBtn) {
         if (self.oldPasswordTf.text.length==0) {
-            [BaseUIViewController showAlertView:@"请输入旧密码" msg:nil cancel:@"确定"];
+            [BaseUIViewController showAlertView:@"请输入旧密码" msg:nil cancel:@"知道了"];
             return;
         }else if (self.firstPasswordTf.text.length==0) {
-            [BaseUIViewController showAlertView:@"请输入新密码" msg:nil cancel:@"确定"];
+            [BaseUIViewController showAlertView:@"请输入新密码" msg:nil cancel:@"知道了"];
             return;
         } else if (![self.firstPasswordTf.text isEqualToString:self.secondPasswordTf.text]) {
-            [BaseUIViewController showAlertView:@"两次密码不一致" msg:@"请重新输入" cancel:@"确定"];
+            [BaseUIViewController showAlertView:@"两次密码不一致" msg:@"请重新输入" cancel:@"知道了"];
             return;
         } else  {
             saveCon = [self getNewRequestCon:NO];

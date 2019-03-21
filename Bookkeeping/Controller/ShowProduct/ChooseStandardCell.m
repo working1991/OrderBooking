@@ -11,6 +11,8 @@
 
 @implementation ChooseStandardCell
 
+@synthesize minNum;
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
@@ -35,6 +37,8 @@
     [layer setBorderWidth:1.0];
     [layer setBorderColor:[borderColor CGColor]];
     
+    minNum = 1;
+    
     _originalPriceLb
     .lineType = LineTypeMiddle;
     _originalPriceLb.lineColor = _originalPriceLb.textColor;
@@ -52,7 +56,7 @@
 - (void)updateView
 {
     int newNum = [_cntTf.text intValue];
-    if( newNum <= 0 ){
+    if( newNum <= minNum ){
         self.desBtn.alpha = 0.3;
     }else{
         self.desBtn.alpha = 1.0;
@@ -61,8 +65,8 @@
 
 - (void)updateNum:(int)newNum
 {
-    if (newNum<0) {
-        newNum = 0;
+    if (newNum<minNum) {
+        newNum = minNum;
     }
     _cntTf.text = [NSString stringWithFormat:@"%i", newNum];
     if (self.numChange) {
@@ -73,10 +77,8 @@
 
 - (IBAction)desClick:(UIButton *)sender {
     int newNum = [_cntTf.text intValue] -1;
-    if (newNum >= 0) {
+    if (newNum >= minNum) {
         [self updateNum:newNum];
-    } else {
-        NSLog(@"num can not less than 0");
     }
 }
 - (IBAction)addClick:(UIButton *)sender {

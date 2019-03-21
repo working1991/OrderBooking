@@ -416,7 +416,7 @@ int tmpProcessPlayerControlViewIndex;
 
 - (void)showChooseAlertViewCtl:(NSString *)title msg:(NSString *)msg confirmHandle:(void(^)(void))confirmBlock
 {
-    [self showChooseAlertViewCtl:title msg:msg okBtnTitle:@"确定" cancelBtnTitle:@"取消" confirmHandle:confirmBlock cancleHandle:nil];
+    [self showChooseAlertViewCtl:title msg:msg okBtnTitle:@"知道了" cancelBtnTitle:@"取消" confirmHandle:confirmBlock cancleHandle:nil];
 }
 
 - (void)showChooseAlertViewCtl:(NSString *)title msg:(NSString *)msg
@@ -466,7 +466,7 @@ int tmpProcessPlayerControlViewIndex;
 }
 
 -(void)showTextAlert:(UIKeyboardType)keyboardType title:(NSString *)title msg:(NSString *)msg placeholder:(NSString *)placeholder confirmHandle:(void(^)(NSString *))confirmBlock {
-    [self showTextAlert:keyboardType title:title msg:msg placeholder:placeholder  okBtnTitle:@"确定" cancelBtnTitle:@"取消" confirmHandle:confirmBlock cancleHandle:nil];
+    [self showTextAlert:keyboardType title:title msg:msg placeholder:placeholder  okBtnTitle:@"知道了" cancelBtnTitle:@"取消" confirmHandle:confirmBlock cancleHandle:nil];
 }
 
 -(void)showTextAlert:(UIKeyboardType)keyboardType title:(NSString *)title msg:(NSString *)msg placeholder:(NSString *)placeholder
@@ -895,7 +895,7 @@ int tmpProcessPlayerControlViewIndex;
     } @catch (NSException *exception) {
         [BaseUIViewController showAlertView:NSLocalizedString(@"操作失败", nil)
                                         msg:nil
-                                     cancel:NSLocalizedString(@"确定", nil)];
+                                     cancel:NSLocalizedString(@"知道了", nil)];
     } @finally {
     }
 }

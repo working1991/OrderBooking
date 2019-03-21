@@ -112,7 +112,7 @@
             [[ManagerCtl defaultManagerCtl] loginOK:self modal:modal];
             [BaseUIViewController showHUDSuccessView:@"登录成功" msg:nil];
         } else {
-            [BaseUIViewController showAlertView:@"登录失败" msg:modal.restMsg?modal.restMsg:@"请稍后重试" cancel:@"确定"];
+            [BaseUIViewController showAlertView:@"登录失败" msg:modal.restMsg?modal.restMsg:@"请稍后重试" cancel:@"知道了"];
         }
     }
 }
@@ -128,12 +128,12 @@
 
 - (void)loginInfoVerification {
     if( [self.accountTf.text length] == 0 ){
-        [BaseUIViewController showAlertView:@"请输入您的账号" msg:nil cancel:@"确定"];
+        [BaseUIViewController showAlertView:@"请输入您的账号" msg:nil cancel:@"知道了"];
         [self.accountTf becomeFirstResponder];
         return;
     }
     if( [self.pwdTf.text length] == 0 ){
-        [BaseUIViewController showAlertView:@"请输入您的密码" msg:nil cancel:@"确定"];
+        [BaseUIViewController showAlertView:@"请输入您的密码" msg:nil cancel:@"知道了"];
         [self.pwdTf becomeFirstResponder];
         return;
     }
