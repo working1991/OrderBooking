@@ -416,7 +416,7 @@ int tmpProcessPlayerControlViewIndex;
 
 - (void)showChooseAlertViewCtl:(NSString *)title msg:(NSString *)msg confirmHandle:(void(^)(void))confirmBlock
 {
-    [self showChooseAlertViewCtl:title msg:msg okBtnTitle:@"知道了" cancelBtnTitle:@"取消" confirmHandle:confirmBlock cancleHandle:nil];
+    [self showChooseAlertViewCtl:title msg:msg okBtnTitle:@"确定   " cancelBtnTitle:@"取消" confirmHandle:confirmBlock cancleHandle:nil];
 }
 
 - (void)showChooseAlertViewCtl:(NSString *)title msg:(NSString *)msg

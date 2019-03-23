@@ -10,8 +10,14 @@
 #import "OrderListCell.h"
 #import "OrderDetailCtl.h"
 #import "PrintTool.h"
+#import "ManagerCtl.h"
 
 @interface OrderListItemCtl ()
+
+{
+    OrderStatus status;
+    RequestCon *detailCon;
+}
 
 @end
 
@@ -30,20 +36,38 @@
 }
 
 #pragma mark - Base
+-(void)beginLoad:(id)dataModal exParam:(id)exParam
+{
+    if ([exParam isKindOfClass:[NSNumber class]]) {
+        status = [exParam integerValue];
+    }
+    [super beginLoad:dataModal exParam:exParam];
+}
 
+- (void)startRequest:(RequestCon *)request
+{
+    [request queryOrderList:[ManagerCtl getRoleInfo].id_ companyId:[ManagerCtl getRoleInfo].companyId orderStatus:status];
+}
+
+- (void)finishLoadData:(BaseRequest *)request dataArr:(NSArray *)dataArr
+{
+    if (request == detailCon) {
+        Order_Model *detailModel = dataArr.firstObject;
+        [[PrintTool sharedManager] printOrderInfo:detailModel];
+    }
+}
 
 #pragma mark - Private
+
 - (void)printOrderInfo:(UIButton *)sender
 {
-   [[PrintTool sharedManager] printOrderInfo:nil];
+    Order_Model *modal = requestCon_.dataArr_[sender.tag];
+    detailCon = [self getNewRequestCon:NO];
+    [detailCon queryOrderDetail:modal.id_];
 }
 
 
 #pragma mark - UITableView
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 4;
-}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -54,14 +78,26 @@
 {
     OrderListCell *myCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([OrderListCell class]) forIndexPath:indexPath];
     
+    Order_Model *modal = requestCon_.dataArr_[indexPath.row];
+    myCell.customerLb.text = modal.customerName;
+    myCell.statusLb.text = modal.orderStatusName;
+    myCell.orderCodeLb.text = [NSString stringWithFormat:@"订单编号：%@", modal.id_];
+    myCell.operaterLb.text = [NSString stringWithFormat:@"开单人：%@", modal.oporaterName];
+    myCell.productLb.text = [NSString stringWithFormat:@"共%d件商品", modal.saleCount];
+    myCell.timeLb.text = [NSString stringWithFormat:@"%@", modal.createTime];
+    myCell.totalPriceLb.text = [NSString stringWithFormat:@"应付金额：¥%.2lf", modal.orderPrice];
+    myCell.realPayLb.text = [NSString stringWithFormat:@"实付金额：¥%.2lf", modal.realPrice];
+    myCell.operateBtn.tag = indexPath.row;
     [myCell.operateBtn addTarget:self action:@selector(printOrderInfo:) forControlEvents:UIControlEventTouchUpInside];
     
     return myCell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)loadDetail:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath
 {
     OrderDetailCtl *ctl = [OrderDetailCtl new];
+    Order_Model *modal = requestCon_.dataArr_[indexPath.row];
+    [ctl beginLoad:modal exParam:nil];
     [self.navigationController pushViewController:ctl animated:YES];
 }
 

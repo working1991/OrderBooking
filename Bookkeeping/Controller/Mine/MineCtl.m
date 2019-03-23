@@ -11,11 +11,13 @@
 #import "CustomerCtl.h"
 #import "SettingCtl.h"
 #import "ManagerCtl.h"
+#import "SaleTotal_Modal.h"
 
 @interface MineCtl ()
 
 {
     NSArray     *itemInfoArray;
+    SaleTotal_Modal *totalModal;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *nameView;
@@ -66,6 +68,7 @@
 {
     [super viewWillAppear:animated];
     self.nameLb.text = [ManagerCtl getRoleInfo].name;
+    [self onStart];
 }
 
 
@@ -85,13 +88,26 @@
 }
 
 #pragma mark - Base
+- (void)startRequest:(RequestCon *)request
+{
+    [request querySaleTotalInfo:[ManagerCtl getRoleInfo].id_ companyId:[ManagerCtl getRoleInfo].companyId];
+}
+
 - (void)finishLoadData:(BaseRequest *)request dataArr:(NSArray *)dataArr
 {
-    
+    if (request == requestCon_) {
+        totalModal = dataArr.firstObject;
+        [self updatSaleTotalInfo];
+    }
 }
 
 
 #pragma mark - Pravite
+- (void)updatSaleTotalInfo
+{
+    self.amoutLb.text = [NSString stringWithFormat:@"¥%.2lf", totalModal.saleAmount];
+    self.orderNumLb.text = [NSString stringWithFormat:@"%d", totalModal.saleCount];
+}
 
 
 #pragma mark - UITableView

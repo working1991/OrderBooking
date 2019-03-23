@@ -63,6 +63,18 @@
         else if ([opKey isEqualToString:@"getProductDetail"]){
             arr = [self parserProductDetail:dic];
         }
+        //订单列表
+        else if ([opKey isEqualToString:@"queryOrderList"]){
+            arr = [self parserOrderList:dic];
+        }
+        //订单详情
+        else if ([opKey isEqualToString:@"queryOrderDetail"]){
+            arr = [self parserOrderDetail:dic];
+        }
+        //销售汇总
+        else if ([opKey isEqualToString:@"querySaleTotalInfo"]){
+            arr = [self parserSaleTotalInfo:dic];
+        }
         //客户列表
         else if ([opKey isEqualToString:@"queryCustomerList"]){
             arr = [self parserCustomerList:dic];
@@ -181,6 +193,98 @@
             [typeArr addObject:typeModel];
         }
         modal.typeArr = typeArr;
+        
+        [arr addObject:modal];
+    }
+    
+    return arr;
+}
+
+//订单列表
++(NSMutableArray *)parserOrderList:(NSDictionary *)dic
+{
+    NSMutableArray *arr = nil;
+    if ( dic && [dic isKindOfClass:[NSDictionary class]] ) {
+        int totalCount = [[dic objectForKey:@"total"] intValue];
+        int totalPage = totalCount / PageSize + (totalCount % PageSize == 0 ? 0 : 1);
+        NSArray *tmpArr = [dic objectForKey:@"list"];
+        
+        if( tmpArr && [tmpArr isKindOfClass:[NSArray class]] ){
+            arr = [[NSMutableArray alloc] init];
+            for ( NSDictionary *tmpDic in tmpArr ) {
+                Order_Model *modal = [Order_Model new];
+                modal.id_ = tmpDic[@"id"];
+                modal.orderStatus = [tmpDic[@"orderStatus"] integerValue];
+                modal.orderPrice = [tmpDic[@"orderPrice"] doubleValue];
+                modal.payTypeCode = tmpDic[@"payType"];
+                modal.realPrice = [tmpDic[@"realPrice"] doubleValue];
+                modal.code = tmpDic[@"code"];
+                modal.oporaterName = tmpDic[@"managerName"];
+                modal.customerName = tmpDic[@"customerName"];
+                modal.createTime = tmpDic[@"createTime"];
+                
+                modal.totalPage_ = totalPage;
+                modal.totalSize_ = totalCount;
+                
+                [arr addObject:modal];
+            }
+        }
+    }
+    return arr;
+}
+
+//订单详情
++ (NSMutableArray *)parserOrderDetail:(NSDictionary *)tmpDic
+{
+    NSMutableArray *arr = nil;
+    arr = [[NSMutableArray alloc] init];
+    if (tmpDic && [tmpDic isKindOfClass:[NSDictionary class]]) {
+        Order_Model *modal = [Order_Model new];
+        modal.id_ = tmpDic[@"id"];
+        modal.orderStatus = [tmpDic[@"orderStatus"] integerValue];
+        modal.orderPrice = [tmpDic[@"orderPrice"] doubleValue];
+        modal.payTypeCode = tmpDic[@"payType"];
+        modal.realPrice = [tmpDic[@"realPrice"] doubleValue];
+        modal.code = tmpDic[@"code"];
+        modal.oporaterName = tmpDic[@"managerName"];
+        modal.customerName = tmpDic[@"customerName"];
+        modal.saleCount = [tmpDic[@"productNumber"] intValue];
+        modal.createTime = tmpDic[@"createTime"];
+        NSMutableArray *typeArr = [NSMutableArray array];
+        for (NSDictionary *typeDic in tmpDic[@"specs"]) {
+            Standard_Modal *typeModel = [Standard_Modal new];
+            typeModel.id_ = typeDic[@"productId"];
+            typeModel.name = typeDic[@"productName"];
+            typeModel.firstSpecName = typeDic[@"firstSpecName"];
+            typeModel.productSpecPrice = [typeDic[@"specPrice"] doubleValue];
+            typeModel.secondSpecName = typeDic[@"secondSpecName"];
+            typeModel.realPrice = [typeDic[@"realPrice"] doubleValue];
+            typeModel.saleCount = [typeDic[@"product_number"] intValue];
+            
+            [typeArr addObject:typeModel];
+            
+            modal.productId = typeDic[@"productId"];
+            modal.productName = typeDic[@"productName"];
+        }
+        modal.productTypeArr = typeArr;
+        
+        [arr addObject:modal];
+    }
+    
+    return arr;
+}
+
+//销售汇总
++ (NSMutableArray *)parserSaleTotalInfo:(NSDictionary *)tmpDic
+{
+    NSMutableArray *arr = nil;
+    arr = [[NSMutableArray alloc] init];
+    if (tmpDic && [tmpDic isKindOfClass:[NSDictionary class]]) {
+        SaleTotal_Modal *modal = [SaleTotal_Modal new];
+        modal.saleAmount = [tmpDic[@"saleAmount"] doubleValue];
+        modal.saleAchieve = [tmpDic[@"orderNum"] doubleValue];
+        modal.saleCount = [tmpDic[@"products"] intValue];
+        
         
         [arr addObject:modal];
     }

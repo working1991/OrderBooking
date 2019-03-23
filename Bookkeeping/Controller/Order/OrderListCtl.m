@@ -34,7 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    homeArr = @[@"全部", @"支付完成", @"支付未完成"];
+    homeArr = @[@(OrderStatus_All), @(OrderStatus_WaitPay), @(OrderStatus_Complete), @(OrderStatus_Incomplete)];
     self.segmentControl.backgroundColor = [UIColor clearColor];
     self.segmentTitleColor = [Common getColor:@"999999"];
     self.segmentHighlightColor = Color_Default;
@@ -64,12 +64,12 @@
 
 - (void)updateSegmentView:(NSArray *)infoArr
 {
-    self.segmentType = XHSegmentTypeFilledSelf;
+    self.segmentType = XHSegmentTypeScreen;
     NSMutableArray *viewCtls = [NSMutableArray array];
-    for (NSString *name in infoArr) {
+    for (NSNumber *code in infoArr) {
         OrderListItemCtl *ctl = [[OrderListItemCtl alloc] init];
-        ctl.title = name;
-        [ctl beginLoad:nil exParam:nil];
+        ctl.title = [Order_Model getOrderStatusName:[code integerValue]];
+        [ctl beginLoad:nil exParam:code];
         [viewCtls addObject:ctl];
     }
     if (viewCtls.count>0) {

@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *operaterLb;
 @property (weak, nonatomic) IBOutlet UILabel *totalPriceLb;
 @property (weak, nonatomic) IBOutlet UILabel *realPayLb;
+@property (weak, nonatomic) IBOutlet UILabel *productName;
 @property (weak, nonatomic) IBOutlet UIButton *operateBtn;
 
 @end

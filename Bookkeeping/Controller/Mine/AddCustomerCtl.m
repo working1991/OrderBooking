@@ -144,6 +144,7 @@
         dataModal.telphone = self.phoneTf.text;
         dataModal.address = self.addressTf.text;
         dataModal.companyId = [ManagerCtl getRoleInfo].companyId;
+        dataModal.id_ = cusModel.id_;
   
         cusModel = dataModal;
         addCon = [self getNewRequestCon:NO];

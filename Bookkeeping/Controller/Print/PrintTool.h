@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Base_Modal.h"
+#import "Order_Model.h"
 
 @interface PrintTool : NSObject <UIAlertViewDelegate>
 
 + (PrintTool *)sharedManager;
 
 //订单
-- (BOOL)printOrderInfo:(Base_Modal *)dataModal;
+- (BOOL)printOrderInfo:(Order_Model *)dataModal;
 
 
 @end

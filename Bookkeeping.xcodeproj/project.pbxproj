@@ -18,6 +18,7 @@
 		060444FF2243EECA0068D4EB /* ChineseToPinyinResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 060444F82243EEC90068D4EB /* ChineseToPinyinResource.m */; };
 		060445002243EECA0068D4EB /* PinyinFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 060444F92243EEC90068D4EB /* PinyinFormatter.m */; };
 		060445012243EECA0068D4EB /* PinYinForObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 060444FA2243EEC90068D4EB /* PinYinForObjc.m */; };
+		06044504224649A30068D4EB /* SaleTotal_Modal.m in Sources */ = {isa = PBXBuildFile; fileRef = 06044503224649A30068D4EB /* SaleTotal_Modal.m */; };
 		0661814C2232AF07009F5CB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0661814B2232AF07009F5CB6 /* Assets.xcassets */; };
 		066181522232AF07009F5CB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 066181512232AF07009F5CB6 /* main.m */; };
 		06618520223682A0009F5CB6 /* UIButton+EnlargeEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 066182732236829E009F5CB6 /* UIButton+EnlargeEdge.m */; };
@@ -242,6 +243,8 @@
 		060444F82243EEC90068D4EB /* ChineseToPinyinResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseToPinyinResource.m; sourceTree = "<group>"; };
 		060444F92243EEC90068D4EB /* PinyinFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinFormatter.m; sourceTree = "<group>"; };
 		060444FA2243EEC90068D4EB /* PinYinForObjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinYinForObjc.m; sourceTree = "<group>"; };
+		06044502224649A30068D4EB /* SaleTotal_Modal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaleTotal_Modal.h; sourceTree = "<group>"; };
+		06044503224649A30068D4EB /* SaleTotal_Modal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaleTotal_Modal.m; sourceTree = "<group>"; };
 		0661813F2232AF07009F5CB6 /* Bookkeeping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookkeeping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0661814B2232AF07009F5CB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		066181512232AF07009F5CB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -992,6 +995,8 @@
 				060444E322427DB80068D4EB /* Standard_Modal.m */,
 				060444EA2243CA770068D4EB /* Order_Model.h */,
 				060444EB2243CA770068D4EB /* Order_Model.m */,
+				06044502224649A30068D4EB /* SaleTotal_Modal.h */,
+				06044503224649A30068D4EB /* SaleTotal_Modal.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1492,6 +1497,7 @@
 				066187A0223694E8009F5CB6 /* SBJsonStreamWriterState.m in Sources */,
 				0661879C223694E8009F5CB6 /* SBJsonStreamParserState.m in Sources */,
 				0661881E223AAD09009F5CB6 /* UartXCtl.m in Sources */,
+				06044504224649A30068D4EB /* SaleTotal_Modal.m in Sources */,
 				06618563223682A0009F5CB6 /* SDWebImageCompat.m in Sources */,
 				06618576223682A0009F5CB6 /* Config.m in Sources */,
 				06618625223682A1009F5CB6 /* UIControl+CYLTabBarControllerExtention.m in Sources */,

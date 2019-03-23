@@ -64,10 +64,30 @@
     for (Standard_Modal *typeModel in modal.productTypeArr) {
         NSDictionary *typeDic = @{@"product_re_spec_id":typeModel.productReSpecId?typeModel.productReSpecId:@"" ,@"price":[NSString stringWithFormat:@"%.2lf", typeModel.productSpecPrice], @"product_number":[NSString stringWithFormat:@"%d", (int)typeModel.saleCount]};
         [typeArr addObject:typeDic];
-        
-        NSDictionary *dic = @{@"user_id":modal.oporaterId?modal.oporaterId:@"", @"product_id":modal.productId?modal.productId:@"", @"customer_id":modal.customerId?modal.customerId:Null_Default, @"company_id":modal.companyId?modal.companyId:@"", @"order_price":[NSString stringWithFormat:@"%.2lf", modal.orderPrice], @"real_price":[NSString stringWithFormat:@"%.2lf", modal.realPrice], @"order_status":[NSString stringWithFormat:@"%d", (int)modal.orderStatus], @"pay_type":modal.payTypeCode?modal.payTypeCode:@"", @"product_number":[NSString stringWithFormat:@"%d", (int)modal.saleCount], @"products": typeArr};
-        [self startPostRequest:@"confirmOrder" bodyDic:dic];
     }
+    NSDictionary *dic = @{@"user_id":modal.oporaterId?modal.oporaterId:@"", @"product_id":modal.productId?modal.productId:@"", @"customer_id":modal.customerId?modal.customerId:Null_Default, @"company_id":modal.companyId?modal.companyId:@"", @"order_price":[NSString stringWithFormat:@"%.2lf", modal.orderPrice], @"real_price":[NSString stringWithFormat:@"%.2lf", modal.realPrice], @"order_status":[NSString stringWithFormat:@"%d", (int)modal.orderStatus], @"pay_type":modal.payTypeCode?modal.payTypeCode:@"", @"product_number":[NSString stringWithFormat:@"%d", (int)modal.saleCount], @"products": typeArr};
+    [self startPostRequest:@"confirmOrder" bodyDic:dic];
+}
+
+//订单列表
+- (void)queryOrderList:(NSString *)userId companyId:(NSString *)companyId orderStatus:(OrderStatus)status;
+{
+    NSDictionary *dic = @{@"user_id":userId?userId:@"", @"company_id":companyId?companyId:@"", @"order_status":[NSString stringWithFormat:@"%d", (int)status], @"is_permission": @"1"};
+    [self startPostListRequest:@"queryOrderList" bodyDic:dic];
+}
+
+//订单详情
+- (void)queryOrderDetail:(NSString *)orderId;
+{
+    NSDictionary *dic = @{@"order_id":orderId?orderId:@""};
+    [self startPostRequest:@"queryOrderDetail" bodyDic:dic];
+}
+
+//销售汇总
+- (void)querySaleTotalInfo:(NSString *)userId companyId:(NSString *)companyId
+{
+    NSDictionary *dic = @{@"user_id":userId?userId:@"", @"company_id":companyId?companyId:@"", @"is_permission": @"0"};
+    [self startPostListRequest:@"querySaleTotalInfo" bodyDic:dic];
 }
 
 //客户列表
@@ -92,8 +112,8 @@
 {
     NSMutableDictionary *mDic = [NSMutableDictionary dictionaryWithDictionary:bodyDic];
     
-    mDic[@"page_size"] = [NSString stringWithFormat:@"%d",self.pageModal_.currentPage_];
-    mDic[@"page_num"] = [NSString stringWithFormat:@"%d",PageSize];
+    mDic[@"page_num"] = [NSString stringWithFormat:@"%d",self.pageModal_.currentPage_];
+    mDic[@"page_size"] = [NSString stringWithFormat:@"%d",PageSize];
     [self startPostRequest:opKey bodyDic:mDic];
 }
 

@@ -13,6 +13,8 @@
 #import "Customer_Modal.h"
 #import "Product_Modal.h"
 #import "Standard_Modal.h"
+#import "Order_Model.h"
+#import "SaleTotal_Modal.h"
 
 @interface DataParser (ExDataParser)
 

@@ -28,7 +28,49 @@
 }
 
 //订单
-- (BOOL)printOrderInfo:(Base_Modal *)dataModal
+- (BOOL)printOrderInfo:(Order_Model *)dataModal
+{
+    HLPrinter *printer = [[HLPrinter alloc] init];
+    NSString *title = @"销售单";
+    [printer appendText:title alignment:HLTextAlignmentCenter fontSize:HLFontSizeTitleBig];
+    [printer appendSeperatorLine];
+    
+    [printer appendTitle:@"订单编号:" value:dataModal.id_];
+    [printer appendTitle:@"开单时间:" value:dataModal.createTime];
+    
+    [printer appendTitle:@"客户:" value:dataModal.customerName];
+    [printer appendTitle:@"商品:" value:dataModal.productName];
+    
+    [printer appendSeperatorLine];
+    [printer appendLeftText:@"尺码" middleText:@"数量" rightText:@"单价" isTitle:YES];
+
+    for (Standard_Modal *typeModal in dataModal.productTypeArr) {
+        NSString *type = [NSString stringWithFormat:@"%@（%@）", typeModal.secondSpecName, typeModal.firstSpecName];
+        NSString *count = [NSString stringWithFormat:@"%d", typeModal.saleCount];
+        NSString *price = [NSString stringWithFormat:@"%.2lf", typeModal.productSpecPrice];
+        [printer appendLeftText:type middleText:count rightText:price isTitle:NO];
+    }
+    
+    [printer appendSeperatorLine];
+    NSString *totalStr = [NSString stringWithFormat:@"%.2f",dataModal.orderPrice];
+    [printer appendTitle:@"应收:" value:totalStr];
+    NSString *realStr = [NSString stringWithFormat:@"%.2f",dataModal.realPrice];
+    [printer appendTitle:@"实收:" value:realStr];
+    [printer appendTitle:@"状态:" value:dataModal.orderStatusName];
+    
+    [printer appendSeperatorLine];
+
+    [printer appendTitle:@"打单时间:" value:[Common getDateStr:nil format:nil]];
+    [printer appendFooter:nil];
+    [printer appendNewLine];
+    [printer appendNewLine];
+    // 你也可以利用UIWebView加载HTML小票的方式，这样可以在远程修改小票的样式和布局。
+    // 注意点：需要等UIWebView加载完成后，再截取UIWebView的屏幕快照，然后利用添加图片的方法，加进printer
+    // 截取屏幕快照，可以用UIWebView+UIImage中的catogery方法 - (UIImage *)imageForWebView
+    return [self printInfos:printer];
+}
+
+- (BOOL)printExInfo
 {
     HLPrinter *printer = [[HLPrinter alloc] init];
     NSString *title = @"测试电商";

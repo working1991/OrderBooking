@@ -75,6 +75,30 @@
      "noDataStr" : "没有数据"
  },
  {
+     "key" : "queryOrderList",
+     "des" : "订单列表",
+     "value" : "orders/my_order",
+     "loadType" : "normal",
+     "loadingStr" : "正在加载...",
+     "noDataStr" : "没有数据"
+ },
+ {
+     "key" : "queryOrderDetail",
+     "des" : "订单详情",
+     "value" : "orders/detail",
+     "loadType" : "normal",
+     "loadingStr" : "正在加载...",
+     "noDataStr" : "没有数据"
+ },
+ {
+     "key" : "querySaleTotalInfo",
+     "des" : "销售汇总",
+     "value" : "user/mySales",
+     "loadType" : "null",
+     "loadingStr" : "正在加载...",
+     "noDataStr" : "没有数据"
+ },
+ {
      "key" : "queryCustomerList",
      "des" : "客户列表",
      "value" : "customers/query",

@@ -9,9 +9,10 @@
 #import "Base_Modal.h"
 
 typedef enum : NSUInteger {
-    OrderStatus_WaitPay = 1,
-    OrderStatus_Complete = 2,
-    OrderStatus_Incomplete = 3,
+    OrderStatus_All         = 0,
+    OrderStatus_WaitPay     = 1,
+    OrderStatus_Complete    = 2,
+    OrderStatus_Incomplete  = 3,
 } OrderStatus;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -26,11 +27,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString        *customerName;
 @property (strong, nonatomic) NSString        *companyId;
 @property (strong, nonatomic) NSString        *payTypeCode;
+@property (strong, nonatomic) NSString        *payTypeName;
 @property (assign, nonatomic) double        orderPrice;
 @property (assign, nonatomic) double        realPrice;
 @property (assign, nonatomic) OrderStatus   orderStatus;
+@property (assign, nonatomic) NSString      *orderStatusName;
 @property (assign, nonatomic) int           saleCount;
 @property (strong, nonatomic) NSArray       *productTypeArr;
+
++ (NSString *)getPayTypeName:(NSString *)code;
++ (NSString *)getOrderStatusName:(OrderStatus)status;
 
 @end
 

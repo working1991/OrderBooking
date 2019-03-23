@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString        *secondSpecName;
 @property (assign, nonatomic) double        productSpecPrice;
 @property (assign, nonatomic) int        saleCount;
+@property (assign, nonatomic) double        realPrice;
 
 @end
 

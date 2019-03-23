@@ -72,7 +72,7 @@
 {
     Customer_Modal *modal =  [[dataDic_ objectForKey:[keyArr_ objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
     AddCustomerCtl *ctl = [AddCustomerCtl new];
-    ctl.title = @"新增客户";
+    ctl.title = @"编辑客户";
     [ctl beginLoad:modal exParam:nil];
     ctl.finished = ^(Customer_Modal *model) {
         [self onStart];
@@ -121,7 +121,7 @@
         myCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([CustomerCell class]) forIndexPath:indexPath];
         Customer_Modal *modal =  [[dataDic_ objectForKey:[keyArr_ objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
         
-        [myCell setDefineTypeName:modal.name];
+        [myCell setDefineTypeName:modal.fristChar];
         myCell.nameLb.text = modal.name;
         myCell.phoneLb.text = modal.telphone;
         

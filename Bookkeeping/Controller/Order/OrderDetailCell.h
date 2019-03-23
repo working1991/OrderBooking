@@ -10,4 +10,7 @@
 
 @interface OrderDetailCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *typeLb;
+@property (weak, nonatomic) IBOutlet UILabel *countLb;
+
 @end

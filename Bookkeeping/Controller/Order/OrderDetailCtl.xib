@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,6 +16,7 @@
                 <outlet property="operateBtn" destination="DvP-UC-Xp7" id="mo2-Sc-fay"/>
                 <outlet property="operaterLb" destination="4FU-96-m4S" id="3wq-NV-xCb"/>
                 <outlet property="orderCodeLb" destination="nxo-oQ-iRG" id="rsQ-SW-Sne"/>
+                <outlet property="productName" destination="cAj-zJ-dez" id="iHV-yf-iFM"/>
                 <outlet property="realPayLb" destination="RBQ-MJ-H0S" id="b6O-lU-BPH"/>
                 <outlet property="statusLb" destination="V1Y-X5-zZ3" id="ITg-C5-XxQ"/>
                 <outlet property="tableView_" destination="0Kn-D4-C7O" id="aLQ-EK-IvM"/>
@@ -36,7 +37,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="单号：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKF-Qh-8nv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单编号：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKF-Qh-8nv">
                                 <rect key="frame" x="10" y="10" width="76.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -143,8 +144,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUF-vv-f16">
                                 <rect key="frame" x="0.0" y="195" width="375" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品白色衬衫" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cht-bX-dFN">
-                                        <rect key="frame" x="10" y="15" width="110.5" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="商品：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cht-bX-dFN">
+                                        <rect key="frame" x="10" y="14.5" width="55.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品白色衬衫" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAj-zJ-dez">
+                                        <rect key="frame" x="65.5" y="14.5" width="289.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -153,6 +160,9 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Cht-bX-dFN" firstAttribute="leading" secondItem="hUF-vv-f16" secondAttribute="leading" constant="10" id="eTd-HS-y5J"/>
+                                    <constraint firstAttribute="trailing" secondItem="cAj-zJ-dez" secondAttribute="trailing" constant="20" id="ho5-Kk-T0x"/>
+                                    <constraint firstItem="cAj-zJ-dez" firstAttribute="centerY" secondItem="Cht-bX-dFN" secondAttribute="centerY" id="w5g-1v-q64"/>
+                                    <constraint firstItem="cAj-zJ-dez" firstAttribute="leading" secondItem="Cht-bX-dFN" secondAttribute="trailing" id="wMc-eF-7tT"/>
                                     <constraint firstItem="Cht-bX-dFN" firstAttribute="centerY" secondItem="hUF-vv-f16" secondAttribute="centerY" id="xqX-3c-Wpm"/>
                                 </constraints>
                             </view>

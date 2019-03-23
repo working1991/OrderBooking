@@ -38,6 +38,15 @@
 //确认下单
 - (void)confirmOrder:(Order_Model *)model;
 
+//订单列表
+- (void)queryOrderList:(NSString *)userId companyId:(NSString *)companyId orderStatus:(OrderStatus)status;
+
+//订单详情
+- (void)queryOrderDetail:(NSString *)orderId;
+
+//销售汇总
+- (void)querySaleTotalInfo:(NSString *)userId companyId:(NSString *)companyId;
+
 //客户列表
 - (void)queryCustomerList:(NSString *)companyId;
 

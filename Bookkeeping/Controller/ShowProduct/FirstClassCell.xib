@@ -27,7 +27,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JGX-aX-Rui">
-                        <rect key="frame" x="16" y="23" width="167" height="21"/>
+                        <rect key="frame" x="2" y="23" width="195" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                     <constraint firstItem="JGX-aX-Rui" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Fc1-ZP-uzk"/>
                     <constraint firstItem="K6j-b9-BKw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JT0-tu-C7u"/>
                     <constraint firstItem="JGX-aX-Rui" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Pty-VW-NUW"/>
-                    <constraint firstItem="JGX-aX-Rui" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="k83-HY-z1k"/>
+                    <constraint firstItem="JGX-aX-Rui" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="emJ-0h-wyz"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>

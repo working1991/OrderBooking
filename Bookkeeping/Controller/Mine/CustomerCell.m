@@ -28,7 +28,8 @@
                           [UIColor colorWithRed:0.280 green:1.000 blue:0.192 alpha:0.800],
                           [UIColor colorWithRed:0.162 green:0.996 blue:0.940 alpha:1.000]];
     if (name) {
-        NSInteger index = name.length%colorArr.count;
+        int value = [name characterAtIndex:0];
+        NSInteger index = value%colorArr.count;
         self.headImgView.backgroundColor = colorArr[index];
         self.headLb.text = [name substringToIndex:1];
     }
