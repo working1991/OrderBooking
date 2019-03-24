@@ -282,7 +282,7 @@
     if (tmpDic && [tmpDic isKindOfClass:[NSDictionary class]]) {
         SaleTotal_Modal *modal = [SaleTotal_Modal new];
         modal.saleAmount = [tmpDic[@"saleAmount"] doubleValue];
-        modal.saleAchieve = [tmpDic[@"orderNum"] doubleValue];
+        modal.orderCount = [tmpDic[@"orderNum"] doubleValue];
         modal.saleCount = [tmpDic[@"products"] intValue];
         
         

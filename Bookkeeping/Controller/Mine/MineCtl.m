@@ -106,7 +106,7 @@
 - (void)updatSaleTotalInfo
 {
     self.amoutLb.text = [NSString stringWithFormat:@"¥%.2lf", totalModal.saleAmount];
-    self.orderNumLb.text = [NSString stringWithFormat:@"%d", totalModal.saleCount];
+    self.orderNumLb.text = [NSString stringWithFormat:@"%d", totalModal.orderCount];
 }
 
 

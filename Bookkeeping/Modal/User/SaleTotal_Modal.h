@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SaleTotal_Modal : Base_Modal
 
 @property (assign, nonatomic) double        saleAmount;//销售额
-@property (assign, nonatomic) double        saleAchieve;//销售业绩
-@property (assign, nonatomic) int           saleCount;//销售数量
+@property (assign, nonatomic) int        orderCount;//销售单数量
+@property (assign, nonatomic) int           saleCount;//商品数量
 
 @end
 
