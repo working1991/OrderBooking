@@ -43,14 +43,25 @@
     .lineType = LineTypeMiddle;
     _originalPriceLb.lineColor = _originalPriceLb.textColor;
     
-    [_chooseBtn setImage:[UIImage imageNamed:@"ico_checked_select"] forState:UIControlStateSelected];
-    [_chooseBtn setImage:[UIImage imageNamed:@"ico_checked_normal"] forState:UIControlStateNormal];
+    [_chooseBtn setImage:[UIImage imageNamed:@"singleSelected"] forState:UIControlStateSelected];
+    [_chooseBtn setImage:[UIImage imageNamed:@"singleSelect"] forState:UIControlStateNormal];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setTypeModle:(Standard_Modal *)model
+{
+//    self.nameLb.text = [NSString stringWithFormat:@"尺码：%@", model.secondSpecName];
+    self.nameLb.text = [NSString stringWithFormat:@"尺码：%@（%@）", model.secondSpecName, model.firstSpecName];
+    self.originalPriceLb.hidden = model.productSpecPrice==model.realPrice;
+    self.originalPriceLb.text = [NSString stringWithFormat:@"原价：¥%.2f", model.productSpecPrice];
+    self.priceLb.text = [NSString stringWithFormat:@"¥%.2lf元/件", model.realPrice];
+    self.cntTf.text = [NSString stringWithFormat:@"%i", model.saleCount];
+    [self updateView];
 }
 
 - (void)updateView
@@ -91,6 +102,12 @@
     sender.selected = !sender.selected;
     if (self.itemChoosed) {
         self.itemChoosed(sender.selected);
+    }
+}
+
+- (IBAction)modifyPriceBlock:(UIButton *)sender {
+    if (self.modifyPriceBlock) {
+        self.modifyPriceBlock();
     }
 }
 

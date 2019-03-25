@@ -466,7 +466,7 @@ int tmpProcessPlayerControlViewIndex;
 }
 
 -(void)showTextAlert:(UIKeyboardType)keyboardType title:(NSString *)title msg:(NSString *)msg placeholder:(NSString *)placeholder confirmHandle:(void(^)(NSString *))confirmBlock {
-    [self showTextAlert:keyboardType title:title msg:msg placeholder:placeholder  okBtnTitle:@"知道了" cancelBtnTitle:@"取消" confirmHandle:confirmBlock cancleHandle:nil];
+    [self showTextAlert:keyboardType title:title msg:msg placeholder:placeholder  okBtnTitle:@"确定" cancelBtnTitle:@"取消" confirmHandle:confirmBlock cancleHandle:nil];
 }
 
 -(void)showTextAlert:(UIKeyboardType)keyboardType title:(NSString *)title msg:(NSString *)msg placeholder:(NSString *)placeholder
@@ -498,8 +498,8 @@ int tmpProcessPlayerControlViewIndex;
         }
         [MyLog Log:[NSString stringWithFormat:@"Alert View Choosed Cancel."] obj:self];
     }];
-    [alertCtl addAction:confirmAction];
     [alertCtl addAction:cancleAction];
+    [alertCtl addAction:confirmAction];
     [self presentViewController:alertCtl animated:YES completion:nil];
     
 }

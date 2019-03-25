@@ -14,6 +14,7 @@
 #import "ManagerCtl.h"
 #import "Product_Modal.h"
 #import "UIImageView+WebCache.h"
+#import "ShopCarCtl.h"
 
 @interface ShowProductCtl ()
 
@@ -34,6 +35,7 @@
     self = [super init];
     if (self) {
         self.title = @"首页";
+        rightBarImg_ = @"icon_shopcart_white";
     }
     return self;
 }
@@ -97,6 +99,11 @@
         [self.firstClassTableView reloadData];
         [self onStart];
     }
+}
+
+- (void)rightBarBtnResponse:(id)sender
+{
+    [self.navigationController pushViewController:[ShopCarCtl new] animated:YES];
 }
 
 #pragma mark - Private

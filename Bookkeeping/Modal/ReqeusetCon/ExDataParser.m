@@ -188,6 +188,7 @@
             typeModel.firstSpecName = typeDic[@"firstSpecName"];
             typeModel.productReSpecId = typeDic[@"productReSpecId"];
             typeModel.productSpecPrice = [typeDic[@"productSpecPrice"] doubleValue];
+            typeModel.realPrice = [typeDic[@"productSpecPrice"] doubleValue];
             typeModel.secondSpecName = typeDic[@"secondSpecName"];
             
             [typeArr addObject:typeModel];

@@ -19,6 +19,10 @@
 		060445002243EECA0068D4EB /* PinyinFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 060444F92243EEC90068D4EB /* PinyinFormatter.m */; };
 		060445012243EECA0068D4EB /* PinYinForObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 060444FA2243EEC90068D4EB /* PinYinForObjc.m */; };
 		06044504224649A30068D4EB /* SaleTotal_Modal.m in Sources */ = {isa = PBXBuildFile; fileRef = 06044503224649A30068D4EB /* SaleTotal_Modal.m */; };
+		060585F0224912DD00ABED23 /* ShopCarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 060585E9224912DC00ABED23 /* ShopCarHeaderView.m */; };
+		060585F3224912DD00ABED23 /* ShopCarCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060585EC224912DC00ABED23 /* ShopCarCtl.xib */; };
+		060585F4224912DD00ABED23 /* ShopCarCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 060585ED224912DC00ABED23 /* ShopCarCtl.m */; };
+		060585F5224912DD00ABED23 /* ShopCarHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060585EF224912DD00ABED23 /* ShopCarHeaderView.xib */; };
 		0661814C2232AF07009F5CB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0661814B2232AF07009F5CB6 /* Assets.xcassets */; };
 		066181522232AF07009F5CB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 066181512232AF07009F5CB6 /* main.m */; };
 		06618520223682A0009F5CB6 /* UIButton+EnlargeEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 066182732236829E009F5CB6 /* UIButton+EnlargeEdge.m */; };
@@ -245,6 +249,12 @@
 		060444FA2243EEC90068D4EB /* PinYinForObjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinYinForObjc.m; sourceTree = "<group>"; };
 		06044502224649A30068D4EB /* SaleTotal_Modal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaleTotal_Modal.h; sourceTree = "<group>"; };
 		06044503224649A30068D4EB /* SaleTotal_Modal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaleTotal_Modal.m; sourceTree = "<group>"; };
+		060585E8224912DC00ABED23 /* ShopCarCtl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCarCtl.h; sourceTree = "<group>"; };
+		060585E9224912DC00ABED23 /* ShopCarHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCarHeaderView.m; sourceTree = "<group>"; };
+		060585EC224912DC00ABED23 /* ShopCarCtl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopCarCtl.xib; sourceTree = "<group>"; };
+		060585ED224912DC00ABED23 /* ShopCarCtl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCarCtl.m; sourceTree = "<group>"; };
+		060585EE224912DC00ABED23 /* ShopCarHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCarHeaderView.h; sourceTree = "<group>"; };
+		060585EF224912DD00ABED23 /* ShopCarHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopCarHeaderView.xib; sourceTree = "<group>"; };
 		0661813F2232AF07009F5CB6 /* Bookkeeping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookkeeping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0661814B2232AF07009F5CB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		066181512232AF07009F5CB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -642,6 +652,19 @@
 			path = PinYin;
 			sourceTree = "<group>";
 		};
+		060585E6224912C900ABED23 /* ShopCar */ = {
+			isa = PBXGroup;
+			children = (
+				060585E8224912DC00ABED23 /* ShopCarCtl.h */,
+				060585ED224912DC00ABED23 /* ShopCarCtl.m */,
+				060585EC224912DC00ABED23 /* ShopCarCtl.xib */,
+				060585EE224912DC00ABED23 /* ShopCarHeaderView.h */,
+				060585E9224912DC00ABED23 /* ShopCarHeaderView.m */,
+				060585EF224912DD00ABED23 /* ShopCarHeaderView.xib */,
+			);
+			path = ShopCar;
+			sourceTree = "<group>";
+		};
 		066181362232AF07009F5CB6 = {
 			isa = PBXGroup;
 			children = (
@@ -846,6 +869,7 @@
 		066183302236829F009F5CB6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				060585E6224912C900ABED23 /* ShopCar */,
 				06618810223AAA8B009F5CB6 /* Print */,
 				0661868E22368C7B009F5CB6 /* Order */,
 				0661868D22368C58009F5CB6 /* ShowProduct */,
@@ -1449,10 +1473,12 @@
 				06618784223694E8009F5CB6 /* BaseCleViewController.xib in Resources */,
 				066187D82237DDC6009F5CB6 /* ShowProductCell.xib in Resources */,
 				066187F6223947B7009F5CB6 /* ChooseCustomerCtl.xib in Resources */,
+				060585F3224912DD00ABED23 /* ShopCarCtl.xib in Resources */,
 				06618771223694E8009F5CB6 /* BaseLoadingView.xib in Resources */,
 				066187BF2236A89C009F5CB6 /* CustomerCtl.xib in Resources */,
 				066187AE2236969F009F5CB6 /* Main.storyboard in Resources */,
 				06618538223682A0009F5CB6 /* QBImagePicker.storyboard in Resources */,
+				060585F5224912DD00ABED23 /* ShopCarHeaderView.xib in Resources */,
 				066187FB223A9743009F5CB6 /* OrderListCell.xib in Resources */,
 				06618787223694E8009F5CB6 /* ico_fail@3x.png in Resources */,
 				06618788223694E8009F5CB6 /* ico_empty@3x.png in Resources */,
@@ -1486,6 +1512,7 @@
 				06618547223682A0009F5CB6 /* MASConstraint.m in Sources */,
 				06618636223682A1009F5CB6 /* Customer_Modal.m in Sources */,
 				066187FA223A9743009F5CB6 /* OrderListCell.m in Sources */,
+				060585F0224912DD00ABED23 /* ShopCarHeaderView.m in Sources */,
 				06618627223682A1009F5CB6 /* SystemPicker.m in Sources */,
 				0661881F223AAD09009F5CB6 /* UartXCtl_Cell.m in Sources */,
 				066187EB22393A33009F5CB6 /* ChoosePayCtl.m in Sources */,
@@ -1606,6 +1633,7 @@
 				06D15DF42247B127001F956E /* SVIndefiniteAnimatedView.m in Sources */,
 				06618565223682A0009F5CB6 /* SDImageCache.m in Sources */,
 				0661869C2236923F009F5CB6 /* MineCtl.m in Sources */,
+				060585F4224912DD00ABED23 /* ShopCarCtl.m in Sources */,
 				06618545223682A0009F5CB6 /* NSArray+MASAdditions.m in Sources */,
 				060444EC2243CA770068D4EB /* Order_Model.m in Sources */,
 				06618795223694E8009F5CB6 /* MMProgressHUDWindow.m in Sources */,

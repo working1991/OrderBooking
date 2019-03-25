@@ -26,4 +26,6 @@ typedef enum {
 
 @property (strong, nonatomic) NSString        *companyId;//公司
 
+@property (strong, nonatomic) NSArray        *selectProductArr;
+
 @end

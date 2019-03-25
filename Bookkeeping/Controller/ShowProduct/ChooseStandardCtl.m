@@ -41,7 +41,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    
+    CALayer *layer = self.iconImgView.layer;
+    layer.masksToBounds = YES;
+    layer.cornerRadius = 10;
     
     [Common addTapGesture:self.topView target:self numberOfTap:1 sel:@selector(hide)];
     
@@ -156,7 +158,7 @@
     for (NSDictionary *typeDic in typeArr) {
         TypeListCtl *ctl = [[TypeListCtl alloc] init];
         ctl.title = typeDic[@"name"];
-        [ctl beginLoad:nil exParam:typeDic[@"list"]];
+        [ctl beginLoad:detailModal exParam:typeDic[@"list"]];
         [viewCtls addObject:ctl];
     }
     if (viewCtls.count>0) {

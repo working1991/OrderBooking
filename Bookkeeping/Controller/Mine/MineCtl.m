@@ -36,6 +36,7 @@
     self = [super init];
     if (self) {
         self.title = @"我的";
+        bHeadRefresh_ = NO;
     }
     return self;
 }

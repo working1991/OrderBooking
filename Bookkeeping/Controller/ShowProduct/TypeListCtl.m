@@ -9,10 +9,12 @@
 #import "TypeListCtl.h"
 #import "ChooseStandardCell.h"
 #import "Standard_Modal.h"
+#import "ShopCarCtl.h"
 
 @interface TypeListCtl ()
 
 {
+    Product_Modal *productModel;
     NSArray *sourceArr;
 }
 
@@ -42,6 +44,7 @@
         sourceArr = (NSArray *)exParam;
         [self.tableView_ reloadData];
     }
+    productModel = dataModal;
 }
 
 #pragma mark - UITableView
@@ -52,7 +55,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 90;
+    return 80;
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,13 +64,12 @@
     
     Standard_Modal *model = sourceArr[indexPath.row];
     myCell.minNum = 0;
-    myCell.nameLb.text = [NSString stringWithFormat:@"尺码：%@", model.secondSpecName];
-    myCell.originalPriceLb.hidden = YES;
-    myCell.priceLb.text = [NSString stringWithFormat:@"¥%.2lf元/件", model.productSpecPrice];
-    [myCell updateNum:model.saleCount];
+    myCell.widthCons.constant = 0;
     myCell.numChange = ^(int currentNum) {
         model.saleCount = currentNum;
+        [ShopCarCtl addContent:model prodcut:productModel];
     };
+    [myCell setTypeModle:model];
     
     return myCell;
 }
