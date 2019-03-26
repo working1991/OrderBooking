@@ -77,7 +77,7 @@
 //订单列表
 - (void)queryOrderList:(NSString *)userId companyId:(NSString *)companyId orderStatus:(OrderStatus)status;
 {
-    NSDictionary *dic = @{@"user_id":userId?userId:@"", @"company_id":companyId?companyId:@"", @"order_status":[NSString stringWithFormat:@"%d", (int)status], @"is_permission": @"1"};
+    NSDictionary *dic = @{@"user_id":userId?userId:@"", @"company_id":companyId?companyId:@"", @"order_status":status==OrderStatus_All?@"":[NSString stringWithFormat:@"%d", (int)status], @"is_permission": @"1"};
     [self startPostListRequest:@"queryOrderList" bodyDic:dic];
 }
 

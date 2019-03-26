@@ -161,10 +161,8 @@
     int count = 0;
     for (Product_Modal *modal in selectArr) {
         for (Standard_Modal *typeModel in modal.typeArr) {
-            if (typeModel.bSelected_) {
-                count += typeModel.saleCount;
-                totalPrice += typeModel.realPrice*typeModel.saleCount;
-            }
+            count += typeModel.saleCount;
+            totalPrice += typeModel.realPrice*typeModel.saleCount;
         }
     }
     totalAmount = totalPrice;
