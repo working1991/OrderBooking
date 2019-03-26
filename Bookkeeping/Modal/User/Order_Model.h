@@ -7,6 +7,7 @@
 //
 
 #import "Base_Modal.h"
+#import "Customer_Modal.h"
 
 typedef enum : NSUInteger {
     OrderStatus_All         = 0,
@@ -21,10 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) NSString        *oporaterId;
 @property (strong, nonatomic) NSString        *oporaterName;
-@property (strong, nonatomic) NSString        *productId;
-@property (strong, nonatomic) NSString        *productName;
-@property (strong, nonatomic) NSString        *customerId;
-@property (strong, nonatomic) NSString        *customerName;
+@property (strong, nonatomic) Customer_Modal  *customerModal;
 @property (strong, nonatomic) NSString        *companyId;
 @property (strong, nonatomic) NSString        *payTypeCode;
 @property (strong, nonatomic) NSString        *payTypeName;

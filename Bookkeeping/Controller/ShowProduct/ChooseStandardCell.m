@@ -37,7 +37,9 @@
     [layer setBorderWidth:1.0];
     [layer setBorderColor:[borderColor CGColor]];
     
-    minNum = 1;
+    self.cntTf.userInteractionEnabled = NO;
+    
+    minNum = Add_Product_Num;
     
     _originalPriceLb
     .lineType = LineTypeMiddle;
@@ -87,14 +89,12 @@
 }
 
 - (IBAction)desClick:(UIButton *)sender {
-    int newNum = [_cntTf.text intValue] -1;
-    if (newNum >= minNum) {
-        [self updateNum:newNum];
-    }
+    int newNum = [_cntTf.text intValue] -Add_Product_Num;
+    [self updateNum:newNum];
 }
 - (IBAction)addClick:(UIButton *)sender {
     
-    int newNum = [_cntTf.text intValue] + 1;
+    int newNum = [_cntTf.text intValue] + Add_Product_Num;
     [self updateNum:newNum];
 }
 

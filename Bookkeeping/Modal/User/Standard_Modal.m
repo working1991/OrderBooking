@@ -10,4 +10,28 @@
 
 @implementation Standard_Modal
 
+-(id)mutableCopyWithZone:(NSZone *)zone
+{
+    Standard_Modal *copy= [Standard_Modal allocWithZone:zone];
+    
+    copy.id_=[self.id_ copyWithZone:zone];
+    copy.name = self.name;
+    copy.code = self.code;
+    copy.des = self.des;
+    copy.imgUrl = self.imgUrl;
+    copy.companyId = self.companyId;
+    copy.unitPrice = self.unitPrice;
+    copy.typeArr = [NSArray arrayWithArray:self.typeArr];
+    
+    copy.firstSpecId = self.firstSpecId;
+    copy.firstSpecName = self.firstSpecName;
+    copy.productReSpecId = self.productReSpecId;
+    copy.secondSpecName = self.secondSpecName;
+    copy.productSpecPrice = self.productSpecPrice;
+    copy.saleCount = self.saleCount;
+    copy.realPrice = self.realPrice;
+    
+    return copy;
+}
+
 @end

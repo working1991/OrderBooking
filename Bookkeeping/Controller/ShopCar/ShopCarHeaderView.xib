@@ -35,6 +35,12 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gch-Bu-gp9">
                     <rect key="frame" x="35" y="0.0" width="456" height="65"/>
                     <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017女装新品基本喀什" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ko2-SQ-Ay8">
+                            <rect key="frame" x="60" y="22" width="376" height="21.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TwK-cf-ZFB">
                             <rect key="frame" x="0.0" y="5" width="55" height="55"/>
                             <color key="backgroundColor" red="0.46274509800000002" green="0.77647058820000003" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -42,12 +48,6 @@
                                 <constraint firstAttribute="width" secondItem="TwK-cf-ZFB" secondAttribute="height" id="QhG-B4-BVr"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017女装新品基本喀什" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ko2-SQ-Ay8">
-                            <rect key="frame" x="60" y="22" width="376" height="21.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -57,6 +57,13 @@
                         <constraint firstAttribute="trailing" secondItem="Ko2-SQ-Ay8" secondAttribute="trailing" constant="20" id="VsA-Lp-1nr"/>
                         <constraint firstItem="TwK-cf-ZFB" firstAttribute="leading" secondItem="gch-Bu-gp9" secondAttribute="leading" id="gEV-mq-SKy"/>
                         <constraint firstItem="Ko2-SQ-Ay8" firstAttribute="leading" secondItem="TwK-cf-ZFB" secondAttribute="trailing" constant="5" id="ldr-IA-BQF"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWL-xN-Ujf">
+                    <rect key="frame" x="0.0" y="64" width="491" height="1"/>
+                    <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Bfj-Nj-cSg"/>
                     </constraints>
                 </view>
             </subviews>
@@ -70,10 +77,13 @@
                 <constraint firstItem="gch-Bu-gp9" firstAttribute="leading" secondItem="cdx-DM-Fpp" secondAttribute="trailing" constant="5" id="OVc-Nd-OID"/>
                 <constraint firstItem="ZjL-0C-JhK" firstAttribute="top" secondItem="9DQ-fJ-sad" secondAttribute="top" id="Ofl-Os-XJX"/>
                 <constraint firstItem="ZjL-0C-JhK" firstAttribute="leading" secondItem="cdx-DM-Fpp" secondAttribute="trailing" id="Pbc-xn-B00"/>
+                <constraint firstAttribute="trailing" secondItem="HWL-xN-Ujf" secondAttribute="trailing" id="RKC-v6-ZWe"/>
                 <constraint firstAttribute="trailing" secondItem="ZjL-0C-JhK" secondAttribute="trailing" id="deb-hA-WBk"/>
                 <constraint firstAttribute="trailing" secondItem="gch-Bu-gp9" secondAttribute="trailing" id="fNU-EG-x4r"/>
+                <constraint firstItem="HWL-xN-Ujf" firstAttribute="leading" secondItem="9DQ-fJ-sad" secondAttribute="leading" id="ff2-Tw-XeK"/>
                 <constraint firstAttribute="bottom" secondItem="ZjL-0C-JhK" secondAttribute="bottom" id="gxs-G8-y95"/>
                 <constraint firstItem="ZjL-0C-JhK" firstAttribute="leading" secondItem="9DQ-fJ-sad" secondAttribute="leading" id="oKi-wL-kMd"/>
+                <constraint firstAttribute="bottom" secondItem="HWL-xN-Ujf" secondAttribute="bottom" id="uGY-Pm-PLI"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -87,6 +97,7 @@
                 <outlet property="chooseBtn" destination="cdx-DM-Fpp" id="10M-gp-aYp"/>
                 <outlet property="iconImgView" destination="TwK-cf-ZFB" id="d3X-fQ-szC"/>
                 <outlet property="titleLb" destination="Ko2-SQ-Ay8" id="ZaR-rD-MbH"/>
+                <outlet property="widthCons" destination="3c8-KB-h2b" id="Qr3-8b-Q0A"/>
             </connections>
             <point key="canvasLocation" x="573.60000000000002" y="283.80809595202402"/>
         </view>

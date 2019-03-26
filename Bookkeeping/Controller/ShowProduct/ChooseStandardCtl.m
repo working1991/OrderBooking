@@ -108,16 +108,17 @@
     if (sender == self.closeBtn) {
         [self hide];
     } else if (sender == self.buyBtn) {
-        BOOL bHave = NO;
+        Product_Modal *selectModal = [detailModal mutableCopy];
+        NSMutableArray *typeArr = [NSMutableArray array];
         for (Standard_Modal *modal in detailModal.typeArr) {
             if (modal.saleCount > 0) {
-                bHave = YES;
-                break;
+                [typeArr addObject:modal];
             }
         }
-        if (bHave) {
+        if (typeArr.count > 0) {
+            selectModal.typeArr = typeArr;
             if (self.finished) {
-                self.finished(detailModal);
+                self.finished(selectModal);
             }
             [self hide];
         } else {

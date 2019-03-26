@@ -12,6 +12,7 @@
 #import "ManagerCtl.h"
 #import "Standard_Modal.h"
 #import "UIImageView+WebCache.h"
+#import "ConfirmOrderCtl.h"
 
 @interface ShopCarCtl () <UITextFieldDelegate>
 
@@ -70,6 +71,28 @@
         [self updateTotalPriceInfo];
         [self.tableView_ reloadData];
         
+    } else if (sender == self.confirmBtn) {
+        NSMutableArray *selectArr = [NSMutableArray array];
+        for (Product_Modal *modal in [ManagerCtl getRoleInfo].selectProductArr) {
+            NSMutableArray *typeArr= [NSMutableArray array];
+            for (Standard_Modal *typeModel in modal.typeArr) {
+                if (typeModel.bSelected_) {
+                    [typeArr addObject:typeModel];
+                }
+            }
+            if (typeArr.count>0) {
+                Product_Modal *selectModal = [modal mutableCopy];
+                selectModal.typeArr = typeArr;
+                [selectArr addObject:selectModal];
+            }
+        }
+        if (selectArr.count == 0) {
+            [BaseUIViewController showAlertView:@"未选择任一产品" msg:nil cancel:@"知道了"];
+        } else {
+            ConfirmOrderCtl *ctl = [ConfirmOrderCtl new];
+            [ctl beginLoad:nil exParam:selectArr];
+            [self.navigationController pushViewController:ctl animated:YES];
+        }
     }
 }
 
@@ -210,7 +233,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ChooseStandardCell *itemCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ChooseStandardCell class]) forIndexPath:indexPath];
-    itemCell.minNum = 1;
+    itemCell.minNum = Add_Product_Num;
     Product_Modal *modal = self.sourceArr[indexPath.section];
     Standard_Modal *typeModel = modal.typeArr[indexPath.row];
     
@@ -297,14 +320,8 @@
     if (!productModal.id_) {
         return NO;
     }
-    Standard_Modal *modal = [Standard_Modal new];
-    modal.productSpecPrice = typeModal.productSpecPrice;
-    modal.realPrice = typeModal.realPrice;
-    modal.firstSpecId = typeModal.firstSpecId;
-    modal.secondSpecName = typeModal.secondSpecName;
-    modal.firstSpecName = typeModal.firstSpecName;
-    modal.productReSpecId = typeModal.productReSpecId;
-    
+    Standard_Modal *modal = [typeModal mutableCopy];
+    modal.bSelected_ = YES;
     NSMutableArray *dataArr = [NSMutableArray arrayWithArray:[ManagerCtl getRoleInfo].selectProductArr];
     BOOL bFind = NO;
     for ( Product_Modal *tmpModal in dataArr ) {
@@ -312,7 +329,7 @@
             for (Standard_Modal *tmpTypeModal in tmpModal.typeArr) {
                 if ([tmpTypeModal.productReSpecId isEqualToString:modal.productReSpecId]) {
                     bFind = YES;
-                    tmpTypeModal.saleCount += 1;
+                    tmpTypeModal.saleCount = modal.saleCount;
                     break;
                 }
             }
@@ -326,12 +343,8 @@
         }
     }
     if( !bFind ){
-        modal.saleCount = 1;
-        modal.bSelected_ = YES;
-        Product_Modal *proModal = [Product_Modal new];
-        proModal.name = productModal.name;
-        proModal.id_ = productModal.id_;
-        proModal.imgUrl = productModal.imgUrl;
+        
+        Product_Modal *proModal = [productModal mutableCopy];
         NSMutableArray *typeArr = [NSMutableArray array];
         [typeArr addObject:modal];
         proModal.typeArr = typeArr;
@@ -341,5 +354,45 @@
     return YES;
 }
 
++ (void)removeProductArr:(NSArray *)productArr
+{
+    for (Product_Modal *modal in productArr) {
+        for (Standard_Modal *typeModal in modal.typeArr) {
+            [self remove:typeModal prodcut:modal];
+        }
+    }
+}
+
+//移除
++ (void)remove:(Standard_Modal *)typeModal prodcut:(Product_Modal *)productModal
+{
+    if (!productModal.id_) {
+        return;
+    }
+    NSMutableArray *dataArr = [NSMutableArray arrayWithArray:[ManagerCtl getRoleInfo].selectProductArr];
+    BOOL bFind = NO;
+    Product_Modal *deleteModal;
+    for ( Product_Modal *tmpModal in dataArr ) {
+        if ([tmpModal.id_ isEqualToString:productModal.id_]) {
+            for (Standard_Modal *tmpTypeModal in tmpModal.typeArr) {
+                if ([tmpTypeModal.productReSpecId isEqualToString:typeModal.productReSpecId]) {
+                    bFind = YES;
+                    NSMutableArray *typeArr = [NSMutableArray arrayWithArray:tmpModal.typeArr];
+                    [typeArr removeObject:tmpTypeModal];
+                    tmpModal.typeArr = typeArr;
+                }
+            }
+            if (tmpModal.typeArr.count == 0) {
+                deleteModal = tmpModal;
+                break;
+            }
+        }
+    }
+    
+    if( deleteModal.id_){
+        [dataArr removeObject:deleteModal];
+    }
+    [ManagerCtl getRoleInfo].selectProductArr = dataArr;
+}
 
 @end

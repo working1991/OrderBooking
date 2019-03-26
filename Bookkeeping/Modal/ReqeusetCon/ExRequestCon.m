@@ -60,12 +60,17 @@
 //确认下单
 - (void)confirmOrder:(Order_Model *)modal
 {
-    NSMutableArray *typeArr = [NSMutableArray array];
-    for (Standard_Modal *typeModel in modal.productTypeArr) {
-        NSDictionary *typeDic = @{@"product_re_spec_id":typeModel.productReSpecId?typeModel.productReSpecId:@"" ,@"price":[NSString stringWithFormat:@"%.2lf", typeModel.productSpecPrice], @"product_number":[NSString stringWithFormat:@"%d", (int)typeModel.saleCount]};
-        [typeArr addObject:typeDic];
+    NSMutableArray *productArr = [NSMutableArray array];
+    for (Product_Modal *productModal in modal.productTypeArr) {
+        NSMutableArray *typeArr = [NSMutableArray array];
+        for (Standard_Modal *typeModel in productModal.typeArr) {
+            NSDictionary *typeDic = @{@"product_re_spec_id":typeModel.productReSpecId?typeModel.productReSpecId:@"" ,@"price":[NSString stringWithFormat:@"%.2lf", typeModel.realPrice], @"product_number":[NSString stringWithFormat:@"%d", (int)typeModel.saleCount]};
+            [typeArr addObject:typeDic];
+        }
+        [productArr addObject:@{@"product_id":productModal.id_?productModal.id_:@"", @"productSpecs": typeArr}];
     }
-    NSDictionary *dic = @{@"user_id":modal.oporaterId?modal.oporaterId:@"", @"product_id":modal.productId?modal.productId:@"", @"customer_id":modal.customerId?modal.customerId:Null_Default, @"company_id":modal.companyId?modal.companyId:@"", @"order_price":[NSString stringWithFormat:@"%.2lf", modal.orderPrice], @"real_price":[NSString stringWithFormat:@"%.2lf", modal.realPrice], @"order_status":[NSString stringWithFormat:@"%d", (int)modal.orderStatus], @"pay_type":modal.payTypeCode?modal.payTypeCode:@"", @"product_number":[NSString stringWithFormat:@"%d", (int)modal.saleCount], @"products": typeArr};
+    
+    NSDictionary *dic = @{@"user_id":modal.oporaterId?modal.oporaterId:@"", @"customer_id":modal.customerModal.id_?modal.customerModal.id_:Null_Default, @"company_id":modal.companyId?modal.companyId:@"", @"order_price":[NSString stringWithFormat:@"%.2lf", modal.orderPrice], @"real_price":[NSString stringWithFormat:@"%.2lf", modal.realPrice], @"order_status":[NSString stringWithFormat:@"%d", (int)modal.orderStatus], @"pay_type":modal.payTypeCode?modal.payTypeCode:@"", @"product_number":[NSString stringWithFormat:@"%d", (int)modal.saleCount], @"products": productArr};
     [self startPostRequest:@"confirmOrder" bodyDic:dic];
 }
 

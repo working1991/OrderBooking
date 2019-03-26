@@ -12,6 +12,13 @@
 
 @synthesize restCode,restMsg,code,name,des;
 
+- (void)setId_:(NSString *)id_
+{
+    if (id_) {
+        _id_ = [NSString stringWithFormat:@"%@", id_];
+    }
+}
+
 +(NSString *) getArrDes:(NSArray *)arr
 {
     return [self getArrDes:arr withDot:@"、"];

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Product_Modal : Base_Modal
+@interface Product_Modal : Base_Modal <NSMutableCopying>
 
 @property (strong, nonatomic) NSString        *imgUrl;
 @property (strong, nonatomic) NSString        *unitPrice;//单价

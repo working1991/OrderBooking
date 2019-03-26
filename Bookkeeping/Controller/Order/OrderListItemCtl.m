@@ -79,7 +79,7 @@
     OrderListCell *myCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([OrderListCell class]) forIndexPath:indexPath];
     
     Order_Model *modal = requestCon_.dataArr_[indexPath.row];
-    myCell.customerLb.text = modal.customerName;
+    myCell.customerLb.text = modal.customerModal.name;
     myCell.statusLb.text = modal.orderStatusName;
     myCell.orderCodeLb.text = [NSString stringWithFormat:@"订单编号：%@", modal.id_];
     myCell.operaterLb.text = [NSString stringWithFormat:@"开单人：%@", modal.oporaterName];

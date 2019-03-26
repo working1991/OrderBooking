@@ -103,6 +103,18 @@
 
 - (void)rightBarBtnResponse:(id)sender
 {
+    ChooseStandardCtl *ctl;
+    for (UIViewController *viewCtl in self.childViewControllers) {
+        if ([viewCtl isKindOfClass:[ChooseStandardCtl class]]) {
+            ctl = (ChooseStandardCtl *)viewCtl;
+            break;
+        }
+    }
+    if (ctl) {
+        ctl.view.alpha = 0.0;
+        [ctl.view removeFromSuperview];
+        [ctl removeFromParentViewController];
+    }
     [self.navigationController pushViewController:[ShopCarCtl new] animated:YES];
 }
 

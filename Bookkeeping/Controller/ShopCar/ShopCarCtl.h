@@ -22,4 +22,6 @@
 //添加
 + (BOOL)addContent:(Standard_Modal *)typeModal prodcut:(Product_Modal *)productModal;
 
++ (void)removeProductArr:(NSArray *)productArr;
+
 @end

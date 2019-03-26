@@ -15,27 +15,26 @@
 #import "UIImageView+WebCache.h"
 #import "Order_Model.h"
 #import "ManagerCtl.h"
+#import "ShopCarHeaderView.h"
+#import "PrintTool.h"
+#import "ShopCarCtl.h"
 
 @interface ConfirmOrderCtl () <UITextFieldDelegate>
 
 {
     Base_Modal *payModel;
-    Product_Modal *productModel;
     Customer_Modal *customerModel;
     NSMutableArray  *selectArr;
     double    totalAmount;
     double    realAmount;
     int       totalCount;
     RequestCon *confirmCon;
+    RequestCon *detailCon;
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *customerBtn;
 @property (weak, nonatomic) IBOutlet UITextField *realAmoutTf;
 @property (weak, nonatomic) IBOutlet UIButton *payBtn;
-@property (weak, nonatomic) IBOutlet UIImageView *iconImgView;
-@property (weak, nonatomic) IBOutlet UILabel *classLb;
-@property (weak, nonatomic) IBOutlet UILabel *totalNumLb;
-@property (weak, nonatomic) IBOutlet UILabel *nameLb;
 @property (weak, nonatomic) IBOutlet UILabel *totalAmoutLb;
 @property (weak, nonatomic) IBOutlet UILabel *totalInfoLb;
 @property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
@@ -59,6 +58,7 @@
     // Do any additional setup after loading the view from its nib.
     
     [self.tableView_ registerNib:[UINib nibWithNibName:NSStringFromClass([ChooseStandardCell class]) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:NSStringFromClass([ChooseStandardCell class])];
+    [self.tableView_ registerNib:[UINib nibWithNibName:NSStringFromClass([ShopCarHeaderView class]) bundle:nil] forHeaderFooterViewReuseIdentifier:NSStringFromClass([ShopCarHeaderView class])];
     self.realAmoutTf.delegate = self;
     [self updateDetailInfo];
 }
@@ -71,7 +71,12 @@
 #pragma mark - Base
 - (void)beginLoad:(id)dataModal exParam:(id)exParam
 {
-    productModel = dataModal;
+    if ([dataModal isKindOfClass:[Product_Modal class]]) {
+        selectArr = [NSMutableArray arrayWithObject:dataModal];
+    }
+    if ([exParam isKindOfClass:[NSArray class]]) {
+        selectArr = [NSMutableArray arrayWithArray:exParam];
+    }
     [self updateDetailInfo];
 }
 
@@ -81,9 +86,16 @@
         Base_Modal *modal = [dataArr firstObject];
         if ([modal.restCode isEqualToString:Request_OK]) {
             [BaseUIViewController showHUDSuccessView:@"下单成功" msg:nil];
+            detailCon = [self getNewRequestCon:NO];
+            [detailCon queryOrderDetail:modal.id_];
+            [ShopCarCtl removeProductArr:selectArr];
         } else {
             [BaseUIViewController showAlertView:@"下单失败" msg:modal.restMsg?modal.restMsg:@"请稍后重试" cancel:@"知道了"];
         }
+    }else if (request == detailCon) {
+        [self.navigationController popViewControllerAnimated:YES];
+        Order_Model *detailModel = dataArr.firstObject;
+        [[PrintTool sharedManager] printOrderInfo:detailModel];
     }
 }
 
@@ -139,47 +151,24 @@
 
 - (void)updateDetailInfo
 {
-    if (!productModel) {
-        return;
-    }
-    self.nameLb.text = productModel.name;
-    [self.iconImgView sd_setImageWithURL:[NSURL URLWithString:productModel.imgUrl]];
-    
-    selectArr = [NSMutableArray array];
-    double amount = 0;
-    int count = 0;
-    for (NSInteger i=0; i<productModel.typeArr.count; i++) {
-        Standard_Modal *model = productModel.typeArr[i];
-        if (model.saleCount <= 0) {
-            continue;
-        }
-        count += model.saleCount;
-        amount += model.productSpecPrice * model.saleCount;
-        [selectArr addObject:model];
-    }
-    
-    totalAmount = amount;
-    totalCount = count;
-    self.classLb.text = [NSString stringWithFormat:@"%ld种商品", selectArr.count];
-    self.totalNumLb.text = [NSString stringWithFormat:@"共%d件商品", count];
-    self.totalAmoutLb.text = [NSString stringWithFormat:@"¥%.2lf", totalAmount];
-    self.totalInfoLb.text = [NSString stringWithFormat:@"共%ld种%d件商品", selectArr.count, count];
     [self.tableView_ reloadData];
+    [self updateTotalPriceInfo];
 }
 
-- (void)updateTotalInfo
+- (void)updateTotalPriceInfo
 {
-    double amount = 0;
+    double totalPrice = 0;
     int count = 0;
-    for (NSInteger i=0; i<selectArr.count; i++) {
-        Standard_Modal *model = selectArr[i];
-        count += model.saleCount;
-        amount += model.productSpecPrice * model.saleCount;
+    for (Product_Modal *modal in selectArr) {
+        for (Standard_Modal *typeModel in modal.typeArr) {
+            if (typeModel.bSelected_) {
+                count += typeModel.saleCount;
+                totalPrice += typeModel.realPrice*typeModel.saleCount;
+            }
+        }
     }
-    
-    totalAmount = amount;
+    totalAmount = totalPrice;
     totalCount = count;
-    self.totalNumLb.text = [NSString stringWithFormat:@"共%d件商品", count];
     self.totalAmoutLb.text = [NSString stringWithFormat:@"¥%.2lf", totalAmount];
     self.totalInfoLb.text = [NSString stringWithFormat:@"共%ld种%d件商品", selectArr.count, count];
 }
@@ -189,8 +178,7 @@
     Order_Model *modal = [Order_Model new];
     modal.oporaterId = [ManagerCtl getRoleInfo].id_;
     modal.companyId = [ManagerCtl getRoleInfo].companyId;
-    modal.productId = productModel.id_;
-    modal.customerId = customerModel.id_;
+    modal.customerModal = customerModel;
     modal.orderPrice = totalAmount;
     modal.realPrice = [self.realAmoutTf.text doubleValue];
     modal.payTypeCode = payModel.code;
@@ -219,33 +207,84 @@
     [self addChildViewController:ctl];
 }
 
+- (void)modifyPrice:(NSIndexPath *)indexPath
+{
+    [self showTextAlert:UIKeyboardTypeDecimalPad title:@"修改单价" msg:nil placeholder:@"请输入价格" confirmHandle:^(NSString *text) {
+        Product_Modal *modal = selectArr[indexPath.section];
+        Standard_Modal *typeModel = modal.typeArr[indexPath.row];
+        typeModel.realPrice = [text doubleValue];
+        [self.tableView_ reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self updateTotalPriceInfo];
+    }];
+}
 #pragma mark - UITableView
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
     return selectArr.count;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 90;
+    Product_Modal *modal = selectArr[section];
+    return modal.typeArr.count;
 }
 
--(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    ChooseStandardCell *myCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ChooseStandardCell class]) forIndexPath:indexPath];
+    ShopCarHeaderView *headView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([ShopCarHeaderView class])];
     
+    headView.widthCons.constant = 0;
+    Product_Modal *modal = selectArr[section];
+    headView.titleLb.text = modal.name;
+    [headView.iconImgView sd_setImageWithURL:[NSURL URLWithString:modal.imgUrl]];
     
-    Standard_Modal *model = selectArr[indexPath.row];
-    myCell.nameLb.text = [NSString stringWithFormat:@"尺码：%@（%@）", model.secondSpecName, model.firstSpecName];
-    myCell.originalPriceLb.hidden = YES;
-    myCell.priceLb.text = [NSString stringWithFormat:@"¥%.2lf元/件", model.productSpecPrice];
-    [myCell updateNum:model.saleCount];
-    myCell.numChange = ^(int currentNum) {
-        model.saleCount = currentNum;
-        [self updateTotalInfo];
+    return headView;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *view = [UIView new];
+    view.backgroundColor = [UIColor clearColor];
+    return view;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ChooseStandardCell *itemCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ChooseStandardCell class]) forIndexPath:indexPath];
+    itemCell.widthCons.constant = 0;
+    Product_Modal *modal = selectArr[indexPath.section];
+    Standard_Modal *typeModel = modal.typeArr[indexPath.row];
+    
+    itemCell.numChange = ^(int count){
+        typeModel.saleCount = count;
+        [self updateTotalPriceInfo];
     };
     
-    return myCell;
+    itemCell.modifyPriceBlock = ^{
+        [self modifyPrice:indexPath];
+    };
+    
+    [itemCell setTypeModle:typeModel];
+    
+    itemCell.cntTf.delegate = self;
+    
+    return itemCell;
+}
+
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
+}
+
+-(CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 60;
+}
+
+-(CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 5;
 }
 
 @end

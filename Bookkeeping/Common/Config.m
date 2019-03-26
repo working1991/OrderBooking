@@ -25,4 +25,17 @@
     return ServiceAddr_Default;
 }
 
++ (void)setAddProductNum:(int)num;
+{
+    [[NSUserDefaults standardUserDefaults] setObject:@(num) forKey:@"config_key_add"];
+}
+
++ (int)getAddProductNum;
+{
+    if ( [[NSUserDefaults standardUserDefaults] objectForKey:@"config_key_add"] ) {
+        return [[[NSUserDefaults standardUserDefaults] objectForKey:@"config_key_add"] intValue];
+    }
+    return 1;
+}
+
 @end

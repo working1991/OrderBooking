@@ -7,6 +7,7 @@
 //
 
 #import "User_Modal.h"
+#import "Config.h"
 
 @implementation User_Modal
 
@@ -17,6 +18,12 @@
         _sexType = -1;
     }
     return self;
+}
+
+- (void)setAddProductNum:(int)addProductNum
+{
+    [Config setAddProductNum:addProductNum];
+    _addProductNum = addProductNum;
 }
 
 @end

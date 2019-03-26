@@ -28,4 +28,6 @@ typedef enum {
 
 @property (strong, nonatomic) NSArray        *selectProductArr;
 
+@property (assign, nonatomic) int            addProductNum;
+
 @end

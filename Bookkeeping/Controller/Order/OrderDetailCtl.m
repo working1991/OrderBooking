@@ -84,11 +84,10 @@
 #pragma mark - Pravite
 - (void)updateDetailInfo:(Order_Model *)modal
  {
-     self.customerLb.text = modal.customerName;
+     self.customerLb.text = modal.customerModal.name;
      self.statusLb.text = modal.orderStatusName;
      self.orderCodeLb.text = modal.id_;
      self.operaterLb.text = modal.oporaterName;
-     self.productName.text = modal.productName;
      self.timeLb.text = modal.createTime;
      self.totalPriceLb.text = [NSString stringWithFormat:@"¥%.2lf", modal.orderPrice];
      self.realPayLb.text = [NSString stringWithFormat:@"¥%.2lf", modal.realPrice];
@@ -105,7 +104,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return 65;
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -113,6 +112,7 @@
     OrderDetailCell *myCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([OrderDetailCell class]) forIndexPath:indexPath];
     
     Standard_Modal *modal = detailModel.productTypeArr[indexPath.row];
+    myCell.productName.text = modal.name;
     myCell.typeLb.text = [NSString stringWithFormat:@"尺码：%@（%@）", modal.secondSpecName, modal.firstSpecName];
     myCell.countLb.text = [NSString stringWithFormat:@"%d件", modal.saleCount];
     

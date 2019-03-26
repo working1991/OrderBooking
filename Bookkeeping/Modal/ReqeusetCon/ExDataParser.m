@@ -112,6 +112,7 @@
         modal.name = dic[@"name"];
         modal.telphone = dic[@"mobile"];
         modal.companyId = dic[@"companyId"];
+        modal.addProductNum = [dic[@"add_product"] intValue];
         
         baseModal = modal;
     }
@@ -221,7 +222,10 @@
                 modal.realPrice = [tmpDic[@"realPrice"] doubleValue];
                 modal.code = tmpDic[@"code"];
                 modal.oporaterName = tmpDic[@"managerName"];
-                modal.customerName = tmpDic[@"customerName"];
+                
+                modal.customerModal = [Customer_Modal new];
+                modal.customerModal.name = tmpDic[@"customerName"];
+                
                 modal.createTime = tmpDic[@"createTime"];
                 
                 modal.totalPage_ = totalPage;
@@ -248,7 +252,12 @@
         modal.realPrice = [tmpDic[@"realPrice"] doubleValue];
         modal.code = tmpDic[@"code"];
         modal.oporaterName = tmpDic[@"managerName"];
-        modal.customerName = tmpDic[@"customerName"];
+        
+        modal.customerModal = [Customer_Modal new];
+        modal.customerModal.name = tmpDic[@"customerName"];
+        modal.customerModal.telphone = tmpDic[@"customerMobile"];
+        modal.customerModal.address = tmpDic[@"address"];
+        
         modal.saleCount = [tmpDic[@"productNumber"] intValue];
         modal.createTime = tmpDic[@"createTime"];
         NSMutableArray *typeArr = [NSMutableArray array];
@@ -263,9 +272,6 @@
             typeModel.saleCount = [typeDic[@"product_number"] intValue];
             
             [typeArr addObject:typeModel];
-            
-            modal.productId = typeDic[@"productId"];
-            modal.productName = typeDic[@"productName"];
         }
         modal.productTypeArr = typeArr;
         

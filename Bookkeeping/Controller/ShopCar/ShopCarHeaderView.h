@@ -10,6 +10,7 @@
 
 @interface ShopCarHeaderView : UITableViewHeaderFooterView
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthCons;
 @property (weak, nonatomic) IBOutlet UIButton   *chooseBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *iconImgView;
 @property (weak, nonatomic) IBOutlet UILabel    *titleLb;

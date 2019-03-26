@@ -34,10 +34,16 @@
 #define Default_Null_Str            @"--"
 
 
+#define Add_Product_Num             [Config getAddProductNum]
+
+
 @interface Config : NSObject
 
 //服务器地址
 + (void)setServiceAddr:(NSString *)addrStr;
 + (NSString *)getServiceAddr;
+
++ (void)setAddProductNum:(int)num;
++ (int)getAddProductNum;
 
 @end

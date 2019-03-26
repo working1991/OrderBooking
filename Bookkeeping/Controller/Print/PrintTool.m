@@ -38,17 +38,20 @@
     [printer appendTitle:@"订单编号:" value:dataModal.id_];
     [printer appendTitle:@"开单时间:" value:dataModal.createTime];
     
-    [printer appendTitle:@"客户:" value:dataModal.customerName];
-    [printer appendTitle:@"商品:" value:dataModal.productName];
+    [printer appendTitle:@"客户姓名:" value:dataModal.customerModal.name];
+    [printer appendTitle:@"客户手机:" value:dataModal.customerModal.telphone];
+    [printer appendTitle:@"客户地址:" value:dataModal.customerModal.address];
     
-    [printer appendSeperatorLine];
-    [printer appendLeftText:@"尺码" middleText:@"数量" rightText:@"单价" isTitle:YES];
-
-    for (Standard_Modal *typeModal in dataModal.productTypeArr) {
-        NSString *type = [NSString stringWithFormat:@"%@（%@）", typeModal.secondSpecName, typeModal.firstSpecName];
-        NSString *count = [NSString stringWithFormat:@"%d", typeModal.saleCount];
-        NSString *price = [NSString stringWithFormat:@"%.2lf", typeModal.productSpecPrice];
-        [printer appendLeftText:type middleText:count rightText:price isTitle:NO];
+    for (Product_Modal *productModal in dataModal.productTypeArr) {
+        [printer appendSeperatorLine];
+        [printer appendTitle:@"商品:" value:productModal.name];
+        [printer appendLeftText:@"尺码" middleText:@"数量" rightText:@"单价" isTitle:YES];
+        for (Standard_Modal *typeModal in productModal.typeArr) {
+            NSString *type = [NSString stringWithFormat:@"%@（%@）", typeModal.secondSpecName, typeModal.firstSpecName];
+            NSString *count = [NSString stringWithFormat:@"%d", typeModal.saleCount];
+            NSString *price = [NSString stringWithFormat:@"%.2lf", typeModal.productSpecPrice];
+            [printer appendLeftText:type middleText:count rightText:price isTitle:NO];
+        }
     }
     
     [printer appendSeperatorLine];
