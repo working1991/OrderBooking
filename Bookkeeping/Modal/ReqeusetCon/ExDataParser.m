@@ -260,20 +260,28 @@
         
         modal.saleCount = [tmpDic[@"productNumber"] intValue];
         modal.createTime = tmpDic[@"createTime"];
-        NSMutableArray *typeArr = [NSMutableArray array];
-        for (NSDictionary *typeDic in tmpDic[@"specs"]) {
-            Standard_Modal *typeModel = [Standard_Modal new];
-            typeModel.id_ = typeDic[@"productId"];
-            typeModel.name = typeDic[@"productName"];
-            typeModel.firstSpecName = typeDic[@"firstSpecName"];
-            typeModel.productSpecPrice = [typeDic[@"specPrice"] doubleValue];
-            typeModel.secondSpecName = typeDic[@"secondSpecName"];
-            typeModel.realPrice = [typeDic[@"realPrice"] doubleValue];
-            typeModel.saleCount = [typeDic[@"product_number"] intValue];
+        
+        NSMutableArray *productArr = [NSMutableArray array];
+        for (NSDictionary *productDic in tmpDic[@"specs"]) {
+            Product_Modal *productModal = [Product_Modal new];
+            productModal.id_ = productDic[@"productId"];
+            productModal.name = productDic[@"productName"];
             
-            [typeArr addObject:typeModel];
+            NSMutableArray *typeArr = [NSMutableArray array];
+            for (NSDictionary *typeDic in productDic[@"specDtos"]) {
+                Standard_Modal *typeModel = [Standard_Modal new];
+                typeModel.firstSpecName = typeDic[@"firstSpecName"];
+                typeModel.secondSpecName = typeDic[@"secondSpecName"];
+                typeModel.productSpecPrice = [typeDic[@"specPrice"] doubleValue];
+                typeModel.realPrice = [typeDic[@"realPrice"] doubleValue];
+                typeModel.saleCount = [typeDic[@"productNumber"] intValue];
+                
+                [typeArr addObject:typeModel];
+            }
+            productModal.typeArr = typeArr;
+            [productArr addObject:productModal];
         }
-        modal.productTypeArr = typeArr;
+        modal.productTypeArr = productArr;
         
         [arr addObject:modal];
     }

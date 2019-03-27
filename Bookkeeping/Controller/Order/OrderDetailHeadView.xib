@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Ihf-XL-YpB" customClass="OrderDetailHeadView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghn-Ti-Y5H">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="商品：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihm-Aj-Ycm">
+                    <rect key="frame" x="10" y="23.5" width="55.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品白色衬衫" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icS-Sc-hyr">
+                    <rect key="frame" x="65.5" y="23.5" width="299.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LtS-cn-3dk">
+                    <rect key="frame" x="0.0" y="67" width="375" height="1"/>
+                    <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="c7M-Ti-snA"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ghn-Ti-Y5H" secondAttribute="bottom" id="00A-pI-OyG"/>
+                <constraint firstAttribute="trailing" secondItem="LtS-cn-3dk" secondAttribute="trailing" id="Gpj-w1-Qky"/>
+                <constraint firstAttribute="bottom" secondItem="LtS-cn-3dk" secondAttribute="bottom" id="H6T-Vo-j5i"/>
+                <constraint firstAttribute="trailing" secondItem="ghn-Ti-Y5H" secondAttribute="trailing" id="QJe-yk-qhv"/>
+                <constraint firstItem="LtS-cn-3dk" firstAttribute="leading" secondItem="Ihf-XL-YpB" secondAttribute="leading" id="aU4-Ja-8Pz"/>
+                <constraint firstItem="ihm-Aj-Ycm" firstAttribute="leading" secondItem="Ihf-XL-YpB" secondAttribute="leading" constant="10" id="ahR-9x-W6B"/>
+                <constraint firstItem="ghn-Ti-Y5H" firstAttribute="leading" secondItem="Ihf-XL-YpB" secondAttribute="leading" id="cfS-nh-iwF"/>
+                <constraint firstItem="icS-Sc-hyr" firstAttribute="leading" secondItem="ihm-Aj-Ycm" secondAttribute="trailing" id="e34-1a-h9t"/>
+                <constraint firstItem="icS-Sc-hyr" firstAttribute="centerY" secondItem="ihm-Aj-Ycm" secondAttribute="centerY" id="f6s-z0-W1R"/>
+                <constraint firstItem="ihm-Aj-Ycm" firstAttribute="centerY" secondItem="Ihf-XL-YpB" secondAttribute="centerY" id="kZB-Bt-qRC"/>
+                <constraint firstItem="ghn-Ti-Y5H" firstAttribute="top" secondItem="Ihf-XL-YpB" secondAttribute="top" id="nWg-RN-osu"/>
+                <constraint firstAttribute="trailing" secondItem="icS-Sc-hyr" secondAttribute="trailing" constant="10" id="tOU-Es-WiY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="productName" destination="icS-Sc-hyr" id="4Hl-QC-HE3"/>
+            </connections>
+            <point key="canvasLocation" x="623.20000000000005" y="286.05697151424289"/>
+        </view>
+    </objects>
+</document>

@@ -9,6 +9,7 @@
 #import "OrderDetailCtl.h"
 #import "OrderDetailCell.h"
 #import "PrintTool.h"
+#import "OrderDetailHeadView.h"
 
 @interface OrderDetailCtl ()
 
@@ -39,6 +40,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    [self.tableView_ registerNib:[UINib nibWithNibName:NSStringFromClass([OrderDetailHeadView class]) bundle:nil] forHeaderFooterViewReuseIdentifier:NSStringFromClass([OrderDetailHeadView class])];
     [self.tableView_ registerNib:[UINib nibWithNibName:NSStringFromClass([OrderDetailCell class]) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:NSStringFromClass([OrderDetailCell class])];
     
     CALayer *layer = self.operateBtn.layer;
@@ -97,22 +99,43 @@
 #pragma mark - Delegate
 
 #pragma mark - UITableView
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return detailModel.productTypeArr.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 50;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    OrderDetailHeadView *headView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([OrderDetailHeadView class])];
+    
+    Product_Modal *productModal = detailModel.productTypeArr[section];
+    headView.productName.text = productModal.name;
+    
+    return headView;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    Product_Modal *productModal = detailModel.productTypeArr[section];
+    return productModal.typeArr.count;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 65;
+    return 44;
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     OrderDetailCell *myCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([OrderDetailCell class]) forIndexPath:indexPath];
     
-    Standard_Modal *modal = detailModel.productTypeArr[indexPath.row];
-    myCell.productName.text = modal.name;
+    Product_Modal *productModal = detailModel.productTypeArr[indexPath.section];
+    Standard_Modal *modal = productModal.typeArr[indexPath.row];
     myCell.typeLb.text = [NSString stringWithFormat:@"尺码：%@（%@）", modal.secondSpecName, modal.firstSpecName];
     myCell.countLb.text = [NSString stringWithFormat:@"%d件", modal.saleCount];
     
