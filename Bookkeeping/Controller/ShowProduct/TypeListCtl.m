@@ -67,7 +67,7 @@
     myCell.widthCons.constant = 0;
     myCell.numChange = ^(int currentNum) {
         model.saleCount = currentNum;
-        [ShopCarCtl addContent:model prodcut:productModel];
+//        [ShopCarCtl addContent:model prodcut:productModel];
     };
     [myCell setTypeModle:model];
     

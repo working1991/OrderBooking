@@ -12,6 +12,7 @@
 #import "Standard_Modal.h"
 #import "UIImageView+WebCache.h"
 #import "TypeListCtl.h"
+#import "ShopCarCtl.h"
 
 @interface ChooseStandardCtl ()
 
@@ -113,6 +114,7 @@
         for (Standard_Modal *modal in detailModal.typeArr) {
             if (modal.saleCount > 0) {
                 [typeArr addObject:modal];
+                [ShopCarCtl addContent:modal prodcut:selectModal];
             }
         }
         if (typeArr.count > 0) {

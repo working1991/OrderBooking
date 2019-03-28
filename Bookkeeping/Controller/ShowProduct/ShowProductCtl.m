@@ -124,9 +124,9 @@
 {
     Product_Modal *modal = requestCon_.dataArr_[sender.tag];
     ChooseStandardCtl *ctl = [ChooseStandardCtl start:modal showInfoView:self.view finished:^(Product_Modal *product) {
-        ConfirmOrderCtl *ctl = [ConfirmOrderCtl new];
-        [ctl beginLoad:product exParam:nil];
-        [self.navigationController pushViewController:ctl animated:YES];
+//        ConfirmOrderCtl *ctl = [ConfirmOrderCtl new];
+//        [ctl beginLoad:product exParam:nil];
+//        [self.navigationController pushViewController:ctl animated:YES];
     }];
     [self addChildViewController:ctl];
 }

@@ -77,7 +77,7 @@
             NSMutableArray *typeArr= [NSMutableArray array];
             for (Standard_Modal *typeModel in modal.typeArr) {
                 if (typeModel.bSelected_) {
-                    [typeArr addObject:typeModel];
+                    [typeArr addObject:[typeModel mutableCopy]];
                 }
             }
             if (typeArr.count>0) {
@@ -149,7 +149,6 @@
             if (typeModel.bSelected_) {
                 count += typeModel.saleCount;
                 totalPrice += typeModel.realPrice*typeModel.saleCount;
-                break;
             }
         }
     }
@@ -329,7 +328,7 @@
             for (Standard_Modal *tmpTypeModal in tmpModal.typeArr) {
                 if ([tmpTypeModal.productReSpecId isEqualToString:modal.productReSpecId]) {
                     bFind = YES;
-                    tmpTypeModal.saleCount = modal.saleCount;
+                    tmpTypeModal.saleCount += modal.saleCount;
                     break;
                 }
             }
