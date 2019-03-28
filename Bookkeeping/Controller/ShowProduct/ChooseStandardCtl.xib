@@ -11,7 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChooseStandardCtl">
             <connections>
-                <outlet property="buyBtn" destination="FM5-A1-haH" id="5gI-Ep-svf"/>
+                <outlet property="addCarBtn" destination="FM5-A1-haH" id="SKI-fA-PtO"/>
+                <outlet property="buyBtn" destination="Af3-eu-DYF" id="QjQ-KH-cpf"/>
                 <outlet property="closeBtn" destination="e3k-W3-wpN" id="bkg-Jq-3zl"/>
                 <outlet property="contentView" destination="dnW-nI-lJh" id="12y-t6-UzW"/>
                 <outlet property="iconImgView" destination="W5J-LI-c48" id="4L8-DR-ihj"/>
@@ -34,10 +35,10 @@
                     <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J9p-kt-6Je">
-                            <rect key="frame" x="0.0" y="507" width="375" height="40"/>
+                            <rect key="frame" x="0.0" y="497" width="375" height="50"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FM5-A1-haH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="50"/>
                                     <color key="backgroundColor" red="0.0039215686269999999" green="0.66274509800000003" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                     <state key="normal" title="加入购物车">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -46,14 +47,28 @@
                                         <action selector="viewClicked:" destination="-1" eventType="touchUpInside" id="W9k-BB-Jvn"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Af3-eu-DYF">
+                                    <rect key="frame" x="187.5" y="0.0" width="187.5" height="50"/>
+                                    <color key="backgroundColor" red="0.46274509800000002" green="0.77647058820000003" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="下单">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="viewClicked:" destination="-1" eventType="touchUpInside" id="9K1-qx-2B2"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="FM5-A1-haH" firstAttribute="leading" secondItem="J9p-kt-6Je" secondAttribute="leading" id="1Pr-ry-yj9"/>
+                                <constraint firstAttribute="bottom" secondItem="Af3-eu-DYF" secondAttribute="bottom" id="5Aq-rv-beH"/>
                                 <constraint firstAttribute="bottom" secondItem="FM5-A1-haH" secondAttribute="bottom" id="8wb-zE-sV0"/>
-                                <constraint firstAttribute="trailing" secondItem="FM5-A1-haH" secondAttribute="trailing" id="aax-CW-LxX"/>
+                                <constraint firstItem="Af3-eu-DYF" firstAttribute="top" secondItem="J9p-kt-6Je" secondAttribute="top" id="cJP-hF-gr1"/>
                                 <constraint firstItem="FM5-A1-haH" firstAttribute="top" secondItem="J9p-kt-6Je" secondAttribute="top" id="eZC-QE-HW2"/>
-                                <constraint firstAttribute="height" constant="40" id="ygc-To-kVC"/>
+                                <constraint firstItem="Af3-eu-DYF" firstAttribute="width" secondItem="FM5-A1-haH" secondAttribute="width" id="i0I-p3-BDT"/>
+                                <constraint firstAttribute="trailing" secondItem="Af3-eu-DYF" secondAttribute="trailing" id="uAv-KO-QFe"/>
+                                <constraint firstItem="Af3-eu-DYF" firstAttribute="leading" secondItem="FM5-A1-haH" secondAttribute="trailing" id="uu4-mh-2Ov"/>
+                                <constraint firstAttribute="height" constant="50" id="ygc-To-kVC"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8o-KY-yrV">
@@ -97,7 +112,7 @@
                             </connections>
                         </button>
                         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rsC-0R-mum">
-                            <rect key="frame" x="0.0" y="90" width="375" height="417"/>
+                            <rect key="frame" x="0.0" y="90" width="375" height="407"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUo-Zp-jcW">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -107,7 +122,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnW-nI-lJh">
-                                    <rect key="frame" x="0.0" y="45" width="375" height="372"/>
+                                    <rect key="frame" x="0.0" y="45" width="375" height="362"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                             </subviews>

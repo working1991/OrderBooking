@@ -35,7 +35,7 @@
     self = [super init];
     if (self) {
         self.title = @"首页";
-        rightBarImg_ = @"icon_shopcart_white";
+//        rightBarImg_ = @"icon_shopcart_white";
     }
     return self;
 }
@@ -48,11 +48,39 @@
     self.firstClassTableView.dataSource = self;
     [self.firstClassTableView registerNib:[UINib nibWithNibName:NSStringFromClass([FirstClassCell class]) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:NSStringFromClass([FirstClassCell class])];
     [self.tableView_ registerNib:[UINib nibWithNibName:NSStringFromClass([ShowProductCell class]) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:NSStringFromClass([ShowProductCell class])];
+    [self initShopCarItem];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NotifyKey_ShopCartChanged object:nil];
+}
+
+- (void)initShopCarItem
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:[UIImage imageNamed:@"icon_shopcart_white"] forState:UIControlStateNormal];
+    button.frame  = CGRectMake(0,7,22,30);
+    [button addTarget:self action:@selector(rightBarBtnResponse:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = rightItem;
+    
+    //注册购物车通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(udpateShopCartChanged:) name:NotifyKey_ShopCartChanged object:nil];
+}
+
+-(void) udpateShopCartChanged:(id)obj
+{
+    int cnt = [ShopCarCtl getProductCnt];
+    [UIView animateWithDuration:0.5 animations:^{
+        [MsgView setMsg:self.navigationItem.rightBarButtonItem.customView rightLess:-8 topMore:-8 cnt:cnt];
+    }];
+    
 }
 
 #pragma mark - Base
@@ -124,9 +152,9 @@
 {
     Product_Modal *modal = requestCon_.dataArr_[sender.tag];
     ChooseStandardCtl *ctl = [ChooseStandardCtl start:modal showInfoView:self.view finished:^(Product_Modal *product) {
-//        ConfirmOrderCtl *ctl = [ConfirmOrderCtl new];
-//        [ctl beginLoad:product exParam:nil];
-//        [self.navigationController pushViewController:ctl animated:YES];
+        ConfirmOrderCtl *ctl = [ConfirmOrderCtl new];
+        [ctl beginLoad:product exParam:nil];
+        [self.navigationController pushViewController:ctl animated:YES];
     }];
     [self addChildViewController:ctl];
 }

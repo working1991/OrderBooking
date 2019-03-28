@@ -24,4 +24,7 @@
 
 + (void)removeProductArr:(NSArray *)productArr;
 
+//获取购物车数量
++ (int)getProductCnt;
+
 @end

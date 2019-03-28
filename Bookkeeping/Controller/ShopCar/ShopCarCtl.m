@@ -141,6 +141,9 @@
 
 - (void)updateTotalPriceInfo
 {
+    //发送通知
+    [ShopCarCtl postChangedNotification];
+    
     [self udpateNoDataView];
     double totalPrice = 0;
     int count = 0;
@@ -350,8 +353,32 @@
         [dataArr addObject:proModal];
     }
     [ManagerCtl getRoleInfo].selectProductArr = dataArr;
+    //发送通知
+    [ShopCarCtl postChangedNotification];
     return YES;
 }
+
+//获取购物车数量
++ (int)getProductCnt
+{
+    int count = 0;
+    for (Product_Modal *modal in [ManagerCtl getRoleInfo].selectProductArr) {
+        for (Standard_Modal *typeModel in modal.typeArr) {
+            if (typeModel.bSelected_) {
+                count += typeModel.saleCount;
+            }
+        }
+    }
+    return count;
+}
+
+//发送购物车已经更改的通知
++(void) postChangedNotification
+{
+    //发送通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:NotifyKey_ShopCartChanged object:nil userInfo:nil];
+}
+
 
 + (void)removeProductArr:(NSArray *)productArr
 {
@@ -360,6 +387,8 @@
             [self remove:typeModal prodcut:modal];
         }
     }
+    //发送通知
+    [ShopCarCtl postChangedNotification];
 }
 
 //移除

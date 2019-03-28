@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLb;
 @property (weak, nonatomic) IBOutlet UIButton *closeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *buyBtn;
+@property (weak, nonatomic) IBOutlet UIButton *addCarBtn;
 
 @property (weak, nonatomic) IBOutlet UIView     *titleView;
 @property (weak, nonatomic) IBOutlet UIView     *contentView;
@@ -114,7 +115,6 @@
         for (Standard_Modal *modal in detailModal.typeArr) {
             if (modal.saleCount > 0) {
                 [typeArr addObject:modal];
-                [ShopCarCtl addContent:modal prodcut:selectModal];
             }
         }
         if (typeArr.count > 0) {
@@ -127,6 +127,20 @@
             [BaseUIViewController showAlertView:@"未选择规格" msg:nil cancel:@"知道了"];
         }
         
+    }  else if (sender == self.addCarBtn)  {
+        Product_Modal *selectModal = [detailModal mutableCopy];
+        BOOL bHave = NO;
+        for (Standard_Modal *modal in detailModal.typeArr) {
+            if (modal.saleCount > 0) {
+                bHave = YES;
+                [ShopCarCtl addContent:modal prodcut:selectModal];
+            }
+        }
+        if (bHave) {
+            [self hide];
+        } else {
+            [BaseUIViewController showAlertView:@"未选择规格" msg:nil cancel:@"知道了"];
+        }
     }
 }
 

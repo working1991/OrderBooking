@@ -22,6 +22,7 @@
 @interface ConfirmOrderCtl () <UITextFieldDelegate>
 
 {
+    int  sourceType;   //1为立即购买，2为购物车
     Base_Modal *payModel;
     Customer_Modal *customerModel;
     NSMutableArray  *selectArr;
@@ -73,9 +74,11 @@
 {
     if ([dataModal isKindOfClass:[Product_Modal class]]) {
         selectArr = [NSMutableArray arrayWithObject:dataModal];
+        sourceType = 1;
     }
     if ([exParam isKindOfClass:[NSArray class]]) {
         selectArr = [NSMutableArray arrayWithArray:exParam];
+        sourceType = 2;
     }
     [self updateDetailInfo];
 }
@@ -88,7 +91,9 @@
             [BaseUIViewController showHUDSuccessView:@"下单成功" msg:nil];
             detailCon = [self getNewRequestCon:NO];
             [detailCon queryOrderDetail:modal.id_];
-            [ShopCarCtl removeProductArr:selectArr];
+            if (sourceType == 2) {
+                [ShopCarCtl removeProductArr:selectArr];
+            }
         } else {
             [BaseUIViewController showAlertView:@"下单失败" msg:modal.restMsg?modal.restMsg:@"请稍后重试" cancel:@"知道了"];
         }

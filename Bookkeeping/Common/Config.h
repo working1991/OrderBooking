@@ -23,11 +23,6 @@
 //主要字体颜色
 #define Color_Text_Main             [UIColor colorWithWhite:0.200 alpha:1.000]
 
-//次要字体颜色
-#define Color_Default_Gray          [UIColor colorWithWhite:0.400 alpha:1.000]
-
-#define Color_Default_Off           [UIColor colorWithRed:133.0/255 green:133.0/255 blue:133.0/255 alpha:1]
-
 //UIBarButtonItem 颜色
 #define Color_BarButtonItem         [UIColor whiteColor]
 
@@ -35,6 +30,9 @@
 
 
 #define Add_Product_Num             [Config getAddProductNum]
+
+//购物车变化通知Key
+#define NotifyKey_ShopCartChanged    @"NotifyKey_ShopCartChanged"
 
 
 @interface Config : NSObject

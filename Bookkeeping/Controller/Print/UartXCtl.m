@@ -7,9 +7,6 @@
 //
 
 #import "UartXCtl.h"
-
-
-
 #import "Common.h"
 #import "ManagerCtl.h"
 #import "Config.h"
@@ -27,19 +24,21 @@
 {
     if ([SEPrinterManager sharedInstance].isConnected) {
         [self printInfo:printer];
-    } else if([SEPrinterManager sharedInstance].connectedPerpheral) {
+        return YES;
+    } else if ([SEPrinterManager sharedInstance].connectedPerpheral) {
         [[SEPrinterManager sharedInstance] autoConnectLastPeripheralTimeout:10 completion:^(CBPeripheral *perpheral, NSError *error) {
             NSLog(@"自动重连返回");
-            //因为自动重连后，特性还没扫描完，所以延迟一会开始写入数据
-            [self performSelector:@selector(printInfo:) withObject:printer afterDelay:1.0];
+            if (error) {
+                [BaseUIViewController showAlertView:@"蓝牙未连接" msg:@"请在设置里，连接蓝牙" cancel:@"知道了"];
+            } else {
+                //因为自动重连后，特性还没扫描完，所以延迟一会开始写入数据
+                [self performSelector:@selector(printInfo:) withObject:printer afterDelay:1.0];
+            }
         }];
-        [self performSelector:@selector(printInfo:) withObject:printer afterDelay:1.0];
     } else {
-        UartXCtl *ctl = [UartXCtl new];
-        ctl.dataPrinter = printer;
-        [[ManagerCtl getCurrentNav] pushViewController:ctl animated:YES];
+        [BaseUIViewController showAlertView:@"蓝牙未连接" msg:@"请在设置里，先连接蓝牙，再打印小票" cancel:@"知道了"];
+        return NO;
     }
-    
     return YES;
 }
 
