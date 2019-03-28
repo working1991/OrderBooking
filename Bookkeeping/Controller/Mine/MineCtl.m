@@ -44,8 +44,8 @@
 - (void)initItemInfo
 {
     itemInfoArray = @[
-                      @[@{@"itemName":@"我的客户",@"icon":@"customer_list",@"itemType":@0},
-                        @{@"itemName":@"设置",@"icon":@"icon_setting",@"itemType":@1}]
+                      @[@{@"itemName":@"我的客户",@"icon":@"customer_list",@"itemType":@0}],
+                      @[@{@"itemName":@"设置",@"icon":@"icon_setting",@"itemType":@1}]
                       ];
 }
 

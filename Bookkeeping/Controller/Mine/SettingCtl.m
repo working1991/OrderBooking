@@ -10,6 +10,7 @@
 #import "MineItemCell.h"
 #import "ChangePasswordCtl.h"
 #import "ManagerCtl.h"
+#import "UartXCtl.h"
 
 @interface SettingCtl ()
 
@@ -35,7 +36,8 @@
 - (void)initItemInfo
 {
     itemInfoArray = @[
-                      @[@{@"itemName":@"修改密码",@"icon":@"mine_change_password",@"itemType":@2}]
+                      @[@{@"itemName":@"修改密码",@"icon":@"mine_change_password",@"itemType":@2}],
+                      @[@{@"itemName":@"蓝牙",@"icon":@"mine_contact",@"itemType":@3}]
                       ];
 }
 
@@ -107,6 +109,20 @@
     
     myCell.lineView.hidden = indexPath.row == items.count -1;
     myCell.detailLb.alpha = 0.0;
+    int type = [itemDic[@"itemType"] intValue];
+    if (type==3) {
+        myCell.detailLb.alpha = 1.0;
+        if ([SEPrinterManager sharedInstance].connectedPerpheral) {
+            myCell.detailLb.text = [SEPrinterManager sharedInstance].connectedPerpheral.name;
+        } else {
+            myCell.detailLb.text = @"未连接";
+            [[SEPrinterManager sharedInstance] autoConnectLastPeripheralTimeout:10 completion:^(CBPeripheral *perpheral, NSError *error) {
+                NSLog(@"自动重连返回");
+                myCell.detailLb.text = [SEPrinterManager sharedInstance].connectedPerpheral.name;
+            }];
+            
+        }
+    }
     
     return myCell;
 }
@@ -125,6 +141,11 @@
             [self.navigationController pushViewController:ctl animated:YES];
         }
             break;
+        case 3:
+        {
+            UartXCtl *ctl = [UartXCtl new];
+            [self.navigationController pushViewController:ctl animated:YES];
+        }
             
         default:
             break;

@@ -1339,15 +1339,15 @@
 		06D15DD82247B120001F956E /* BLEPrinter */ = {
 			isa = PBXGroup;
 			children = (
+				06D15DE12247B120001F956E /* SEBLEConst.h */,
 				06D15DDF2247B120001F956E /* HLPrinter.h */,
 				06D15DD92247B120001F956E /* HLPrinter.m */,
+				06D15DDD2247B120001F956E /* UIWebView+UIImage.h */,
 				06D15DDA2247B120001F956E /* UIWebView+UIImage.m */,
 				06D15DDB2247B120001F956E /* UIImage+Bitmap.h */,
-				06D15DDC2247B120001F956E /* SEPrinterManager.m */,
-				06D15DDD2247B120001F956E /* UIWebView+UIImage.h */,
 				06D15DDE2247B120001F956E /* UIImage+Bitmap.m */,
 				06D15DE02247B120001F956E /* SEPrinterManager.h */,
-				06D15DE12247B120001F956E /* SEBLEConst.h */,
+				06D15DDC2247B120001F956E /* SEPrinterManager.m */,
 			);
 			path = BLEPrinter;
 			sourceTree = "<group>";

@@ -60,7 +60,7 @@
     self.tableView_.dataSource = self;
     self.tableView_.delegate = self;
     
-    self.title = @"未连接";
+    self.title = @"蓝牙未连接";
     SEPrinterManager *_manager = [SEPrinterManager sharedInstance];
     [_manager startScanPerpheralTimeout:10 Success:^(NSArray<CBPeripheral *> *perpherals,BOOL isTimeout) {
         NSLog(@"perpherals:%@",perpherals);
@@ -69,6 +69,21 @@
     } failure:^(SEScanError error) {
         NSLog(@"error:%ld",(long)error);
     }];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if ([SEPrinterManager sharedInstance].connectedPerpheral) {
+        self.title = [SEPrinterManager sharedInstance].connectedPerpheral.name;
+    } else {
+        [[SEPrinterManager sharedInstance] autoConnectLastPeripheralTimeout:10 completion:^(CBPeripheral *perpheral, NSError *error) {
+            if (!error) {
+                self.title = perpheral.name;
+            }
+            NSLog(@"自动重连返回");
+        }];
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -95,13 +110,24 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     CBPeripheral *peripheral = [self.deviceArray objectAtIndex:indexPath.row];
-     //如果你需要连接，立刻去打印
-    [[SEPrinterManager sharedInstance] fullOptionPeripheral:peripheral completion:^(SEOptionStage stage, CBPeripheral *perpheral, NSError *error) {
-        if (stage == SEOptionStageSeekCharacteristics) {
-            [UartXCtl printInfo:self.dataPrinter];
-            [self.navigationController popViewControllerAnimated:YES];
-        }
-    }];
+    if (self.dataPrinter) {
+        //如果你需要连接，立刻去打印
+        [[SEPrinterManager sharedInstance] fullOptionPeripheral:peripheral completion:^(SEOptionStage stage, CBPeripheral *perpheral, NSError *error) {
+            if (stage == SEOptionStageSeekCharacteristics) {
+                [UartXCtl printInfo:self.dataPrinter];
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        }];
+    } else {
+        [[SEPrinterManager sharedInstance] connectPeripheral:peripheral completion:^(CBPeripheral *perpheral, NSError *error) {
+            if (error) {
+                [SVProgressHUD showErrorWithStatus:@"连接失败"];
+            } else {
+                self.title = perpheral.name;
+                [SVProgressHUD showSuccessWithStatus:@"连接成功"];
+            }
+        }];
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
