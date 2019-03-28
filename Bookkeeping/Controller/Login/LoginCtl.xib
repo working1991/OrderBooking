@@ -26,6 +26,9 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="hHA-BV-CQL">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5aX-w8-Rfa" userLabel="LogIN">
                     <rect key="frame" x="30" y="112.5" width="315" height="342"/>
                     <subviews>
@@ -179,7 +182,7 @@
                         </mask>
                     </variation>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="版本号：1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzM-NH-WSq">
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="版本号：1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzM-NH-WSq">
                     <rect key="frame" x="141" y="607" width="93" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="x9n-Jr-hWS"/>
@@ -194,14 +197,19 @@
                 <constraint firstAttribute="trailing" secondItem="5aX-w8-Rfa" secondAttribute="trailing" constant="30" id="9uu-TE-9qq"/>
                 <constraint firstItem="gzM-NH-WSq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KyC-RE-wYz"/>
                 <constraint firstItem="5aX-w8-Rfa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="P0a-Wy-a8l"/>
+                <constraint firstAttribute="bottom" secondItem="hHA-BV-CQL" secondAttribute="bottom" id="Yji-V9-rwl"/>
+                <constraint firstAttribute="trailing" secondItem="hHA-BV-CQL" secondAttribute="trailing" id="fqF-se-vv0"/>
                 <constraint firstAttribute="bottom" secondItem="gzM-NH-WSq" secondAttribute="bottom" constant="20" id="oUE-5I-Hxz"/>
                 <constraint firstItem="5aX-w8-Rfa" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-50" id="t19-Hi-hJy"/>
+                <constraint firstItem="hHA-BV-CQL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uka-Il-AyY"/>
+                <constraint firstItem="hHA-BV-CQL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yVq-zX-e3j"/>
             </constraints>
         </view>
     </objects>
     <resources>
         <image name="logIn_pwd_icon" width="23" height="23"/>
         <image name="logIn_user_icon" width="23" height="23"/>
+        <image name="login_bg" width="700" height="1244"/>
         <image name="login_eher" width="194" height="66"/>
     </resources>
 </document>

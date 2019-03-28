@@ -27,10 +27,10 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="puo-6g-rmV">
                     <rect key="frame" x="0.0" y="20" width="375" height="55"/>
                     <subviews>
-                        <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="请输入文字搜索产品" translatesAutoresizingMaskIntoConstraints="NO" id="1JU-lI-D7k">
+                        <searchBar contentMode="redraw" placeholder="请输入文字搜索产品" translatesAutoresizingMaskIntoConstraints="NO" id="1JU-lI-D7k">
                             <rect key="frame" x="0.0" y="0.0" width="315" height="56"/>
-                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <color key="barTintColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="barTintColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <textInputTraits key="textInputTraits" returnKeyType="search"/>
                             <scopeButtonTitles>
                                 <string>Title</string>
@@ -51,7 +51,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="puV-q7-CsG" firstAttribute="leading" secondItem="1JU-lI-D7k" secondAttribute="trailing" id="06p-FQ-yaX"/>
                         <constraint firstItem="1JU-lI-D7k" firstAttribute="top" secondItem="puo-6g-rmV" secondAttribute="top" id="5Oa-L0-6Ft"/>
