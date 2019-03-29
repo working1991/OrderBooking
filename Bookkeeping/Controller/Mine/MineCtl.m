@@ -162,7 +162,8 @@
 {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSDictionary *itemDic = itemInfoArray[indexPath.section][indexPath.row];
+    NSArray *items = itemInfoArray[indexPath.section];
+    NSDictionary *itemDic = items[indexPath.row];
     int type = [itemDic[@"itemType"] intValue];
     switch (type) {
         case 0:

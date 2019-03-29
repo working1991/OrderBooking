@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -49,7 +48,7 @@
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付完成" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq1-1o-UcZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="支付完成" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq1-1o-UcZ">
                                 <rect key="frame" x="347.5" y="2" width="65.5" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="L2m-g3-Z0r"/>
@@ -106,6 +105,7 @@
                             <constraint firstItem="mXL-Qp-eAx" firstAttribute="leading" secondItem="l6C-Sb-sBD" secondAttribute="leading" id="bjB-6a-MYT"/>
                             <constraint firstAttribute="trailing" secondItem="gq1-1o-UcZ" secondAttribute="trailing" constant="10" id="cVX-OJ-Dp9"/>
                             <constraint firstItem="sD3-Ol-irZ" firstAttribute="trailing" secondItem="9dG-pW-9Mc" secondAttribute="trailing" id="eyO-Yt-jQH"/>
+                            <constraint firstItem="gq1-1o-UcZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="l6C-Sb-sBD" secondAttribute="trailing" constant="20" id="fN1-IO-onw"/>
                             <constraint firstItem="sD3-Ol-irZ" firstAttribute="leading" secondItem="9dG-pW-9Mc" secondAttribute="leading" id="fbg-FT-pjK"/>
                             <constraint firstItem="TtP-M7-bhn" firstAttribute="top" secondItem="l6C-Sb-sBD" secondAttribute="bottom" constant="2" id="h3I-tf-usm"/>
                             <constraint firstItem="uM4-lh-BII" firstAttribute="top" secondItem="mXL-Qp-eAx" secondAttribute="bottom" constant="2" id="iug-HQ-ahx"/>
@@ -126,7 +126,6 @@
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-            <viewLayoutGuide key="safeArea" id="DBE-QB-aTm"/>
             <connections>
                 <outlet property="customerLb" destination="l6C-Sb-sBD" id="MT1-ko-qqJ"/>
                 <outlet property="infoView" destination="QUW-Dv-Bcs" id="fMH-Nq-3Xa"/>

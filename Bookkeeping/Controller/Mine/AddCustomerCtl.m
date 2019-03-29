@@ -132,6 +132,7 @@
 -(void) save
 {
     [self.view endEditing:YES];
+    self.nameTf.text = [Common clearTrimmingWhitespace:self.nameTf.text];
     if( [self.nameTf.text isEqualToString:@""] ){
         [BaseUIViewController showAlertView:@"客户姓名不能为空" msg:nil cancel:@"知道了"];
     }

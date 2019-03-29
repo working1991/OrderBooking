@@ -142,33 +142,38 @@
     
     BOOL bHaveOther = NO;
     for ( Customer_Modal * dataModal in requestCon_.dataArr_ ) {
+        BOOL bJoin = NO;
         if( dataModal.name && [dataModal.name isKindOfClass:[NSString class]] ){
             dataModal.fristChar = [PinYinForObjc chineseConvertToPinYinHead:dataModal.name];
-        }
-        if( dataModal.fristChar && [dataModal.fristChar isKindOfClass:[NSString class]] ){
-            int value = [dataModal.fristChar characterAtIndex:0];
-            if( value >= 'A' && value <= 'Z' ){
-                NSString *tmp = [NSString stringWithFormat:@"%c",value];
-                //判断是否已经添加
-                BOOL bFind = NO;
-                for ( NSString *str in keyArr_ ) {
-                    if( [str isEqualToString:tmp] ){
-                        bFind = YES;
-                        break;
+            if( dataModal.fristChar.length>0 && [dataModal.fristChar isKindOfClass:[NSString class]] ){
+                int value = [dataModal.fristChar characterAtIndex:0];
+                if( value >= 'A' && value <= 'Z' ){
+                    NSString *tmp = [NSString stringWithFormat:@"%c",value];
+                    //判断是否已经添加
+                    BOOL bFind = NO;
+                    for ( NSString *str in keyArr_ ) {
+                        if( [str isEqualToString:tmp] ){
+                            bFind = YES;
+                            break;
+                        }
                     }
+                    if( !bFind ){
+                        [keyArr_ addObject:tmp];
+                        NSMutableArray *arr = [[NSMutableArray alloc] init];
+                        [dataDic_ setObject:arr forKey:tmp];
+                        [arr addObject:dataModal];
+                    }else{
+                        NSMutableArray *arr = [dataDic_ objectForKey:tmp];
+                        [arr addObject:dataModal];
+                    }
+                    bJoin = YES;
                 }
-                if( !bFind ){
-                    [keyArr_ addObject:tmp];
-                    NSMutableArray *arr = [[NSMutableArray alloc] init];
-                    [dataDic_ setObject:arr forKey:tmp];
-                    [arr addObject:dataModal];
-                }else{
-                    NSMutableArray *arr = [dataDic_ objectForKey:tmp];
-                    [arr addObject:dataModal];
-                }
-            }else if( !bHaveOther ){
+            }
+        }
+        if (!bJoin) {
+            dataModal.fristChar = @"#";
+            if( !bHaveOther ){
                 bHaveOther = YES;
-                
                 NSMutableArray *arr = [[NSMutableArray alloc] init];
                 [dataDic_ setObject:arr forKey:@"#"];
                 [arr addObject:dataModal];
