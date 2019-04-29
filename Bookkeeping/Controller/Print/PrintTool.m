@@ -38,9 +38,9 @@
     [printer appendTitle:@"订单编号:" value:dataModal.id_];
     [printer appendTitle:@"开单时间:" value:dataModal.createTime];
     
-    [printer appendTitle:@"客户姓名:" value:dataModal.customerModal.name];
-    [printer appendTitle:@"客户手机:" value:dataModal.customerModal.telphone];
-    [printer appendTitle:@"客户地址:" value:dataModal.customerModal.address];
+    [printer appendTitle:@"客户姓名:" value:dataModal.customerModal.name.length>0?dataModal.customerModal.name:@""];
+    [printer appendTitle:@"客户手机:" value:dataModal.customerModal.telphone.length>0?dataModal.customerModal.telphone:@""];
+    [printer appendTitle:@"客户地址:" value:dataModal.customerModal.address.length>0?dataModal.customerModal.address:@""];
     
     for (Product_Modal *productModal in dataModal.productTypeArr) {
         [printer appendSeperatorLine];

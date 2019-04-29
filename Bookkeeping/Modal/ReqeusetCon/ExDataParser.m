@@ -41,7 +41,8 @@
         //公共解析方法
         if ([opKey isEqualToString:@"modifyPassword"] ||
             [opKey isEqualToString:@"addCutomer"] ||
-            [opKey isEqualToString:@"confirmOrder"]
+            [opKey isEqualToString:@"confirmOrder"] ||
+            [opKey isEqualToString:@"confirmRefund"]
             ) {
             arr = [self parserBaseReturnRestCode:dic];
         }
@@ -78,6 +79,14 @@
         //客户列表
         else if ([opKey isEqualToString:@"queryCustomerList"]){
             arr = [self parserCustomerList:dic];
+        }
+        //欠款列表
+        else if ([opKey isEqualToString:@"queryDebtList"]){
+            arr = [self parserDebtList:dic];
+        }
+        //还款记录
+        else if ([opKey isEqualToString:@"queryRefundList"]){
+            arr = [self parserRefundList:dic];
         }
     }
     
@@ -325,6 +334,58 @@
             modal.updateTime = tmpDic[@"updateTime"];
             
             [arr addObject:modal];
+        }
+    }
+    return arr;
+}
+
+//欠款列表
++(NSMutableArray *)parserDebtList:(NSDictionary *)dic
+{
+    NSMutableArray *arr = nil;
+    if ( dic && [dic isKindOfClass:[NSArray class]] ) {
+        arr = [[NSMutableArray alloc] init];
+        NSArray *tmpArr = (NSArray *)dic;
+        for ( NSDictionary *tmpDic in tmpArr ) {
+            Customer_Modal *modal = [Customer_Modal new];
+            modal.id_ = tmpDic[@"customerId"];
+            modal.name = tmpDic[@"name"];
+            modal.debtAmount = [tmpDic[@"debtAmount"] doubleValue];
+            modal.telphone = tmpDic[@"mobile"];
+            
+            [arr addObject:modal];
+        }
+    }
+    return arr;
+}
+
+//还款记录
++(NSMutableArray *)parserRefundList:(NSDictionary *)dic
+{
+    NSMutableArray *arr = nil;
+    if ( dic && [dic isKindOfClass:[NSDictionary class]] ) {
+        int totalCount = [[dic objectForKey:@"total"] intValue];
+        int totalPage = totalCount / PageSize + (totalCount % PageSize == 0 ? 0 : 1);
+        NSArray *tmpArr = [dic objectForKey:@"list"];
+        
+        if( tmpArr && [tmpArr isKindOfClass:[NSArray class]] ){
+            arr = [[NSMutableArray alloc] init];
+            for ( NSDictionary *tmpDic in tmpArr ) {
+                Order_Model *modal = [Order_Model new];
+                modal.orderPrice = [tmpDic[@"amount"] doubleValue];
+                modal.payTypeCode = tmpDic[@"refundType"];
+                modal.oporaterName = tmpDic[@"managerName"];
+            
+                modal.customerModal = [Customer_Modal new];
+                modal.customerModal.name = tmpDic[@"customerName"];
+                
+                modal.createTime = tmpDic[@"refundTime"];
+                
+                modal.totalPage_ = totalPage;
+                modal.totalSize_ = totalCount;
+                
+                [arr addObject:modal];
+            }
         }
     }
     return arr;

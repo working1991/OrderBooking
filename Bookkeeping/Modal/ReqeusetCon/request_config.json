@@ -1,8 +1,8 @@
 {
 "BaseInfo":
 {
-"debugURL" : "http://193.112.93.94:8080/api",
-"releaseURL" : "http://193.112.93.94:8080/api",
+"debugURL" : "http://193.112.93.183:8080/api",
+"releaseURL" : "http://193.112.93.183:8080/api",
 "isDebug" : "0",
 "cookie" : "",
 "loadingStr" : "正在加载...",
@@ -103,6 +103,30 @@
      "des" : "客户列表",
      "value" : "customers/query",
      "loadType" : "normal",
+     "loadingStr" : "正在加载...",
+     "noDataStr" : "没有数据"
+ },
+ {
+     "key" : "queryDebtList",
+     "des" : "欠款列表",
+     "value" : "debt/list",
+     "loadType" : "normal",
+     "loadingStr" : "正在加载...",
+     "noDataStr" : "没有数据"
+ },
+ {
+     "key" : "queryRefundList",
+     "des" : "还款记录",
+     "value" : "refund/list",
+     "loadType" : "normal",
+     "loadingStr" : "正在加载...",
+     "noDataStr" : "没有数据"
+ },
+ {
+     "key" : "confirmRefund",
+     "des" : "还款",
+     "value" : "debt/refund",
+     "loadType" : "modal",
      "loadingStr" : "正在加载...",
      "noDataStr" : "没有数据"
  },

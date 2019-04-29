@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define ServiceAddr_Default           @"http://oss.eher365.com:8080/eher/api"
+#define ServiceAddr_Default           @"http://193.112.93.183:8080/api"
 #define Config_Key_ServiceAddr      @"service_addr"
 
 //登录成功后，需要重新登录的时间

@@ -133,12 +133,13 @@
 {
     [self.view endEditing:YES];
     self.nameTf.text = [Common clearTrimmingWhitespace:self.nameTf.text];
+    self.phoneTf.text = [Common clearTrimmingWhitespace:self.phoneTf.text];
     if( [self.nameTf.text isEqualToString:@""] ){
         [BaseUIViewController showAlertView:@"客户姓名不能为空" msg:nil cancel:@"知道了"];
     }
-//    else if(self.phoneTf.text.length > 0  &&  (self.phoneTf.text.length != 11)){
-//        [BaseUIViewController showAlertView:@"手机号码格式错误" msg:@"请重新输入" cancel:@"知道了"];
-//    }
+    else if(self.phoneTf.text.length > 11){
+        [BaseUIViewController showAlertView:@"手机号码格式错误" msg:@"请重新输入" cancel:@"知道了"];
+    }
     else {
         Customer_Modal *dataModal = [[Customer_Modal alloc] init];
         dataModal.name = self.nameTf.text;

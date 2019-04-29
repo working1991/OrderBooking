@@ -13,6 +13,7 @@
 + (NSString *)getPayTypeName:(NSString *)code
 {
     NSString *name = @"";
+    code = [NSString stringWithFormat:@"%@", code];
     if ([code isEqualToString:@"1"]) {
         name = @"现金";
     } else if ([code isEqualToString:@"2"]) {

@@ -19,6 +19,16 @@
 		060445002243EECA0068D4EB /* PinyinFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 060444F92243EEC90068D4EB /* PinyinFormatter.m */; };
 		060445012243EECA0068D4EB /* PinYinForObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 060444FA2243EEC90068D4EB /* PinYinForObjc.m */; };
 		06044504224649A30068D4EB /* SaleTotal_Modal.m in Sources */ = {isa = PBXBuildFile; fileRef = 06044503224649A30068D4EB /* SaleTotal_Modal.m */; };
+		060544AC2277499700794031 /* DebtListCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 060544AA2277499700794031 /* DebtListCtl.m */; };
+		060544AD2277499700794031 /* DebtListCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060544AB2277499700794031 /* DebtListCtl.xib */; };
+		060544B1227749B300794031 /* DebeListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 060544AF227749B300794031 /* DebeListCell.m */; };
+		060544B2227749B300794031 /* DebeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060544B0227749B300794031 /* DebeListCell.xib */; };
+		060544B6227755F200794031 /* RefundListCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 060544B4227755F200794031 /* RefundListCtl.m */; };
+		060544B7227755F200794031 /* RefundListCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060544B5227755F200794031 /* RefundListCtl.xib */; };
+		060544BB2277562500794031 /* RefundListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 060544B92277562500794031 /* RefundListCell.m */; };
+		060544BC2277562500794031 /* RefundListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060544BA2277562500794031 /* RefundListCell.xib */; };
+		060544C022775C5E00794031 /* PayDebtCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 060544BE22775C5E00794031 /* PayDebtCtl.m */; };
+		060544C122775C5E00794031 /* PayDebtCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060544BF22775C5E00794031 /* PayDebtCtl.xib */; };
 		060585F0224912DD00ABED23 /* ShopCarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 060585E9224912DC00ABED23 /* ShopCarHeaderView.m */; };
 		060585F3224912DD00ABED23 /* ShopCarCtl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060585EC224912DC00ABED23 /* ShopCarCtl.xib */; };
 		060585F4224912DD00ABED23 /* ShopCarCtl.m in Sources */ = {isa = PBXBuildFile; fileRef = 060585ED224912DC00ABED23 /* ShopCarCtl.m */; };
@@ -251,6 +261,21 @@
 		060444FA2243EEC90068D4EB /* PinYinForObjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinYinForObjc.m; sourceTree = "<group>"; };
 		06044502224649A30068D4EB /* SaleTotal_Modal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaleTotal_Modal.h; sourceTree = "<group>"; };
 		06044503224649A30068D4EB /* SaleTotal_Modal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaleTotal_Modal.m; sourceTree = "<group>"; };
+		060544A92277499700794031 /* DebtListCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebtListCtl.h; sourceTree = "<group>"; };
+		060544AA2277499700794031 /* DebtListCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DebtListCtl.m; sourceTree = "<group>"; };
+		060544AB2277499700794031 /* DebtListCtl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebtListCtl.xib; sourceTree = "<group>"; };
+		060544AE227749B300794031 /* DebeListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebeListCell.h; sourceTree = "<group>"; };
+		060544AF227749B300794031 /* DebeListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DebeListCell.m; sourceTree = "<group>"; };
+		060544B0227749B300794031 /* DebeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebeListCell.xib; sourceTree = "<group>"; };
+		060544B3227755F200794031 /* RefundListCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefundListCtl.h; sourceTree = "<group>"; };
+		060544B4227755F200794031 /* RefundListCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefundListCtl.m; sourceTree = "<group>"; };
+		060544B5227755F200794031 /* RefundListCtl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefundListCtl.xib; sourceTree = "<group>"; };
+		060544B82277562500794031 /* RefundListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefundListCell.h; sourceTree = "<group>"; };
+		060544B92277562500794031 /* RefundListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefundListCell.m; sourceTree = "<group>"; };
+		060544BA2277562500794031 /* RefundListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefundListCell.xib; sourceTree = "<group>"; };
+		060544BD22775C5E00794031 /* PayDebtCtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayDebtCtl.h; sourceTree = "<group>"; };
+		060544BE22775C5E00794031 /* PayDebtCtl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayDebtCtl.m; sourceTree = "<group>"; };
+		060544BF22775C5E00794031 /* PayDebtCtl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayDebtCtl.xib; sourceTree = "<group>"; };
 		060585E8224912DC00ABED23 /* ShopCarCtl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCarCtl.h; sourceTree = "<group>"; };
 		060585E9224912DC00ABED23 /* ShopCarHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCarHeaderView.m; sourceTree = "<group>"; };
 		060585EC224912DC00ABED23 /* ShopCarCtl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopCarCtl.xib; sourceTree = "<group>"; };
@@ -910,6 +935,21 @@
 				066187CA2236B1A1009F5CB6 /* ChangePasswordCtl.h */,
 				066187CB2236B1A1009F5CB6 /* ChangePasswordCtl.m */,
 				066187CC2236B1A1009F5CB6 /* ChangePasswordCtl.xib */,
+				060544A92277499700794031 /* DebtListCtl.h */,
+				060544AA2277499700794031 /* DebtListCtl.m */,
+				060544AB2277499700794031 /* DebtListCtl.xib */,
+				060544AE227749B300794031 /* DebeListCell.h */,
+				060544AF227749B300794031 /* DebeListCell.m */,
+				060544B0227749B300794031 /* DebeListCell.xib */,
+				060544B3227755F200794031 /* RefundListCtl.h */,
+				060544B4227755F200794031 /* RefundListCtl.m */,
+				060544B5227755F200794031 /* RefundListCtl.xib */,
+				060544B82277562500794031 /* RefundListCell.h */,
+				060544B92277562500794031 /* RefundListCell.m */,
+				060544BA2277562500794031 /* RefundListCell.xib */,
+				060544BD22775C5E00794031 /* PayDebtCtl.h */,
+				060544BE22775C5E00794031 /* PayDebtCtl.m */,
+				060544BF22775C5E00794031 /* PayDebtCtl.xib */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1469,6 +1509,7 @@
 				060444E9224281DC0068D4EB /* TypeListCtl.xib in Resources */,
 				06618800223A9BE0009F5CB6 /* OrderListItemCtl.xib in Resources */,
 				0661876A223694E8009F5CB6 /* BaseListMore_Cell.xib in Resources */,
+				060544B7227755F200794031 /* RefundListCtl.xib in Resources */,
 				066187DD2237E95C009F5CB6 /* ChooseStandardCtl.xib in Resources */,
 				06618776223694E8009F5CB6 /* ShowImageView.xib in Resources */,
 				060444FC2243EECA0068D4EB /* unicode_to_hanyu_pinyin.txt in Resources */,
@@ -1486,13 +1527,17 @@
 				06618771223694E8009F5CB6 /* BaseLoadingView.xib in Resources */,
 				066187BF2236A89C009F5CB6 /* CustomerCtl.xib in Resources */,
 				066187AE2236969F009F5CB6 /* Main.storyboard in Resources */,
+				060544BC2277562500794031 /* RefundListCell.xib in Resources */,
 				06618538223682A0009F5CB6 /* QBImagePicker.storyboard in Resources */,
 				060585F5224912DD00ABED23 /* ShopCarHeaderView.xib in Resources */,
+				060544B2227749B300794031 /* DebeListCell.xib in Resources */,
 				066187FB223A9743009F5CB6 /* OrderListCell.xib in Resources */,
 				06618787223694E8009F5CB6 /* ico_fail@3x.png in Resources */,
 				06618788223694E8009F5CB6 /* ico_empty@3x.png in Resources */,
 				06618805223A9FE4009F5CB6 /* OrderDetailCtl.xib in Resources */,
+				060544AD2277499700794031 /* DebtListCtl.xib in Resources */,
 				06618775223694E8009F5CB6 /* MsgView.xib in Resources */,
+				060544C122775C5E00794031 /* PayDebtCtl.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1540,6 +1585,7 @@
 				06D15DE42247B120001F956E /* SEPrinterManager.m in Sources */,
 				06D15DE22247B120001F956E /* HLPrinter.m in Sources */,
 				06618541223682A0009F5CB6 /* ViewController+MASAdditions.m in Sources */,
+				060544BB2277562500794031 /* RefundListCell.m in Sources */,
 				060444FD2243EECA0068D4EB /* PinyinHelper.m in Sources */,
 				06618549223682A0009F5CB6 /* MASViewAttribute.m in Sources */,
 				06618766223694E8009F5CB6 /* BaseLockView.m in Sources */,
@@ -1596,6 +1642,7 @@
 				060444FF2243EECA0068D4EB /* ChineseToPinyinResource.m in Sources */,
 				066187A5223694E8009F5CB6 /* DataManger.m in Sources */,
 				066185F0223682A0009F5CB6 /* TabBarControllerConfig.m in Sources */,
+				060544AC2277499700794031 /* DebtListCtl.m in Sources */,
 				06618777223694E8009F5CB6 /* BaseConfig.m in Sources */,
 				0661853B223682A0009F5CB6 /* QBImagePickerController.m in Sources */,
 				06618523223682A0009F5CB6 /* TPKeyboardAvoidingTableView.m in Sources */,
@@ -1613,17 +1660,20 @@
 				066185EE223682A0009F5CB6 /* EherNavigationController.m in Sources */,
 				06D15DE32247B120001F956E /* UIWebView+UIImage.m in Sources */,
 				06618781223694E8009F5CB6 /* BaseUIViewController.m in Sources */,
+				060544C022775C5E00794031 /* PayDebtCtl.m in Sources */,
 				06618535223682A0009F5CB6 /* QBVideoIconView.m in Sources */,
 				06618537223682A0009F5CB6 /* QBAlbumCell.m in Sources */,
 				0661856B223682A0009F5CB6 /* AppDelegate.m in Sources */,
 				06618569223682A0009F5CB6 /* UIView+WebCacheOperation.m in Sources */,
 				06618524223682A0009F5CB6 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				066187CD2236B1A1009F5CB6 /* ChangePasswordCtl.m in Sources */,
+				060544B1227749B300794031 /* DebeListCell.m in Sources */,
 				06618611223682A1009F5CB6 /* XHSegmentItem.m in Sources */,
 				06618521223682A0009F5CB6 /* UICustomLineLabel.m in Sources */,
 				06618540223682A0009F5CB6 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				066187B42236A683009F5CB6 /* MineItemCell.m in Sources */,
 				066187D22237DB27009F5CB6 /* FirstClassCell.m in Sources */,
+				060544B6227755F200794031 /* RefundListCtl.m in Sources */,
 				066187A7223694E8009F5CB6 /* RequestOperator.m in Sources */,
 				060445012243EECA0068D4EB /* PinYinForObjc.m in Sources */,
 				0661869722368D5C009F5CB6 /* OrderListCtl.m in Sources */,

@@ -12,6 +12,7 @@
 #import "SettingCtl.h"
 #import "ManagerCtl.h"
 #import "SaleTotal_Modal.h"
+#import "DebtListCtl.h"
 
 @interface MineCtl ()
 
@@ -45,6 +46,7 @@
 {
     itemInfoArray = @[
                       @[@{@"itemName":@"我的客户",@"icon":@"customer_list",@"itemType":@0}],
+                      @[@{@"itemName":@"欠款管理",@"icon":@"icon_order",@"itemType":@2}],
                       @[@{@"itemName":@"设置",@"icon":@"icon_setting",@"itemType":@1}]
                       ];
 }
@@ -176,6 +178,13 @@
         case 1:
         {
             SettingCtl *ctl = [[SettingCtl alloc] init];
+            ctl.title = itemDic[@"itemName"];
+            [self.navigationController pushViewController:ctl animated:YES];
+        }
+            break;
+        case 2:
+        {
+            DebtListCtl *ctl = [[DebtListCtl alloc] init];
             ctl.title = itemDic[@"itemName"];
             [self.navigationController pushViewController:ctl animated:YES];
         }

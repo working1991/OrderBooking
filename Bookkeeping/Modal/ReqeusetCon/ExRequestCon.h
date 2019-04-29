@@ -50,6 +50,15 @@
 //客户列表
 - (void)queryCustomerList:(NSString *)companyId;
 
+//欠款列表
+- (void)queryDebtList:(NSString *)companyId;
+
+//还款记录
+- (void)queryRefundList:(NSString *)customerId;
+
+//还款
+- (void)confirmRefund:(Order_Model *)modal;
+
 //新增、修改客户
 - (void)addCustomer:(Customer_Modal *)modal;
 

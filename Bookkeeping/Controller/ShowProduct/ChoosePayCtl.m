@@ -20,20 +20,38 @@
 
 
 @property (strong, nonatomic) void (^finished)(Base_Modal *);
+@property (assign, nonatomic) BOOL isRefund;
 
 @end
 
 @implementation ChoosePayCtl
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.isRefund = NO;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    payTypeArr = @[
-  @{@"name": @"现金", @"code": @"1"},
-  @{@"name": @"支付宝", @"code": @"2"},
-  @{@"name": @"微信", @"code": @"3"},
-  @{@"name": @"赊账", @"code": @"4"}];
+    if (self.isRefund) {
+        payTypeArr = @[
+                       @{@"name": @"现金", @"code": @"1"},
+                       @{@"name": @"支付宝", @"code": @"2"},
+                       @{@"name": @"微信", @"code": @"3"}];
+    } else {
+        payTypeArr = @[
+                       @{@"name": @"现金", @"code": @"1"},
+                       @{@"name": @"支付宝", @"code": @"2"},
+                       @{@"name": @"微信", @"code": @"3"},
+                       @{@"name": @"赊账", @"code": @"4"}];
+    }
+    
     
     [self.tableView_ registerNib:[UINib nibWithNibName:NSStringFromClass([ChoosePayCell class]) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:NSStringFromClass([ChoosePayCell class])];
     
@@ -89,6 +107,16 @@
 }
 
 #pragma mark - Public
+
++(ChoosePayCtl *) startRefundPayType:(UIView *)showInfoView finished:(void(^)(Base_Modal *))finished;
+{
+    ChoosePayCtl *ctl = [ChoosePayCtl new];
+    ctl.isRefund = YES;
+    ctl.finished = finished;
+    [ctl showChooseDate:showInfoView];
+    return ctl;
+}
+
 //开始
 +(ChoosePayCtl *) start:(UIView *)showInfoView finished:(void(^)(Base_Modal *))finished
 {

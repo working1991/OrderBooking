@@ -12,4 +12,6 @@
 
 +(ChoosePayCtl *) start:(UIView *)showInfoView finished:(void(^)(Base_Modal *))finished;
 
++(ChoosePayCtl *) startRefundPayType:(UIView *)showInfoView finished:(void(^)(Base_Modal *))finished;
+
 @end

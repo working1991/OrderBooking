@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) NSString        *fristChar;
 @property (strong, nonatomic) NSString        *address;
+@property (assign, nonatomic) double    debtAmount;//欠款金额
 
 @end

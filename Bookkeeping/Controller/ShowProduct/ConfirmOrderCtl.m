@@ -120,7 +120,7 @@
             [BaseUIViewController showAlertView:@"实付金额大于应付金额" msg:@"请重新输入实付金额" cancel:@"知道了"];
             return;
         }
-        if (realPrice > totalAmount-0.001 && realPrice < totalAmount+0.001) {
+        if (([payModel.code isEqualToString:@"4"])||(realPrice > totalAmount-0.001 && realPrice < totalAmount+0.001)) {
             [self showChooseAlertViewCtl:@"确定下单" msg:nil confirmHandle:^{
                 [self confirmOrderInfo:[payModel.code isEqualToString:@"4"]?OrderStatus_WaitPay:OrderStatus_Complete];
             }];
@@ -288,6 +288,11 @@
 -(CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return 5;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    return [Common onlyInputNumber:textField shouldChangeCharactersInRange:range replacementString:string decimalDigits:2];
 }
 
 @end

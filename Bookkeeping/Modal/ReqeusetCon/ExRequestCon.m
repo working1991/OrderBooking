@@ -102,6 +102,33 @@
     [self startPostRequest:@"queryCustomerList" bodyDic:dic];
 }
 
+//欠款列表
+- (void)queryDebtList:(NSString *)companyId
+{
+    NSDictionary *dic = @{@"company_id":companyId?companyId:@""};
+    [self startPostRequest:@"queryDebtList" bodyDic:dic];
+}
+
+//还款记录
+- (void)queryRefundList:(NSString *)customerId
+{
+    NSDictionary *dic = @{@"customer_id":customerId?customerId:@""};
+    
+//    [self startPostListRequest:@"queryRefundList" bodyDic:dic];
+    
+    NSMutableDictionary *mDic = [NSMutableDictionary dictionaryWithDictionary:dic];
+    
+    mDic[@"page_size"] = [NSString stringWithFormat:@"%d",self.pageModal_.currentPage_];
+    mDic[@"page_num"] = [NSString stringWithFormat:@"%d",PageSize];
+    [self startPostRequest:@"queryRefundList" bodyDic:mDic];
+}
+
+//还款
+- (void)confirmRefund:(Order_Model *)modal
+{
+    NSDictionary *dic = @{@"user_id":modal.oporaterId?modal.oporaterId:@"", @"customer_id":modal.customerModal.id_?modal.customerModal.id_:Null_Default, @"amount":[NSString stringWithFormat:@"%.2lf", modal.orderPrice], @"type":modal.payTypeCode?modal.payTypeCode:@""};
+    [self startPostRequest:@"confirmRefund" bodyDic:dic];
+}
 
 //新增、修改客户
 - (void)addCustomer:(Customer_Modal *)modal

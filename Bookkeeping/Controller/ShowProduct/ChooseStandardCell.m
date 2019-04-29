@@ -58,7 +58,16 @@
 - (void)setTypeModle:(Standard_Modal *)model
 {
 //    self.nameLb.text = [NSString stringWithFormat:@"尺码：%@", model.secondSpecName];
-    self.nameLb.text = [NSString stringWithFormat:@"尺码：%@（%@）", model.secondSpecName, model.firstSpecName];
+    NSMutableString *string = [NSMutableString stringWithString:@"尺码："];
+    [string appendString:model.secondSpecName.length==0?@"":model.secondSpecName];
+    if(model.secondSpecName.length == 0) {
+        [string appendString:model.firstSpecName.length==0?@"":model.firstSpecName];
+    } else {
+        if (model.firstSpecName.length!=0) {
+            [string appendFormat:@"(%@)", model.firstSpecName];
+        }
+    }
+    self.nameLb.text = string;
     self.originalPriceLb.hidden = model.productSpecPrice==model.realPrice;
     self.originalPriceLb.text = [NSString stringWithFormat:@"原价：¥%.2f", model.productSpecPrice];
     self.priceLb.text = [NSString stringWithFormat:@"¥%.2lf元/件", model.realPrice];
